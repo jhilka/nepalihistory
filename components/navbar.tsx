@@ -38,11 +38,11 @@ export function Navbar({
   };
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-backdrop-filter:bg-background/60">
+    <nav className="fixed top-0 z-50 w-full frosted shadow-2xs">
       <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
         <Link
           href="/"
-          className="font-germania uppercase font-bold text-lg hover:text-muted-foreground transition-colors text-national-maroon"
+          className="font-germania uppercase font-bold text-lg text-national-maroon hover:text-national-blue hover:text-shadow-2xs text-shadow-amber-50 transition-colors"
         >
           {NAV.title}
         </Link>
