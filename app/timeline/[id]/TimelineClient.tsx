@@ -1,11 +1,11 @@
-"use client";
-
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+
 import { timelines } from "@/data";
-import { EventCard } from "@/components/event-card";
 import { groupEventsByYear } from "@/lib/date-utils";
+
+import { EventCard } from "@/components/event-card";
 
 interface TimelinePageProps {
   params: { id: string };

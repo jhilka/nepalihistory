@@ -1,7 +1,10 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
+import { SEO } from "./constants";
+
 import { Navbar } from "@/components/navbar";
 import { BackgroundPattern } from "@/components/background-pattern";
 
@@ -9,9 +12,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Timeline Explorer",
-  description: "Explore historical events through clean, minimal timelines",
-  generator: "v0.app",
+  ...SEO,
   icons: {
     icon: [
       {
@@ -41,7 +42,7 @@ export default function RootLayout({
       <body className={`min-h-screen font-sans antialiased overflow-y-auto`}>
         <BackgroundPattern />
         <Navbar />
-        <main className="pt-14 bg-background/0">{children}</main>
+        <main className="pt-14">{children}</main>
       </body>
     </html>
   );

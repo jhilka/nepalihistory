@@ -1,9 +1,12 @@
 "use client";
 
 import type React from "react";
-import Link from "next/link";
-import { ThemeToggle } from "./theme-toggle";
 import { useState } from "react";
+import Link from "next/link";
+
+import { NAV } from "@/app/constants";
+
+import { ThemeToggle } from "./theme-toggle";
 
 interface NavbarProps {
   onSearch?: (query: string) => void;
@@ -40,7 +43,7 @@ export function Navbar({
           href="/"
           className="font-bold text-lg hover:text-muted-foreground transition-colors"
         >
-          Timeline
+          {NAV.title}
         </Link>
 
         <div className="flex items-center gap-2">
