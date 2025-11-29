@@ -2,15 +2,15 @@
 
 export function BackgroundPattern() {
   return (
-    <div className="fixed inset-0 z-10 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-15"
         style={{
-          backgroundImage: `
-            linear-gradient(var(--grid-color) 1px, transparent 1px),
-            linear-gradient(90deg, var(--grid-color) 1px, transparent 1px)
-          `,
-          backgroundSize: "40px 40px",
+          backgroundImage: `linear-gradient(to right, var(--border) 1px, transparent 1px), linear-gradient(to bottom, var(--border) 1px, transparent 1px)`,
+          backgroundSize: "32px 32px",
+          mask: "radial-gradient(ellipse at center, black 40%, transparent 95%)",
+          WebkitMask:
+            "radial-gradient(ellipse at center, black 40%, transparent 95%)",
         }}
       />
 
