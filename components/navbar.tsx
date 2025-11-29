@@ -7,6 +7,7 @@ import Link from "next/link";
 import { NAV } from "@/app/constants";
 
 import { ThemeToggle } from "./theme-toggle";
+import NepalMap from "./NepalMap";
 
 interface NavbarProps {
   onSearch?: (query: string) => void;
@@ -41,10 +42,11 @@ export function Navbar({
       <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
         <Link
           href="/"
-          className="font-bold text-lg hover:text-muted-foreground transition-colors"
+          className="font-germania uppercase font-bold text-lg hover:text-muted-foreground transition-colors text-national-maroon"
         >
           {NAV.title}
         </Link>
+        <NepalMap className="w-11 sm:w-14 fill-national-maroon " />
 
         <div className="flex items-center gap-2">
           {showSearch && (
