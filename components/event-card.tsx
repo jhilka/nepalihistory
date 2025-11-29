@@ -19,10 +19,10 @@ export function EventCard({
   const { year, month, day } = formatDateDisplay(event.date);
 
   return (
-    <div data-testid="event" className="relative pb-8 group">
+    <div data-testid="event" className="relative pb-6 sm:pb-8 group">
       {/* dot and time row */}
       <div
-        className="sticky top-14 flex items-center sm:gap-5 w-full bg-background/80 backdrop-blur-lg py-2 z-20 rounded-3xl"
+        className="sticky top-14 flex items-center sm:gap-5 w-full border-border/40 bg-background/60 backdrop-blur-lg supports-backdrop-filter:bg-background/60 py-2 z-20 rounded-3xl"
         style={{
           mask: "linear-gradient(to right, black 0%, black 70%, transparent 90%)",
           WebkitMask:
@@ -53,7 +53,7 @@ export function EventCard({
         <Link href={`#${event.title}`}>
           <h3
             id={event.title}
-            className="text-lg my-3 font-semibold leading-snug text-balance scroll-mt-16"
+            className="text-lg my-3 font-semibold leading-snug text-balance scroll-mt-28 sm:scroll-mt-30"
           >
             {event.title}
           </h3>

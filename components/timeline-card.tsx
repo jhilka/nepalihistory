@@ -10,7 +10,7 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
   return (
     <Link
       href={`/timeline/${timeline.id}`}
-      className="group block p-5 border border-border rounded-lg hover:border-foreground transition-colors"
+      className="group bg-background block p-5 border border-border rounded-lg"
     >
       <div className="flex items-start gap-4">
         {timeline.media && (
@@ -24,7 +24,7 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
           </div>
         )}
         <div className="flex-1">
-          <h2 className="text-lg font-semibold mb-1 group-hover:text-foreground/80 transition-colors">
+          <h2 className="text-lg font-semibold mb-1 group-hover:text-foreground/80">
             {timeline.title}
           </h2>
           {timeline.description && (
