@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --national-maroon: oklch(57.116% 0.22195 20.073);
+  --national-blue: oklch(37.493% 0.15904 260.704);
   --background: oklch(0.99 0 0);
   --foreground: oklch(0.15 0 0);
   --card: oklch(0.99 0 0);
@@ -81,6 +83,11 @@
 @theme inline {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-germania: "Germania One", cursive;
+  --font-oswald: "Oswald", sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  --color-national-maroon: var(--national-maroon);
+  --color-national-blue: var(--national-blue);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
