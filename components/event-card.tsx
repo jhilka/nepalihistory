@@ -29,7 +29,8 @@ export function EventCard({
             "linear-gradient(to right, black 0%, black 70%, transparent 90%)",
         }}
       >
-        <div className="w-7 h-7 sm:w-9 sm:h-9 bg-foreground shadow-lg text-background rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold">
+        {/* dot */}
+        <div className="size-6 sm:size-7 bg-foreground shadow-lg text-background rounded-full flex items-center justify-center font-oswald text-[10px] sm:text-xs font-bold">
           <span className="tabular-nums">
             {eventNumber}/{totalEvents}
           </span>
@@ -44,7 +45,7 @@ export function EventCard({
       {/* line */}
       {!isLast && (
         <div
-          className="absolute left-3.5 sm:left-[18px] top-0 bottom-0 w-0.5 bg-border"
+          className="absolute left-3 sm:left-3.5 top-0 bottom-0 w-px sm:w-0.5 bg-border"
           aria-hidden="true"
         />
       )}
@@ -53,7 +54,7 @@ export function EventCard({
         <Link href={`#${event.title}`}>
           <h3
             id={event.title}
-            className="text-lg my-3 font-semibold leading-snug text-balance scroll-mt-28 sm:scroll-mt-30"
+            className="text-lg my-3 font-semibold leading-snug font-oswald text-balance scroll-mt-28 sm:scroll-mt-30"
           >
             {event.title}
           </h3>

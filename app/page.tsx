@@ -23,7 +23,7 @@ export default function HomePage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 md:py-12 relative">
       <header className="mb-10 space-y-2">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
+        <h1 className="text-3xl md:text-4xl font-bold font-oswald tracking-tight text-balance">
           {HERO.title}
         </h1>
         <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">

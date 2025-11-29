@@ -62,9 +62,10 @@ export default function TimelineClient({ params }: TimelinePageProps) {
           </div>
         )}
         <div className="space-y-1 flex-1 text-center">
-          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-balance">
+          <h1 className="text-2xl md:text-3xl font-oswald font-bold tracking-tight text-balance">
             {timeline.title}
           </h1>
+
           {timeline.description && (
             <p className="text-muted-foreground text-sm leading-relaxed">
               {timeline.description}
@@ -80,20 +81,9 @@ export default function TimelineClient({ params }: TimelinePageProps) {
 
           return (
             <div key={year} className="relative">
-              {/* <div className="sticky top-14 z-20 flex justify-center py-2 mb-4">
-                  <div className="px-3 py-1 bg-background/95 backdrop-blur-sm border border-border rounded-full shadow-sm">
-                    <h2 className="text-sm font-semibold tabular-nums">
-                      {year.includes("-")
-                        ? `${year.replace("-", "")} BCE`
-                        : year}
-                    </h2>
-                  </div>
-                </div> */}
-
               <>
                 {yearEvents.map((event, idx) => {
                   eventCounter++;
-                  const isLastInYear = idx === yearEvents.length - 1;
                   const isLastOverall = eventCounter === totalEvents;
 
                   return (
