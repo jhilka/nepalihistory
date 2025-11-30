@@ -22,7 +22,7 @@ export function EventCard({
     <div data-testid="event" className="relative pb-6 sm:pb-8 group">
       {/* dot and time row */}
       <div
-        className="sticky top-14 flex items-center sm:gap-5 w-full border-border/40 frosted py-2 z-20"
+        className="sticky top-14 flex items-center sm:gap-5 w-full border-border/40 frosted p-2 -ml-2 rounded-l-3xl z-20"
         style={{
           mask: "linear-gradient(to right, black 0%, black 70%, transparent 90%)",
           WebkitMask:
@@ -45,7 +45,7 @@ export function EventCard({
       {/* line */}
       {!isLast && (
         <div
-          className="absolute left-3 sm:left-3.5 top-0 bottom-0 w-px sm:w-0.5 bg-border"
+          className="absolute left-3 sm:left-3.5 top-0 bottom-0 w-px sm:w-0.5 bg-national-blue drop-shadow-xs drop-shadow-white/20"
           aria-hidden="true"
         />
       )}
@@ -65,18 +65,20 @@ export function EventCard({
         />
 
         {event.media && event.media.length > 0 && (
-          <div className="grid grid-cols-2 gap-2 pt-2">
+          <div className="flex flex-wrap justify-center gap-2 pt-2">
             {event.media.map((item, idx) => (
               <div
                 key={idx}
-                className="relative w-full aspect-video rounded-md overflow-hidden bg-muted"
+                className="relative max-h-64 rounded-md overflow-hidden"
               >
                 <Image
                   src={item.url || "/placeholder.svg"}
                   alt={item.alt}
-                  fill
-                  className="object-cover"
+                  width={500}
+                  height={500}
+                  className="h-auto max-h-64 w-auto rounded-md"
                   sizes="(max-width: 768px) 50vw, 336px"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -88,7 +90,7 @@ export function EventCard({
             {event.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[10px] px-2 py-0.5 bg-muted text-muted-foreground rounded-full font-medium"
+                className="text-[10px] px-2 py-0.5 bg-muted-foreground/20 text-muted-foreground rounded-full font-medium"
               >
                 {tag}
               </span>
