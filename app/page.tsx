@@ -28,8 +28,11 @@ export default function HomePage() {
           No timelines found matching your search.
         </p>
       ) : (
-        <div className="grid gap-4">
+        <div className="grid sm:grid-cols-3 gap-4 items-center-safe">
           {filteredTimelines.map((timeline) => (
+            <TimelineCard key={timeline.id} timeline={timeline} />
+          ))}
+          {[...filteredTimelines].splice(0, 2).map((timeline) => (
             <TimelineCard key={timeline.id} timeline={timeline} />
           ))}
         </div>

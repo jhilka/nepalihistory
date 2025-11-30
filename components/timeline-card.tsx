@@ -10,33 +10,27 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
   return (
     <Link
       href={`/timeline/${timeline.id}`}
-      className="group bg-background block p-5 border border-border rounded-lg"
+      className="group bg-background block overflow-hidden shadow-md rounded-md"
     >
-      <div className="flex items-start gap-4">
-        {timeline.media && (
-          <div className="relative w-14 h-14 shrink-0 rounded-md overflow-hidden bg-muted">
-            <Image
-              src={timeline.media.url || "/placeholder.svg"}
-              alt={timeline.media.alt}
-              fill
-              className="object-cover"
-            />
+      {timeline.media && (
+        <div className="relative w-full aspect-16/10 bg-muted">
+          <Image
+            src={timeline.media.url || "/placeholder.svg"}
+            alt={timeline.media.alt}
+            fill
+            className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute top-4 right-4 sm:top-3 sm:right-3 text-[10px] text-black/80 px-1.5 py-0.5 bg-background rounded-2xl">
+            <strong>{timeline.events.length}</strong> events
           </div>
-        )}
-        <div className="flex-1">
-          <h2 className="text-lg font-oswald font-semibold mb-1 group-hover:text-foreground/80">
-            {timeline.title}
-          </h2>
-          {timeline.description && (
-            <p className="text-muted-foreground text-sm leading-snug">
-              {timeline.description}
-            </p>
-          )}
-          <div className="mt-2 text-xs text-muted-foreground">
-            {timeline.events.length} events
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-3 text-white">
+            <h2 className="text-xl sm:text-lg font-oswald font-semibold line-clamp-2">
+              {timeline.title}
+            </h2>
           </div>
         </div>
-      </div>
+      )}
     </Link>
   );
 }
