@@ -24,9 +24,9 @@ export function EventCard({
       <div
         className="sticky top-14 flex items-center sm:gap-5 w-full border-border/40 frosted p-2 -ml-2 rounded-l-3xl z-20"
         style={{
-          mask: "linear-gradient(to right, black 0%, black 70%, transparent 90%)",
+          mask: "linear-gradient(to right, black 0%, black 85%, transparent 100%)",
           WebkitMask:
-            "linear-gradient(to right, black 0%, black 70%, transparent 90%)",
+            "linear-gradient(to right, black 0%, black 85%, transparent 100%)",
         }}
       >
         {/* dot */}
@@ -69,7 +69,7 @@ export function EventCard({
             {event.media.map((item, idx) => (
               <div
                 key={idx}
-                className="relative max-h-64 rounded-md overflow-hidden"
+                className="relative max-h-64 rounded-md overflow-hidden shadow-md"
               >
                 <Image
                   src={item.url || "/placeholder.svg"}
