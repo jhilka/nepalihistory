@@ -21,7 +21,7 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
             className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-          <div className="absolute top-4 right-4 sm:top-3 sm:right-3 text-[10px] text-black/80 px-1.5 py-0.5 bg-background rounded-2xl">
+          <div className="absolute top-4 right-4 sm:top-3 sm:right-3 text-[10px] text-black/80 px-1.5 py-0.5 bg-white rounded-2xl">
             <strong>{timeline.events.length}</strong> events
           </div>
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-3 text-white">
