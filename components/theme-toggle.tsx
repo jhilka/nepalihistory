@@ -31,13 +31,13 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="size-12 flex items-center justify-center p-2 hover:scale-115 cursor-pointer"
+      className="size-12 flex items-center justify-center p-2 hover:scale-115 cursor-pointer drop-shadow-national-blue drop-shadow-2xl  transition-all duration-200"
       aria-label="Toggle theme"
     >
       {theme === "light" ? (
-        <NepalMoon className="size-10 fill-red-400" />
+        <NepalMoon className="size-10" />
       ) : (
-        <NepalSun className="size-8 fill-red" />
+        <NepalSun className="size-8" />
       )}
     </button>
   );

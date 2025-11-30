@@ -42,7 +42,7 @@ export function Navbar({
       <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
         <Link
           href="/"
-          className="font-germania uppercase font-bold text-lg text-national-maroon hover:text-national-blue hover:text-shadow-2xs text-shadow-amber-50 transition-colors"
+          className="font-germania uppercase font-bold text-2xl text-national-maroon hover:text-national-blue dark:hover:drop-shadow-national-blue drop-shadow-2xl duration-200 transition-colors"
         >
           {NAV.title}
         </Link>
