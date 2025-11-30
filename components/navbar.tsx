@@ -42,11 +42,11 @@ export function Navbar({
       <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
         <Link
           href="/"
-          className="font-germania uppercase font-bold text-2xl text-national-maroon hover:text-national-blue dark:hover:drop-shadow-national-blue drop-shadow-2xl duration-200 transition-colors"
+          className="font-germania uppercase font-bold text-md sm:text-2xl text-national-maroon hover:text-national-blue dark:hover:drop-shadow-national-blue drop-shadow-2xl duration-200 transition-colors"
         >
           {NAV.title}
         </Link>
-        <NepalMap className="w-11 sm:w-14 fill-national-maroon " />
+        <NepalMap className="w-11 sm:w-14 fill-national-maroon" />
 
         <div className="flex items-center gap-2">
           {showSearch && (
