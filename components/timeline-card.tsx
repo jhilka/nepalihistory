@@ -24,11 +24,11 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
           </div>
         )}
         <div className="flex-1">
-          <h2 className="text-lg font-semibold mb-1 group-hover:text-foreground/80">
+          <h2 className="text-lg font-oswald font-semibold mb-1 group-hover:text-foreground/80">
             {timeline.title}
           </h2>
           {timeline.description && (
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-snug">
               {timeline.description}
             </p>
           )}
