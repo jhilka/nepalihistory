@@ -71,7 +71,9 @@ export default function TimelineClient({ params }: TimelinePageProps) {
               {timeline.description}
             </p>
           )}
-          <p className="text-xs text-muted-foreground">{totalEvents} events</p>
+          <p className="text-xs text-muted-foreground">
+            <strong>{totalEvents}</strong> events
+          </p>
         </div>
       </header>
 
