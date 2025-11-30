@@ -1,5 +1,5 @@
 export const SEO = {
-  title: "Nepali History | Explore the timeline",
+  title: "Nepali History | Discover the timeline",
   description:
     "Nepali History is a website that provides information about the history of Nepal.",
   openGraph: {
@@ -16,8 +16,10 @@ export const SEO = {
 };
 
 export const HERO = {
-  title: "Timeline Explorer",
-  description: "Explore historical events through clean, minimal timelines",
+  preface: "Explore historical timelines",
+  title: "Nepal through time",
+  description:
+    "Discover the historical events that shaped our nation. Learn the major events that influenced our culture, our identity, and the path we walk today.",
   cta: "Explore Timelines",
   image: {
     src: "/hero-image.png",
