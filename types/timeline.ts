@@ -11,6 +11,7 @@ export type Event = {
   media?: Array<{
     url: string
     alt: string
+    caption?: string
   }>
 }
 
@@ -21,6 +22,7 @@ export type Timeline = {
   media?: {
     url: string
     alt: string
+    caption?: string
   }
   events: Event[]
 }

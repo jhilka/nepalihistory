@@ -28,6 +28,11 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
             <h2 className="text-xl sm:text-lg font-oswald font-semibold line-clamp-2">
               {timeline.title}
             </h2>
+            {timeline.media.caption && (
+              <p className="text-xs text-white/80 mt-1 line-clamp-1">
+                {timeline.media.caption}
+              </p>
+            )}
           </div>
         </div>
       )}

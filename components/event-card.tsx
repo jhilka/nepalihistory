@@ -67,19 +67,23 @@ export function EventCard({
         {event.media && event.media.length > 0 && (
           <div className="flex flex-wrap justify-center gap-2 pt-2">
             {event.media.map((item, idx) => (
-              <div
-                key={idx}
-                className="relative max-h-64 rounded-md overflow-hidden shadow-md"
-              >
-                <Image
-                  src={item.url || "/placeholder.svg"}
-                  alt={item.alt}
-                  width={500}
-                  height={500}
-                  className="h-auto max-h-64 w-auto rounded-md"
-                  sizes="(max-width: 768px) 50vw, 336px"
-                  loading="lazy"
-                />
+              <div key={idx} className="space-y-1 inline-block">
+                <div className="relative max-h-64 rounded-md overflow-hidden shadow-md">
+                  <Image
+                    src={item.url || "/placeholder.svg"}
+                    alt={item.alt}
+                    width={500}
+                    height={500}
+                    className="h-auto max-h-64 w-auto rounded-md"
+                    sizes="(max-width: 768px) 50vw, 336px"
+                    loading="lazy"
+                  />
+                </div>
+                {/* {item.caption && (
+                  <p className="text-xs text-muted-foreground text-center italic">
+                    {item.caption}
+                  </p>
+                )} */}
               </div>
             ))}
           </div>

@@ -20,6 +20,7 @@ export const worldHistory: Timeline = {
         {
           url: "/ancient-sumerian-cuneiform-tablet.jpg",
           alt: "Ancient Sumerian cuneiform writing",
+          caption: "Clay tablet with cuneiform script from ancient Mesopotamia, circa 3000 BCE",
         },
       ],
       links: [
@@ -40,6 +41,7 @@ export const worldHistory: Timeline = {
         {
           url: "/ancient-olympic-games-greece-stadium.jpg",
           alt: "Ancient Olympic stadium in Greece",
+          caption: "Ruins of the ancient Olympic stadium in Olympia, Greece",
         },
       ],
       links: [
@@ -60,6 +62,7 @@ export const worldHistory: Timeline = {
         {
           url: "/ancient-great-wall.png",
           alt: "The Great Wall of China",
+          caption: "Section of the Great Wall built during the Qin Dynasty",
         },
       ],
       links: [
@@ -140,6 +143,7 @@ export const worldHistory: Timeline = {
         {
           url: "/astronaut-moon-landing-apollo-11.jpg",
           alt: "Astronaut on the moon",
+          caption: "Buzz Aldrin on the lunar surface, photographed by Neil Armstrong",
         },
       ],
       links: [

@@ -20,22 +20,7 @@ export const technology: Timeline = {
         {
           url: "/vintage-telephone-alexander-graham-bell.jpg",
           alt: "Vintage telephone from 1876",
-        },
-        {
-          url: "/vintage-telephone-alexander-graham-bell.jpg",
-          alt: "Vintage telephone from 1876",
-        },
-        {
-          url: "/vintage-telephone-alexander-graham-bell.jpg",
-          alt: "Vintage telephone from 1876",
-        },
-        {
-          url: "/vintage-telephone-alexander-graham-bell.jpg",
-          alt: "Vintage telephone from 1876",
-        },
-        {
-          url: "/vintage-telephone-alexander-graham-bell.jpg",
-          alt: "Vintage telephone from 1876",
+          caption: "Bell's original telephone design, patented March 10, 1876",
         },
       ],
       links: [
@@ -56,6 +41,7 @@ export const technology: Timeline = {
         {
           url: "/wright-brothers-airplane-kitty-hawk.jpg",
           alt: "Wright brothers first flight at Kitty Hawk",
+          caption: "The Wright Flyer during its historic first flight, December 17, 1903",
         },
       ],
       links: [
@@ -76,6 +62,7 @@ export const technology: Timeline = {
         {
           url: "/eniac-computer-1945-vintage-computing.jpg",
           alt: "ENIAC computer room",
+          caption: "ENIAC operators programming the massive computer at the University of Pennsylvania",
         },
       ],
       links: [
@@ -140,6 +127,7 @@ export const technology: Timeline = {
         {
           url: "/first-generation-iphone-2007-apple-smartphone.jpg",
           alt: "First generation iPhone",
+          caption: "Steve Jobs introducing the original iPhone at Macworld 2007",
         },
       ],
       links: [
