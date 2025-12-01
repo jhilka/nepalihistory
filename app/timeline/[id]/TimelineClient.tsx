@@ -6,6 +6,7 @@ import { timelines } from "@/data";
 import { groupEventsByYear } from "@/lib/date-utils";
 
 import { EventCard } from "@/components/event-card";
+import { EventInvolved } from "@/components/event-involved";
 
 interface TimelinePageProps {
   params: { id: string };
@@ -70,6 +71,11 @@ export default function TimelineClient({ params }: TimelinePageProps) {
             <p className="text-muted-foreground text-sm leading-snug">
               {timeline.description}
             </p>
+          )}
+          {timeline.involved && timeline.involved.length > 0 && (
+            <div className="flex flex-wrap justify-center gap-2">
+              <EventInvolved involved={timeline.involved} />
+            </div>
           )}
           <p className="text-xs text-muted-foreground">
             <strong>{totalEvents}</strong> events

@@ -4,6 +4,10 @@ export const worldHistory: Timeline = {
   id: "world-history",
   title: "World History",
   description: "Major events that shaped human civilization",
+  involved: [
+    { name: "UNESCO", role: "Heritage Organization" },
+    { name: "Various Historians", role: "Contributors" },
+  ],
   media: {
     url: "/world-history-globe.jpg",
     alt: "World History Icon",
@@ -58,6 +62,9 @@ export const worldHistory: Timeline = {
       description:
         "<strong>Emperor Qin Shi Huang</strong> unifies China and begins construction of the <em>Great Wall</em>.<ul><li>Standardized writing, currency, and measurements</li><li>Built extensive road networks</li><li>Created a centralized government</li></ul>",
       tags: ["Ancient", "Asia"],
+      involved: [
+        { name: "Qin Shi Huang", role: "First Emperor of China" },
+      ],
       media: [
         {
           url: "/ancient-great-wall.png",
@@ -99,6 +106,10 @@ export const worldHistory: Timeline = {
       description:
         "<strong>Christopher Columbus</strong> lands in the Caribbean, initiating sustained contact between Europe and the Americas.<ul><li>Began the Columbian Exchange of goods and cultures</li><li>Led to European colonization</li><li>Transformed global trade and demographics</li></ul>",
       tags: ["Exploration"],
+      involved: [
+        { name: "Christopher Columbus", role: "Explorer" },
+        { name: "Spanish Crown", role: "Sponsor" },
+      ],
       media: [
         {
           url: "/columbus-ship-sailing-ocean.jpg",
@@ -139,6 +150,20 @@ export const worldHistory: Timeline = {
       description:
         "Apollo 11 astronauts <strong>Neil Armstrong</strong> and <strong>Buzz Aldrin</strong> become the first humans to walk on the Moon.<ul><li>Demonstrated technological superiority</li><li>Inspired scientific advancement</li><li>United humanity in achievement</li></ul>",
       tags: ["Space", "Technology"],
+      involved: [
+        {
+          name: "Neil Armstrong",
+          role: "Commander",
+        },
+        {
+          name: "Buzz Aldrin",
+          role: "Lunar Module Pilot",
+        },
+        {
+          name: "Michael Collins",
+          role: "Command Module Pilot",
+        },
+      ],
       media: [
         {
           url: "/astronaut-moon-landing-apollo-11.jpg",

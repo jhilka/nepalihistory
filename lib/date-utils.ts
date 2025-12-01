@@ -10,7 +10,12 @@ export function parseDate(dateString: string) {
   // Handle YYYY-MM-DD format
   if (dateString.includes("-")) {
     const [year, month, day] = dateString.split("-")
-    return { year, month: month || null, day: day || null, isBCE: false }
+    return { 
+      year, 
+      month: month && month !== "00" ? month : null, 
+      day: day && day !== "00" ? day : null, 
+      isBCE: false 
+    }
   }
 
   // Handle year only

@@ -1,7 +1,10 @@
 import type { Event } from "@/types/timeline";
-import Image from "next/image";
 import Link from "next/link";
 import { formatDateDisplay } from "@/lib/date-utils";
+import { EventMedia } from "./event-media";
+import { EventInvolved } from "./event-involved";
+import { EventTags } from "./event-tags";
+import { EventLinks } from "./event-links";
 
 interface EventCardProps {
   event: Event;
@@ -64,72 +67,10 @@ export function EventCard({
           dangerouslySetInnerHTML={{ __html: event.description }}
         />
 
-        {event.media && event.media.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-2 pt-2">
-            {event.media.map((item, idx) => (
-              <div key={idx} className="space-y-1 inline-block">
-                <div className="relative max-h-64 rounded-md overflow-hidden shadow-md">
-                  <Image
-                    src={item.url || "/placeholder.svg"}
-                    alt={item.alt}
-                    width={500}
-                    height={500}
-                    className="h-auto max-h-64 w-auto rounded-md"
-                    sizes="(max-width: 768px) 50vw, 336px"
-                    loading="lazy"
-                  />
-                </div>
-                {/* {item.caption && (
-                  <p className="text-xs text-muted-foreground text-center italic">
-                    {item.caption}
-                  </p>
-                )} */}
-              </div>
-            ))}
-          </div>
-        )}
-
-        {event.tags && event.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 pt-1">
-            {event.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-[10px] px-2 py-0.5 bg-muted-foreground/20 text-muted-foreground rounded-full font-medium"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-
-        {event.links && event.links.length > 0 && (
-          <div className="flex flex-wrap gap-3 pt-1">
-            {event.links.map((link, idx) => (
-              <Link
-                key={idx}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs font-medium text-foreground hover:text-muted-foreground transition-colors"
-              >
-                {link.label}
-                <svg
-                  className="w-3 h-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            ))}
-          </div>
-        )}
+        {!!event?.media && <EventMedia media={event.media || []} />}
+        {!!event?.involved && <EventInvolved involved={event.involved || []} />}
+        {!!event?.tags && <EventTags tags={event.tags || []} />}
+        {!!event?.links && <EventLinks links={event.links || []} />}
       </div>
     </div>
   );

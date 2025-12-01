@@ -28,6 +28,23 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
             <h2 className="text-xl sm:text-lg font-oswald font-semibold line-clamp-2">
               {timeline.title}
             </h2>
+            {/* {timeline.involved && timeline.involved.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-2">
+                {timeline.involved.slice(0, 3).map((entity, idx) => (
+                  <span
+                    key={idx}
+                    className="text-[10px] px-2 py-0.5 bg-white/20 backdrop-blur-sm text-white rounded-full"
+                  >
+                    {entity.name}
+                  </span>
+                ))}
+                {timeline.involved.length > 3 && (
+                  <span className="text-[10px] px-2 py-0.5 bg-white/20 backdrop-blur-sm text-white rounded-full">
+                    +{timeline.involved.length - 3}
+                  </span>
+                )}
+              </div>
+            )} */}
             {timeline.media.caption && (
               <p className="text-xs text-white/80 mt-1 line-clamp-1">
                 {timeline.media.caption}

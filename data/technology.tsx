@@ -4,6 +4,10 @@ export const technology: Timeline = {
   id: "technology",
   title: "History of Technology",
   description: "Innovations that transformed the modern world",
+  involved: [
+    { name: "IEEE", role: "Technology Standards Organization" },
+    { name: "Various Inventors", role: "Innovators" },
+  ],
   media: {
     url: "/technology-innovation-chip.jpg",
     alt: "Technology Icon",
@@ -16,6 +20,9 @@ export const technology: Timeline = {
       description:
         "<strong>Alexander Graham Bell</strong> patents the telephone, revolutionizing long-distance communication.<ul><li>Enabled instant voice communication</li><li>Connected businesses and families</li><li>Foundation for modern telecommunications</li></ul>",
       tags: ["Communication"],
+      involved: [
+        { name: "Alexander Graham Bell", role: "Inventor" },
+      ],
       media: [
         {
           url: "/vintage-telephone-alexander-graham-bell.jpg",
@@ -37,6 +44,10 @@ export const technology: Timeline = {
       description:
         "The <em>Wright brothers</em> achieve the first sustained, controlled, powered flight at Kitty Hawk.<ul><li>12-second flight covering 120 feet</li><li>Pioneered modern aviation</li><li>Changed transportation forever</li></ul>",
       tags: ["Aviation"],
+      involved: [
+        { name: "Orville Wright", role: "Aviator" },
+        { name: "Wilbur Wright", role: "Aviator" },
+      ],
       media: [
         {
           url: "/wright-brothers-airplane-kitty-hawk.jpg",
@@ -99,6 +110,10 @@ export const technology: Timeline = {
       description:
         "<strong>Tim Berners-Lee</strong> proposes the World Wide Web, making the internet accessible to the general public.<ul><li>Introduced HTTP, HTML, and URLs</li><li>Created the first web browser</li><li>Democratized information access</li></ul>",
       tags: ["Internet"],
+      involved: [
+        { name: "Tim Berners-Lee", role: "Inventor" },
+        { name: "CERN", role: "Research Organization" },
+      ],
       media: [
         {
           url: "/world-wide-web-tim-berners-lee-internet.jpg",
@@ -123,6 +138,10 @@ export const technology: Timeline = {
       description:
         "<strong>Apple</strong> introduces the iPhone, pioneering the modern smartphone era and transforming mobile computing.<ul><li>Multi-touch interface revolution</li><li>App Store ecosystem launched in 2008</li><li>Redefined personal computing</li></ul>",
       tags: ["Mobile", "Computing"],
+      involved: [
+        { name: "Steve Jobs", role: "CEO" },
+        { name: "Apple Inc.", role: "Company" },
+      ],
       media: [
         {
           url: "/first-generation-iphone-2007-apple-smartphone.jpg",
@@ -144,6 +163,10 @@ export const technology: Timeline = {
       description:
         "<em>ChatGPT</em> and other large language models bring artificial intelligence to millions of users worldwide.<ul><li>100 million users in 2 months</li><li>Natural language understanding breakthrough</li><li>Transformed content creation and automation</li></ul>",
       tags: ["AI", "Computing"],
+      involved: [
+        { name: "OpenAI", role: "AI Research Company" },
+        { name: "Sam Altman", role: "CEO" },
+      ],
       media: [
         {
           url: "/artificial-intelligence-ai-neural-network.jpg",
