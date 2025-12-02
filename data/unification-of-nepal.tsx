@@ -100,7 +100,7 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Nuwakot_Durbar_Square.jpg/800px-Nuwakot_Durbar_Square.jpg",
+          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Nuwakot_Palace_%285%29.jpg/526px-Nuwakot_Palace_%285%29.jpg",
           alt: "Nuwakot Durbar Fort",
           caption: "Nuwakot Durbar, strategic fort captured in 1744.",
         },
