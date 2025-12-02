@@ -33,10 +33,7 @@ export function EventCard({
         }}
       >
         {/* dot */}
-        <div
-          className="size-6 sm:size-7 bg-
-        q-blue shadow-lg text-white rounded-full flex items-center justify-center font-oswald text-[10px] sm:text-xs font-bold"
-        >
+        <div className="size-6 sm:size-7 bg-national-blue shadow-lg text-white rounded-full flex items-center justify-center font-oswald text-[10px] sm:text-xs font-bold">
           <span className="tabular-nums">
             {eventNumber}/{totalEvents}
           </span>
