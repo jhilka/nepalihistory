@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { timelines } from "@/data";
 import { groupEntriesByYear } from "@/lib/date-utils";
+import { assetPath } from "@/lib/asset-path";
 
 import { EventCard } from "@/components/event-card";
 import { EventInvolved } from "@/components/event-involved";
@@ -57,7 +58,7 @@ export default function TimelineClient({ params }: TimelinePageProps) {
         {timeline.coverMedia && (
           <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow">
             <Image
-              src={timeline.coverMedia?.src || "/placeholder.svg"}
+              src={assetPath(timeline.coverMedia?.src || "/placeholder.svg")}
               alt={timeline.coverMedia?.alt || ""}
               fill
               className="object-cover"
