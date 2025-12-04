@@ -9,6 +9,7 @@ export const worldHistory: Timeline = {
     { name: "Various Historians", role: "Contributors" },
   ],
   coverMedia: {
+    src: "/timelines/world-history/f9a12ef6.avif",
     sourceUrl: "/world-history-globe.jpg",
     alt: "World History Icon",
   },
@@ -22,6 +23,7 @@ export const worldHistory: Timeline = {
       tags: ["Ancient", "Technology"],
       media: [
         {
+          src: "/timelines/world-history/0edb8f05.avif",
           sourceUrl: "/ancient-sumerian-cuneiform-tablet.jpg",
           alt: "Ancient Sumerian cuneiform writing",
           caption:
@@ -44,6 +46,7 @@ export const worldHistory: Timeline = {
       tags: ["Ancient", "Sports"],
       media: [
         {
+          src: "/timelines/world-history/33d9c367.avif",
           sourceUrl: "/ancient-olympic-games-greece-stadium.jpg",
           alt: "Ancient Olympic stadium in Greece",
           caption: "Ruins of the ancient Olympic stadium in Olympia, Greece",
@@ -66,6 +69,7 @@ export const worldHistory: Timeline = {
       involved: [{ name: "Qin Shi Huang", role: "First Emperor of China" }],
       media: [
         {
+          src: "/timelines/world-history/6fcd529f.avif",
           sourceUrl: "/ancient-great-wall.png",
           alt: "The Great Wall of China",
           caption: "Section of the Great Wall built during the Qin Dynasty",
@@ -87,6 +91,7 @@ export const worldHistory: Timeline = {
       tags: ["Medieval", "Europe"],
       media: [
         {
+          src: "/timelines/world-history/af41fb81.avif",
           sourceUrl: "/roman-empire-colosseum-ruins.jpg",
           alt: "Roman Empire ruins",
         },
@@ -111,6 +116,7 @@ export const worldHistory: Timeline = {
       ],
       media: [
         {
+          src: "/timelines/world-history/f6e273d8.avif",
           sourceUrl: "/columbus-ship-sailing-ocean.jpg",
           alt: "Columbus ship sailing to Americas",
         },
@@ -131,6 +137,7 @@ export const worldHistory: Timeline = {
       tags: ["Revolution", "Europe"],
       media: [
         {
+          src: "/timelines/world-history/5b5eaaf1.avif",
           sourceUrl: "/bastille-fortress-french-revolution.jpg",
           alt: "Storming of the Bastille",
         },
@@ -165,6 +172,7 @@ export const worldHistory: Timeline = {
       ],
       media: [
         {
+          src: "/timelines/world-history/0c430f8e.avif",
           sourceUrl: "/astronaut-moon-landing-apollo-11.jpg",
           alt: "Astronaut on the moon",
           caption:
@@ -191,6 +199,7 @@ export const worldHistory: Timeline = {
       tags: ["Modern", "Europe"],
       media: [
         {
+          src: "/timelines/world-history/aa03261d.avif",
           sourceUrl: "/berlin-wall-falling-people-celebrating.jpg",
           alt: "Berlin Wall being torn down",
         },

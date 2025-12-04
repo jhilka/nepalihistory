@@ -9,6 +9,7 @@ export const technology: Timeline = {
     { name: "Various Inventors", role: "Innovators" },
   ],
   coverMedia: {
+    src: "/timelines/technology/7fcd6fc2.avif",
     sourceUrl: "/technology-innovation-chip.jpg",
     alt: "Technology Icon",
   },
@@ -23,6 +24,7 @@ export const technology: Timeline = {
       involved: [{ name: "Alexander Graham Bell", role: "Inventor" }],
       media: [
         {
+          src: "/timelines/technology/31ce3d6a.avif",
           sourceUrl: "/vintage-telephone-alexander-graham-bell.jpg",
           alt: "Vintage telephone from 1876",
           caption: "Bell's original telephone design, patented March 10, 1876",
@@ -48,6 +50,7 @@ export const technology: Timeline = {
       ],
       media: [
         {
+          src: "/timelines/technology/b0e8c484.avif",
           sourceUrl: "/wright-brothers-airplane-kitty-hawk.jpg",
           alt: "Wright brothers first flight at Kitty Hawk",
           caption:
@@ -70,6 +73,7 @@ export const technology: Timeline = {
       tags: ["Computing"],
       media: [
         {
+          src: "/timelines/technology/fb259b14.avif",
           sourceUrl: "/eniac-computer-1945-vintage-computing.jpg",
           alt: "ENIAC computer room",
           caption:
@@ -92,6 +96,7 @@ export const technology: Timeline = {
       tags: ["Internet", "Computing"],
       media: [
         {
+          src: "/timelines/technology/fcef7054.avif",
           sourceUrl: "/arpanet-network-diagram-vintage-computer.jpg",
           alt: "ARPANET network connection",
         },
@@ -116,6 +121,7 @@ export const technology: Timeline = {
       ],
       media: [
         {
+          src: "/timelines/technology/7a9a45eb.avif",
           sourceUrl: "/world-wide-web-tim-berners-lee-internet.jpg",
           alt: "Early World Wide Web interface",
         },
@@ -144,6 +150,7 @@ export const technology: Timeline = {
       ],
       media: [
         {
+          src: "/timelines/technology/da4a20c3.avif",
           sourceUrl: "/first-generation-iphone-2007-apple-smartphone.jpg",
           alt: "First generation iPhone",
           caption:
@@ -170,6 +177,7 @@ export const technology: Timeline = {
       ],
       media: [
         {
+          src: "/timelines/technology/537ac947.avif",
           sourceUrl: "/artificial-intelligence-ai-neural-network.jpg",
           alt: "AI neural network visualization",
         },
