@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 
 interface EventMediaProps {
   media: Array<{
@@ -18,7 +19,7 @@ export function EventMedia({ media }: EventMediaProps) {
         <div key={idx} className="space-y-1 inline-block">
           <div className="relative max-h-64 rounded-md overflow-hidden shadow-md">
             <Image
-              src={item.src || "/placeholder.svg"}
+              src={assetPath(item.src || "/placeholder.svg")}
               alt={item.alt}
               width={500}
               height={500}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Timeline } from "@/types/timeline";
+import { assetPath } from "@/lib/asset-path";
 
 interface TimelineCardProps {
   timeline: Timeline;
@@ -17,7 +18,7 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
       {media && (
         <div className="relative w-full aspect-16/10 bg-muted">
           <Image
-            src={media.src || "/placeholder.svg"}
+            src={assetPath(media.src || "/placeholder.svg")}
             alt={media.alt}
             fill
             sizes="(max-width: 768px) 100vw, 400px"
