@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Involved } from "@/types/timeline";
+import { assetPath } from "@/lib/asset-path";
 
 interface EventInvolvedProps {
   involved: Involved[];
@@ -17,7 +18,7 @@ export function EventInvolved({ involved }: EventInvolvedProps) {
         >
           {entity.avatar && (
             <Image
-              src={entity.avatar}
+              src={assetPath(entity.avatar)}
               alt={entity.name}
               width={24}
               height={24}

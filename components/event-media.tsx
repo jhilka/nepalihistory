@@ -1,13 +1,9 @@
 import Image from "next/image";
 import { assetPath } from "@/lib/asset-path";
+import { Media } from "@/types/timeline";
 
 interface EventMediaProps {
-  media: Array<{
-    src: string;
-    sourceUrl?: string;
-    alt: string;
-    caption?: string;
-  }>;
+  media: Array<Media>;
 }
 
 export function EventMedia({ media }: EventMediaProps) {
