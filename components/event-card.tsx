@@ -74,7 +74,7 @@ export function EventCard({
             </div>
           ))}
 
-        {!!entry?.media && <EventMedia media={entry.media || []} />}
+        {!!entry?.media && <EventMedia media={entry?.media || []} />}
         {!!entry?.involved && <EventInvolved involved={entry.involved || []} />}
         {!!entry?.tags && <EventTags tags={entry.tags || []} />}
         {!!entry?.links && <EventLinks links={entry.links || []} />}

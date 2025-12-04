@@ -6,7 +6,7 @@ export type Involved = {
   avatar?: string;
 };
 
-type Media = {
+export type Media = {
   src?: string;
   sourceUrl: string;
   alt: string;
