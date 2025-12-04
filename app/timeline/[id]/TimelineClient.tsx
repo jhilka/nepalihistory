@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { timelines } from "@/data";
-import { groupEventsByYear } from "@/lib/date-utils";
+import { groupEntriesByYear } from "@/lib/date-utils";
 
 import { EventCard } from "@/components/event-card";
 import { EventInvolved } from "@/components/event-involved";
@@ -19,15 +19,17 @@ export default function TimelineClient({ params }: TimelinePageProps) {
     notFound();
   }
 
-  const groupedEvents = groupEventsByYear(timeline.events);
-  const years = Object.keys(groupedEvents).sort((a, b) => {
+  // Support both entries and events (backward compatibility)
+  const entries = timeline.entries || timeline.events || [];
+  const groupedEntries = groupEntriesByYear(entries);
+  const years = Object.keys(groupedEntries).sort((a, b) => {
     const yearA = a.includes("-") ? Number.parseInt(a) : Number.parseInt(a);
     const yearB = b.includes("-") ? Number.parseInt(b) : Number.parseInt(b);
     return yearA - yearB;
   });
 
-  const totalEvents = timeline.events.length;
-  let eventCounter = 0;
+  const totalEntries = entries.length;
+  let entryCounter = 0;
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-6 md:py-8 relative">
@@ -52,11 +54,11 @@ export default function TimelineClient({ params }: TimelinePageProps) {
       </Link>
 
       <header className="mb-8 flex flex-col items-center gap-6">
-        {timeline.media && (
+        {timeline.coverMedia && (
           <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow">
             <Image
-              src={timeline.media.url || "/placeholder.svg"}
-              alt={timeline.media.alt}
+              src={timeline.coverMedia?.src || "/placeholder.svg"}
+              alt={timeline.coverMedia?.alt || ""}
               fill
               className="object-cover"
             />
@@ -78,28 +80,28 @@ export default function TimelineClient({ params }: TimelinePageProps) {
             </div>
           )}
           <p className="text-xs text-muted-foreground">
-            <strong>{totalEvents}</strong> events
+            <strong>{totalEntries}</strong> entries
           </p>
         </div>
       </header>
 
       <>
         {years.map((year) => {
-          const yearEvents = groupedEvents[year];
+          const yearEntries = groupedEntries[year];
 
           return (
             <div key={year} className="relative">
               <>
-                {yearEvents.map((event, idx) => {
-                  eventCounter++;
-                  const isLastOverall = eventCounter === totalEvents;
+                {yearEntries.map((entry, idx) => {
+                  entryCounter++;
+                  const isLastOverall = entryCounter === totalEntries;
 
                   return (
                     <EventCard
-                      key={event.id}
-                      event={event}
-                      eventNumber={eventCounter}
-                      totalEvents={totalEvents}
+                      key={entry.id}
+                      entry={entry}
+                      entryNumber={entryCounter}
+                      totalEntries={totalEntries}
                       isLast={isLastOverall}
                     />
                   );

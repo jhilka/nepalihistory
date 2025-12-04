@@ -9,8 +9,7 @@ export const unificationOfNepal: Timeline = {
     {
       name: "Prithvi Narayan Shah",
       role: "King of Gorkha and Unifier of Nepal",
-      avatar:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Prithvi_Narayan_Shah_1960_%28restoration%29.png/180px-Prithvi_Narayan_Shah_1960_%28restoration%29.png",
+      avatar: "/timelines/unification-nepal/0147fcf2.avif",
     },
     {
       name: "Kalu Pande",
@@ -25,19 +24,36 @@ export const unificationOfNepal: Timeline = {
       role: "Regent and Commander",
     },
   ],
-  media: {
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Prithvi_Narayan_Shah_1960_%28restoration%29.png/180px-Prithvi_Narayan_Shah_1960_%28restoration%29.png",
+  coverMedia: {
+    src: "/timelines/unification-nepal/0147fcf2.avif",
+    sourceUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Prithvi_Narayan_Shah_1960_%28restoration%29.png/180px-Prithvi_Narayan_Shah_1960_%28restoration%29.png",
     alt: "Founding father of Nepal - Prithivi Narayan Shah",
     caption:
       "Portrait of Prithvi Narayan Shah, the architect of Nepal's unification.",
   },
-  events: [
+  entries: [
     {
       id: "1",
       date: "1743-04-03",
       title: "Prithvi Narayan Shah Ascends the Throne of Gorkha",
-      description:
-        "<p>At age 20, Prithvi Narayan Shah became king of Gorkha following the death of his father, Nara Bhupal Shah. He recognized the fragmented political landscape of the region and began laying the groundwork for a unified Nepal. He strengthened his military, forged alliances with neighboring hill states, and focused on consolidating power and preparing for territorial expansion.</p><ul><li>Reorganized Gorkha administration</li><li>Built strategic alliances, including with Lamjung</li><li>Set the vision for a unified Nepal</li></ul>",
+      description: (
+        <>
+          <p>
+            At age 20, Prithvi Narayan Shah became king of Gorkha following the
+            death of his father, Nara Bhupal Shah. He recognized the fragmented
+            political landscape of the region and began laying the groundwork
+            for a unified Nepal. He strengthened his military, forged alliances
+            with neighboring hill states, and focused on consolidating power and
+            preparing for territorial expansion.
+          </p>
+          <ul>
+            <li>Reorganized Gorkha administration</li>
+            <li>Built strategic alliances, including with Lamjung</li>
+            <li>Set the vision for a unified Nepal</li>
+          </ul>
+        </>
+      ),
       tags: ["Leadership", "Gorkha"],
       involved: [
         {
@@ -51,11 +67,15 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Prithvi_Narayan_Shah_statue.jpg",
+          src: "/timelines/unification-nepal/38cbaf5d.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/7/7c/Prithvi_Narayan_Shah_statue.jpg",
           alt: "Statue of Prithvi Narayan Shah",
         },
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/0/09/Gorkha_Palace_durbar.jpg",
+          src: "/timelines/unification-nepal/b499be1f.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/0/09/Gorkha_Palace_durbar.jpg",
           alt: "Gorkha Palace — ancestral seat of Shah dynasty",
         },
       ],
@@ -82,8 +102,6 @@ export const unificationOfNepal: Timeline = {
         {
           name: "Prithvi Narayan Shah",
           role: "King and Strategist",
-          avatar:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Prithvi_Narayan_Shah_1960_%28restoration%29.png/180px-Prithvi_Narayan_Shah_1960_%28restoration%29.png",
         },
         {
           name: "Kalu Pande",
@@ -100,7 +118,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Nuwakot_Palace_%285%29.jpg/526px-Nuwakot_Palace_%285%29.jpg",
+          src: "/timelines/unification-nepal/5721357a.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Nuwakot_Palace_%285%29.jpg/526px-Nuwakot_Palace_%285%29.jpg",
           alt: "Nuwakot Durbar Fort",
           caption: "Nuwakot Durbar, strategic fort captured in 1744.",
         },
@@ -139,7 +159,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Kirtipur%2C_1950_-_1955.jpg/800px-Kirtipur%2C_1950_-_1955.jpg",
+          src: "/timelines/unification-nepal/395ee9d9.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Kirtipur%2C_1950_-_1955.jpg/800px-Kirtipur%2C_1950_-_1955.jpg",
           alt: "Kirtipur — ridge town in Nepal",
         },
       ],
@@ -169,7 +191,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Makwanpur_gadhi_fortress.jpg/800px-Makwanpur_gadhi_fortress.jpg",
+          src: "/timelines/unification-nepal/2ad95515.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/0/08/Ruin_Makwanpur_Gadi_Palace.JPG",
           alt: "Makwanpur Gadhi Fortress",
           caption: "Makwanpur Gadhi, site of the decisive battle.",
         },
@@ -204,7 +228,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Kirtipur%2C_1950_-_1955.jpg/800px-Kirtipur%2C_1950_-_1955.jpg",
+          src: "/timelines/unification-nepal/395ee9d9.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Kirtipur%2C_1950_-_1955.jpg/800px-Kirtipur%2C_1950_-_1955.jpg",
           alt: "Kirtipur after the Battles",
         },
       ],
@@ -223,8 +249,21 @@ export const unificationOfNepal: Timeline = {
       id: "4",
       date: "1768-09-25",
       title: "Fall of Kathmandu (Kantipur) — Entry into the Valley",
-      description:
-        "<p>Exploiting internal divisions among the Malla kings, Gorkha forces launched a surprise attack and captured Kathmandu. This decisive turning point ended Malla rule in the valley's core and established Shah dynasty control, consolidating Gorkha authority.</p><ul><li>End of Kantipur’s Malla rule under Jaya Prakash Malla</li><li>Centralized power under Gorkha</li><li>Major boost to unification momentum</li></ul>",
+      description: (
+        <>
+          <p>
+            Exploiting internal divisions among the Malla kings, Gorkha forces
+            launched a surprise attack and captured Kathmandu. This decisive
+            turning point ended Malla rule in the valley's core and established
+            Shah dynasty control, consolidating Gorkha authority.
+          </p>
+          <ul>
+            <li>End of Kantipur’s Malla rule under Jaya Prakash Malla</li>
+            <li>Centralized power under Gorkha</li>
+            <li>Major boost to unification momentum</li>
+          </ul>
+        </>
+      ),
       tags: ["Kathmandu Valley", "Conquest"],
       involved: [
         {
@@ -238,7 +277,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Kathmandu_Durbar_Square_IMG_2284_18.jpg/800px-Kathmandu_Durbar_Square_IMG_2284_18.jpg",
+          src: "/timelines/unification-nepal/19b6fc2a.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Kathmandu_Durbar_Square_IMG_2284_18.jpg/800px-Kathmandu_Durbar_Square_IMG_2284_18.jpg",
           alt: "Kathmandu Durbar Square — historic view",
           caption: "Kathmandu Durbar Square, center of Malla power.",
         },
@@ -273,7 +314,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Patan_durbar_square.jpg/800px-Patan_durbar_square.jpg",
+          src: "/timelines/unification-nepal/8b015da3.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Patan_durbar_square.jpg/800px-Patan_durbar_square.jpg",
           alt: "Patan Durbar Square, Lalitpur",
           caption: "Patan Durbar Square, spared from destruction.",
         },
@@ -309,7 +352,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bhaktapurs-Durbar-Square-before-the-1932-earthquake.jpg/800px-Bhaktapurs-Durbar-Square-before-the-1932-earthquake.jpg",
+          src: "/timelines/unification-nepal/cdda8ce3.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bhaktapurs-Durbar-Square-before-the-1932-earthquake.jpg/800px-Bhaktapurs-Durbar-Square-before-the-1932-earthquake.jpg",
           alt: "Bhaktapur Durbar Square",
           caption: "Bhaktapur Durbar Square, last Malla stronghold.",
         },
@@ -352,7 +397,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Ilam_Bazar.jpg/800px-Ilam_Bazar.jpg",
+          src: "/timelines/unification-nepal/72909fb8.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/9/99/Kanyam%2C_Ilam_-_best_location_in_Ilam_for_Nature_Lovers_%28By_Saroj_Pandey%29.jpg",
           alt: "Eastern Hill Landscape in Nepal",
           caption: "Hills of eastern Nepal, newly annexed territories.",
         },
@@ -383,7 +430,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Kathmandu_valley_scene_Shivapuri_Nagarjun.JPG/800px-Kathmandu_valley_scene_Shivapuri_Nagarjun.JPG",
+          src: "/timelines/unification-nepal/58df7a2d.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Kathmandu_valley_scene_Shivapuri_Nagarjun.JPG/800px-Kathmandu_valley_scene_Shivapuri_Nagarjun.JPG",
           alt: "Hilly regions of Nepal — landscape view",
           caption: "Western hills integrated during expansion.",
         },
@@ -422,7 +471,8 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Devighat_Nepal.jpg/800px-Devighat_Nepal.jpg",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Devighat_Nepal.jpg/800px-Devighat_Nepal.jpg",
           alt: "Devighat, Nepal — memorial site",
           caption: "Devighat, where Prithvi Narayan Shah died.",
         },
@@ -461,7 +511,9 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Kingdom_of_nepal.png/800px-Kingdom_of_nepal.png",
+          src: "/timelines/unification-nepal/77daac13.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Kingdom_of_nepal.png/800px-Kingdom_of_nepal.png",
           alt: "Historical map of Nepal showing territorial expansion",
           caption: "Map of Nepal at its peak during unification era.",
         },

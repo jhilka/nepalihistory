@@ -2,7 +2,8 @@ import Image from "next/image";
 
 interface EventMediaProps {
   media: Array<{
-    url: string;
+    src: string;
+    sourceUrl?: string;
     alt: string;
     caption?: string;
   }>;
@@ -17,28 +18,13 @@ export function EventMedia({ media }: EventMediaProps) {
         <div key={idx} className="space-y-1 inline-block">
           <div className="relative max-h-64 rounded-md overflow-hidden shadow-md">
             <Image
-              src={item.url || "/placeholder.svg"}
+              src={item.src || "/placeholder.svg"}
               alt={item.alt}
               width={500}
               height={500}
               className="h-auto max-h-64 w-auto rounded-md"
               sizes="(max-width: 768px) 50vw, 336px"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      ))}
-      {media.map((item, idx) => (
-        <div key={idx} className="space-y-1 inline-block">
-          <div className="relative max-h-64 rounded-md overflow-hidden shadow-md">
-            <Image
-              src={item.url || "/placeholder.svg"}
-              alt={item.alt}
-              width={500}
-              height={500}
-              className="h-auto max-h-64 w-auto rounded-md"
-              sizes="(max-width: 768px) 50vw, 336px"
-              loading="lazy"
+              priority={idx === 0}
             />
           </div>
         </div>

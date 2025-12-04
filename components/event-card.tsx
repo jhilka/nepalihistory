@@ -1,4 +1,4 @@
-import type { Event } from "@/types/timeline";
+import type { TimelineEntry } from "@/types/timeline";
 import Link from "next/link";
 import { formatDateDisplay } from "@/lib/date-utils";
 import { EventMedia } from "./event-media";
@@ -7,19 +7,19 @@ import { EventTags } from "./event-tags";
 import { EventLinks } from "./event-links";
 
 interface EventCardProps {
-  event: Event;
-  eventNumber: number;
-  totalEvents: number;
+  entry: TimelineEntry;
+  entryNumber: number;
+  totalEntries: number;
   isLast?: boolean;
 }
 
 export function EventCard({
-  event,
-  eventNumber,
-  totalEvents,
+  entry,
+  entryNumber,
+  totalEntries,
   isLast = false,
 }: EventCardProps) {
-  const { year, month, day } = formatDateDisplay(event.date);
+  const { year, month, day } = formatDateDisplay(entry.date);
 
   return (
     <div data-testid="event" className="relative pb-6 sm:pb-8 group">
@@ -35,7 +35,7 @@ export function EventCard({
         {/* dot */}
         <div className="size-6 sm:size-7 bg-national-blue shadow-lg text-white rounded-full flex items-center justify-center font-oswald text-[10px] sm:text-xs font-bold">
           <span className="tabular-nums">
-            {eventNumber}/{totalEvents}
+            {entryNumber}/{totalEntries}
           </span>
         </div>
         <time className="flex-1 -ml-5 sm:ml-0 font-mono text-sm sm:text-sm text-center sm:text-left font-medium text-muted-foreground tabular-nums tracking-wide">
@@ -54,23 +54,30 @@ export function EventCard({
       )}
 
       <div className="pl-8 sm:pl-14 space-y-3">
-        <Link href={`#${event.title}`}>
+        <Link href={`#${entry.title}`}>
           <h3
-            id={event.title}
+            id={entry.title}
             className="text-lg my-3 font-semibold leading-snug font-oswald text-balance scroll-mt-28"
           >
-            {event.title}
+            {entry.title}
           </h3>
         </Link>
-        <div
-          className="text-sm text-muted-foreground leading-relaxed prose-event"
-          dangerouslySetInnerHTML={{ __html: event.description }}
-        />
+        {entry.description &&
+          (typeof entry.description === "string" ? (
+            <div
+              className="text-sm text-muted-foreground leading-relaxed prose-event"
+              dangerouslySetInnerHTML={{ __html: entry.description }}
+            />
+          ) : (
+            <div className="text-sm text-muted-foreground leading-relaxed prose-event">
+              {entry.description}
+            </div>
+          ))}
 
-        {!!event?.media && <EventMedia media={event.media || []} />}
-        {!!event?.involved && <EventInvolved involved={event.involved || []} />}
-        {!!event?.tags && <EventTags tags={event.tags || []} />}
-        {!!event?.links && <EventLinks links={event.links || []} />}
+        {!!entry?.media && <EventMedia media={entry.media || []} />}
+        {!!entry?.involved && <EventInvolved involved={entry.involved || []} />}
+        {!!entry?.tags && <EventTags tags={entry.tags || []} />}
+        {!!entry?.links && <EventLinks links={entry.links || []} />}
       </div>
     </div>
   );

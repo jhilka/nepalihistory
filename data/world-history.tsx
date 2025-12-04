@@ -1,4 +1,4 @@
-import type { Timeline } from "@/types/timeline"
+import type { Timeline } from "@/types/timeline";
 
 export const worldHistory: Timeline = {
   id: "world-history",
@@ -8,11 +8,11 @@ export const worldHistory: Timeline = {
     { name: "UNESCO", role: "Heritage Organization" },
     { name: "Various Historians", role: "Contributors" },
   ],
-  media: {
-    url: "/world-history-globe.jpg",
+  coverMedia: {
+    sourceUrl: "/world-history-globe.jpg",
     alt: "World History Icon",
   },
-  events: [
+  entries: [
     {
       id: "1",
       date: "3000-01-01",
@@ -22,9 +22,10 @@ export const worldHistory: Timeline = {
       tags: ["Ancient", "Technology"],
       media: [
         {
-          url: "/ancient-sumerian-cuneiform-tablet.jpg",
+          sourceUrl: "/ancient-sumerian-cuneiform-tablet.jpg",
           alt: "Ancient Sumerian cuneiform writing",
-          caption: "Clay tablet with cuneiform script from ancient Mesopotamia, circa 3000 BCE",
+          caption:
+            "Clay tablet with cuneiform script from ancient Mesopotamia, circa 3000 BCE",
         },
       ],
       links: [
@@ -43,7 +44,7 @@ export const worldHistory: Timeline = {
       tags: ["Ancient", "Sports"],
       media: [
         {
-          url: "/ancient-olympic-games-greece-stadium.jpg",
+          sourceUrl: "/ancient-olympic-games-greece-stadium.jpg",
           alt: "Ancient Olympic stadium in Greece",
           caption: "Ruins of the ancient Olympic stadium in Olympia, Greece",
         },
@@ -62,12 +63,10 @@ export const worldHistory: Timeline = {
       description:
         "<strong>Emperor Qin Shi Huang</strong> unifies China and begins construction of the <em>Great Wall</em>.<ul><li>Standardized writing, currency, and measurements</li><li>Built extensive road networks</li><li>Created a centralized government</li></ul>",
       tags: ["Ancient", "Asia"],
-      involved: [
-        { name: "Qin Shi Huang", role: "First Emperor of China" },
-      ],
+      involved: [{ name: "Qin Shi Huang", role: "First Emperor of China" }],
       media: [
         {
-          url: "/ancient-great-wall.png",
+          sourceUrl: "/ancient-great-wall.png",
           alt: "The Great Wall of China",
           caption: "Section of the Great Wall built during the Qin Dynasty",
         },
@@ -88,7 +87,7 @@ export const worldHistory: Timeline = {
       tags: ["Medieval", "Europe"],
       media: [
         {
-          url: "/roman-empire-colosseum-ruins.jpg",
+          sourceUrl: "/roman-empire-colosseum-ruins.jpg",
           alt: "Roman Empire ruins",
         },
       ],
@@ -112,7 +111,7 @@ export const worldHistory: Timeline = {
       ],
       media: [
         {
-          url: "/columbus-ship-sailing-ocean.jpg",
+          sourceUrl: "/columbus-ship-sailing-ocean.jpg",
           alt: "Columbus ship sailing to Americas",
         },
       ],
@@ -132,7 +131,7 @@ export const worldHistory: Timeline = {
       tags: ["Revolution", "Europe"],
       media: [
         {
-          url: "/bastille-fortress-french-revolution.jpg",
+          sourceUrl: "/bastille-fortress-french-revolution.jpg",
           alt: "Storming of the Bastille",
         },
       ],
@@ -166,9 +165,10 @@ export const worldHistory: Timeline = {
       ],
       media: [
         {
-          url: "/astronaut-moon-landing-apollo-11.jpg",
+          sourceUrl: "/astronaut-moon-landing-apollo-11.jpg",
           alt: "Astronaut on the moon",
-          caption: "Buzz Aldrin on the lunar surface, photographed by Neil Armstrong",
+          caption:
+            "Buzz Aldrin on the lunar surface, photographed by Neil Armstrong",
         },
       ],
       links: [
@@ -191,7 +191,7 @@ export const worldHistory: Timeline = {
       tags: ["Modern", "Europe"],
       media: [
         {
-          url: "/berlin-wall-falling-people-celebrating.jpg",
+          sourceUrl: "/berlin-wall-falling-people-celebrating.jpg",
           alt: "Berlin Wall being torn down",
         },
       ],
@@ -203,4 +203,4 @@ export const worldHistory: Timeline = {
       ],
     },
   ],
-}
+};

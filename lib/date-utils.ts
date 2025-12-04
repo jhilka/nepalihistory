@@ -1,6 +1,8 @@
-import type { Event } from "@/types/timeline"
+import type { TimelineEntry } from "@/types/timeline"
 
-export function parseDate(dateString: string) {
+export function parseDate(date: string | number) {
+  const dateString = String(date)
+  
   // Handle BCE dates
   if (dateString.includes("BCE")) {
     const year = dateString.replace(" BCE", "")
@@ -18,26 +20,30 @@ export function parseDate(dateString: string) {
     }
   }
 
-  // Handle year only
+  // Handle year only (string or number)
   return { year: dateString, month: null, day: null, isBCE: false }
 }
 
-export function groupEventsByYear(events: Event[]) {
-  const groups: { [year: string]: Event[] } = {}
+export function groupEntriesByYear(entries: TimelineEntry[]) {
+  const groups: { [year: string]: TimelineEntry[] } = {}
 
-  events.forEach((event) => {
-    const { year } = parseDate(event.date)
+  entries.forEach((entry) => {
+    const { year } = parseDate(entry.date)
     if (!groups[year]) {
       groups[year] = []
     }
-    groups[year].push(event)
+    groups[year].push(entry)
   })
 
   return groups
 }
 
-export function formatDateDisplay(dateString: string) {
-  const { year, month, day, isBCE } = parseDate(dateString)
+/** @deprecated Use groupEntriesByYear instead */
+export const groupEventsByYear = groupEntriesByYear
+
+export function formatDateDisplay(date: string | number) {
+  const dateString = String(date)
+  const { year, month, day, isBCE } = parseDate(date)
 
   const monthNames = [
     "January",

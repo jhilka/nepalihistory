@@ -8,11 +8,11 @@ export const technology: Timeline = {
     { name: "IEEE", role: "Technology Standards Organization" },
     { name: "Various Inventors", role: "Innovators" },
   ],
-  media: {
-    url: "/technology-innovation-chip.jpg",
+  coverMedia: {
+    sourceUrl: "/technology-innovation-chip.jpg",
     alt: "Technology Icon",
   },
-  events: [
+  entries: [
     {
       id: "1",
       date: "1876-03-10",
@@ -20,12 +20,10 @@ export const technology: Timeline = {
       description:
         "<strong>Alexander Graham Bell</strong> patents the telephone, revolutionizing long-distance communication.<ul><li>Enabled instant voice communication</li><li>Connected businesses and families</li><li>Foundation for modern telecommunications</li></ul>",
       tags: ["Communication"],
-      involved: [
-        { name: "Alexander Graham Bell", role: "Inventor" },
-      ],
+      involved: [{ name: "Alexander Graham Bell", role: "Inventor" }],
       media: [
         {
-          url: "/vintage-telephone-alexander-graham-bell.jpg",
+          sourceUrl: "/vintage-telephone-alexander-graham-bell.jpg",
           alt: "Vintage telephone from 1876",
           caption: "Bell's original telephone design, patented March 10, 1876",
         },
@@ -50,9 +48,10 @@ export const technology: Timeline = {
       ],
       media: [
         {
-          url: "/wright-brothers-airplane-kitty-hawk.jpg",
+          sourceUrl: "/wright-brothers-airplane-kitty-hawk.jpg",
           alt: "Wright brothers first flight at Kitty Hawk",
-          caption: "The Wright Flyer during its historic first flight, December 17, 1903",
+          caption:
+            "The Wright Flyer during its historic first flight, December 17, 1903",
         },
       ],
       links: [
@@ -71,9 +70,10 @@ export const technology: Timeline = {
       tags: ["Computing"],
       media: [
         {
-          url: "/eniac-computer-1945-vintage-computing.jpg",
+          sourceUrl: "/eniac-computer-1945-vintage-computing.jpg",
           alt: "ENIAC computer room",
-          caption: "ENIAC operators programming the massive computer at the University of Pennsylvania",
+          caption:
+            "ENIAC operators programming the massive computer at the University of Pennsylvania",
         },
       ],
       links: [
@@ -92,7 +92,7 @@ export const technology: Timeline = {
       tags: ["Internet", "Computing"],
       media: [
         {
-          url: "/arpanet-network-diagram-vintage-computer.jpg",
+          sourceUrl: "/arpanet-network-diagram-vintage-computer.jpg",
           alt: "ARPANET network connection",
         },
       ],
@@ -116,7 +116,7 @@ export const technology: Timeline = {
       ],
       media: [
         {
-          url: "/world-wide-web-tim-berners-lee-internet.jpg",
+          sourceUrl: "/world-wide-web-tim-berners-lee-internet.jpg",
           alt: "Early World Wide Web interface",
         },
       ],
@@ -144,9 +144,10 @@ export const technology: Timeline = {
       ],
       media: [
         {
-          url: "/first-generation-iphone-2007-apple-smartphone.jpg",
+          sourceUrl: "/first-generation-iphone-2007-apple-smartphone.jpg",
           alt: "First generation iPhone",
-          caption: "Steve Jobs introducing the original iPhone at Macworld 2007",
+          caption:
+            "Steve Jobs introducing the original iPhone at Macworld 2007",
         },
       ],
       links: [
@@ -169,7 +170,7 @@ export const technology: Timeline = {
       ],
       media: [
         {
-          url: "/artificial-intelligence-ai-neural-network.jpg",
+          sourceUrl: "/artificial-intelligence-ai-neural-network.jpg",
           alt: "AI neural network visualization",
         },
       ],
