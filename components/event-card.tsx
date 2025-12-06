@@ -40,7 +40,7 @@ export function EventCard({
             {entryNumber}/{totalEntries}
           </span>
         </div>
-        <time className="flex-1 -ml-5 sm:ml-0 font-mono text-sm sm:text-sm text-center sm:text-left font-medium text-muted-foreground tabular-nums tracking-wide">
+        <time className="flex-1 font-mono text-sm sm:text-sm text-center sm:text-left font-medium text-muted-foreground tabular-nums tracking-wide">
           {day && `${day}.`}
           {month && `${month}.`}
           {year}
