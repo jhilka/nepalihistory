@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/nepalihistory",
-  assetPrefix: "/nepalihistory/", // Add this line
+  basePath: process.env.NODE_ENV === "production" ? "/nepalihistory" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/nepalihistory/" : "",
   typescript: {
     ignoreBuildErrors: true,
   },
