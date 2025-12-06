@@ -1,13 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 
 import { timelines } from "@/data";
 import { groupEntriesByYear } from "@/lib/date-utils";
-import { assetPath } from "@/lib/asset-path";
 
 import { EventCard } from "@/components/event-card";
 import { EventInvolved } from "@/components/event-involved";
+import { SafeImage } from "@/components/safe-image";
 
 interface TimelinePageProps {
   params: { id: string };
@@ -21,7 +20,8 @@ export default function TimelineClient({ params }: TimelinePageProps) {
   }
 
   // Support both entries and events (backward compatibility)
-  const entries = timeline.entries || timeline.events || [];
+  const entries = timeline.entries || [];
+
   const groupedEntries = groupEntriesByYear(entries);
   const years = Object.keys(groupedEntries).sort((a, b) => {
     const yearA = a.includes("-") ? Number.parseInt(a) : Number.parseInt(a);
@@ -57,8 +57,8 @@ export default function TimelineClient({ params }: TimelinePageProps) {
       <header className="mb-8 flex flex-col items-center gap-6">
         {timeline.coverMedia && (
           <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow">
-            <Image
-              src={assetPath(timeline.coverMedia?.src || "/placeholder.svg")}
+            <SafeImage
+              src={timeline.coverMedia?.src || "/placeholder.svg"}
               alt={timeline.coverMedia?.alt || ""}
               fill
               className="object-cover"
