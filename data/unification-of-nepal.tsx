@@ -5,6 +5,7 @@ export const unificationOfNepal: Timeline = {
   title: "Unification of Nepal",
   description:
     "A timeline of the unification campaign led by Prithvi Narayan Shah of Gorkha and his successors, forming the foundations of modern Nepal.",
+  tags: ["national", "political", "military", "diplomatic"],
   involved: [
     {
       name: "Prithvi Narayan Shah",
