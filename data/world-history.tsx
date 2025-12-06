@@ -4,6 +4,7 @@ export const worldHistory: Timeline = {
   id: "world-history",
   title: "World History",
   description: "Major events that shaped human civilization",
+  tags: ["cultural", "political", "technological"],
   involved: [
     { name: "UNESCO", role: "Heritage Organization" },
     { name: "Various Historians", role: "Contributors" },

@@ -1,5 +1,18 @@
 import { ReactNode } from "react";
 
+export type Tag =
+  | "national"
+  | "political"
+  | "military"
+  | "cultural"
+  | "economic"
+  | "social"
+  | "religious"
+  | "technological"
+  | "natural-disaster"
+  | "constitutional"
+  | "diplomatic";
+
 export type Involved = {
   name: string;
   role?: string;
@@ -63,6 +76,5 @@ export type Timeline = {
   coverMedia?: Media;
 
   entries: TimelineEntry[];
-  /** @deprecated Use entries instead */
-  events?: TimelineEntry[];
+  tags: Tag[];
 };

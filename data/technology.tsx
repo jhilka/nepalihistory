@@ -4,6 +4,7 @@ export const technology: Timeline = {
   id: "technology",
   title: "History of Technology",
   description: "Innovations that transformed the modern world",
+  tags: ["technological", "economic"],
   involved: [
     { name: "IEEE", role: "Technology Standards Organization" },
     { name: "Various Inventors", role: "Innovators" },
