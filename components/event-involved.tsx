@@ -1,6 +1,5 @@
-import Image from "next/image";
 import type { Involved } from "@/types/timeline";
-import { assetPath } from "@/lib/asset-path";
+import { SafeImage } from "./safe-image";
 
 interface EventInvolvedProps {
   involved: Involved[];
@@ -14,21 +13,23 @@ export function EventInvolved({ involved }: EventInvolvedProps) {
       {involved.map((entity, idx) => (
         <div
           key={idx}
-          className="flex items-center gap-1 px-3 py-1.5 bg-muted-foreground/10 rounded-full text-xs"
+          className="flex items-center gap-1 px-3 py-1.5 bg-muted-foreground/10 rounded-full text-xs shadow-2xs"
         >
           {entity.avatar && (
-            <Image
-              src={assetPath(entity.avatar)}
+            <SafeImage
+              src={entity.avatar}
               alt={entity.name}
               width={24}
               height={24}
-              className="aspect-square object-cover rounded-full"
+              className="max-w-6 max-h-6 aspect-square object-cover rounded-full"
             />
           )}
           <div className="flex flex-col">
-            <span className="font-medium text-left">{entity.name}</span>
+            <span className="font-medium text-[11px] leading-tight text-left">
+              {entity.name}
+            </span>
             {entity.role && (
-              <span className="text-[10px] text-muted-foreground">
+              <span className="text-[8px] text-muted-foreground leading-tight">
                 {entity.role}
               </span>
             )}
