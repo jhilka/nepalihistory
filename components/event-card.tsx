@@ -1,3 +1,5 @@
+"use client";
+
 import type { TimelineEntry } from "@/types/timeline";
 import Link from "next/link";
 import { formatDateDisplay } from "@/lib/date-utils";
@@ -54,7 +56,15 @@ export function EventCard({
       )}
 
       <div className="pl-8 sm:pl-14 space-y-3">
-        <Link href={`#${entry.title}`}>
+        <Link
+          href={`#${entry.title}`}
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .getElementById(entry.title)
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           <h3
             id={entry.title}
             className="text-lg my-3 font-semibold leading-snug font-oswald text-balance scroll-mt-26 sm:scroll-mt-28"
