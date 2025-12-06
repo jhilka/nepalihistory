@@ -57,7 +57,7 @@ export function EventCard({
         <Link href={`#${entry.title}`}>
           <h3
             id={entry.title}
-            className="text-lg my-3 font-semibold leading-snug font-oswald text-balance scroll-mt-28"
+            className="text-lg my-3 font-semibold leading-snug font-oswald text-balance scroll-mt-26 sm:scroll-mt-28"
           >
             {entry.title}
           </h3>
