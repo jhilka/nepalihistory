@@ -13,6 +13,7 @@ import { SEO } from "./constants";
 
 import { Navbar } from "@/components/navbar";
 import { BackgroundPattern } from "@/components/background-pattern";
+import { ThemeScript, AfterHydration } from "@/components/theme";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -55,17 +56,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||((!t)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`,
-          }}
-        />
+        <ThemeScript />
       </head>
       <body
         className={`min-h-screen font-sans antialiased overflow-y-auto ${geist.variable} ${geistMono.variable} ${germaniaOne.variable} ${oswald.variable} ${bebasNeue.variable}`}
       >
+        <AfterHydration />
         <BackgroundPattern />
         <Navbar />
         <main className="pt-14">{children}</main>

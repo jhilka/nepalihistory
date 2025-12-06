@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { NAV } from "@/app/constants";
 
-import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "./theme";
 import NepalMap from "./NepalMap";
 
 interface NavbarProps {
