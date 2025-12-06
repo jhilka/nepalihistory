@@ -1,6 +1,5 @@
-import Image from "next/image";
-import { assetPath } from "@/lib/asset-path";
 import { Media } from "@/types/timeline";
+import { SafeImage } from "./safe-image";
 
 interface EventMediaProps {
   media: Array<Media>;
@@ -14,8 +13,8 @@ export function EventMedia({ media }: EventMediaProps) {
       {media.map((item, idx) => (
         <div key={idx} className="space-y-1 inline-block">
           <div className="relative max-h-64 rounded-md overflow-hidden shadow-md">
-            <Image
-              src={assetPath(item.src || "/placeholder.svg")}
+            <SafeImage
+              src={item.src || "/placeholder.svg"}
               alt={item.alt}
               width={500}
               height={500}
