@@ -24,12 +24,10 @@ export function EventInvolved({ involved }: EventInvolvedProps) {
               className="max-w-6 max-h-6 aspect-square object-cover rounded-full"
             />
           )}
-          <div className="flex flex-col">
-            <span className="font-medium text-[11px] leading-tight text-left">
-              {entity.name}
-            </span>
+          <div className="flex flex-col justify-center items-center">
+            <span className="font-medium leading-tight">{entity.name}</span>
             {entity.role && (
-              <span className="text-[8px] text-muted-foreground leading-tight">
+              <span className="text-[10px] text-muted-foreground leading-tight">
                 {entity.role}
               </span>
             )}
