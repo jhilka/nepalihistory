@@ -20,7 +20,6 @@ export function EventMedia({ media }: EventMediaProps) {
               height={500}
               className="h-auto max-h-64 w-auto rounded-md"
               sizes="(max-width: 768px) 50vw, 336px"
-              priority={idx === 0}
             />
           </div>
         </div>

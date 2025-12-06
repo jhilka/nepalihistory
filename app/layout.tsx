@@ -1,6 +1,12 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Germania_One, Oswald, Bebas_Neue } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Germania_One,
+  Oswald,
+  Bebas_Neue,
+} from "next/font/google";
 
 import "./globals.css";
 import { SEO } from "./constants";
@@ -10,9 +16,17 @@ import { BackgroundPattern } from "@/components/background-pattern";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
-const germaniaOne = Germania_One({ subsets: ["latin"], weight: "400", variable: "--font-germania" });
+const germaniaOne = Germania_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-germania",
+});
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
-const bebasNeue = Bebas_Neue({ subsets: ["latin"], weight: "400", variable: "--font-bebas" });
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas",
+});
 
 export const metadata: Metadata = {
   ...SEO,
@@ -42,7 +56,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`min-h-screen font-sans antialiased overflow-y-auto ${geist.variable} ${geistMono.variable} ${germaniaOne.variable} ${oswald.variable} ${bebasNeue.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||((!t)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`,
+          }}
+        />
+      </head>
+      <body
+        className={`min-h-screen font-sans antialiased overflow-y-auto ${geist.variable} ${geistMono.variable} ${germaniaOne.variable} ${oswald.variable} ${bebasNeue.variable}`}
+      >
         <BackgroundPattern />
         <Navbar />
         <main className="pt-14">{children}</main>
