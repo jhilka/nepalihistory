@@ -10,7 +10,7 @@ export const unificationOfNepal: Timeline = {
     {
       name: "Prithvi Narayan Shah",
       role: "King of Gorkha and Unifier of Nepal",
-      avatar: "/timelines/unification-nepal/0147fcf2.avif",
+      avatar: "/timelines/unification-nepal/0c29f787.avif",
     },
     {
       name: "Kalu Pande",
@@ -26,9 +26,9 @@ export const unificationOfNepal: Timeline = {
     },
   ],
   coverMedia: {
-    src: "/timelines/unification-nepal/0147fcf2.avif",
+    src: "/timelines/unification-nepal/0c29f787.avif",
     sourceUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Prithvi_Narayan_Shah_1960_%28restoration%29.png/180px-Prithvi_Narayan_Shah_1960_%28restoration%29.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Prithvi_Narayan_Shah_1960_%28restoration%29.png/900px-Prithvi_Narayan_Shah_1960_%28restoration%29.png",
     alt: "Founding father of Nepal - Prithivi Narayan Shah",
     caption:
       "Portrait of Prithvi Narayan Shah, the architect of Nepal's unification.",
