@@ -9,7 +9,7 @@ export const revolutionsOfNepal: Timeline = {
   involved: [
     {
       name: "King Tribhuvan",
-      role: "Monarch who supported the 1951 revolution",
+      role: "King who supported the 1951 revolution, Father of Nation",
     },
     {
       name: "B.P. Koirala",
@@ -25,7 +25,7 @@ export const revolutionsOfNepal: Timeline = {
     },
     {
       name: "King Gyanendra",
-      role: "Monarch whose rule was challenged in 2006",
+      role: "King whose rule was challenged in 2006",
     },
     {
       name: "Girija Prasad Koirala",
