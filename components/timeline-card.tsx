@@ -50,9 +50,9 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
                 )}
               </div>
             )} */}
-            {media.caption && (
-              <p className="text-xs text-white/80 mt-1 line-clamp-1">
-                {media.caption}
+            {timeline.description && (
+              <p className="text-xs text-white/80 line-clamp-1">
+                {timeline.description}
               </p>
             )}
           </div>

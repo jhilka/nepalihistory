@@ -9,7 +9,7 @@ export function EventInvolved({ involved }: EventInvolvedProps) {
   if (!involved || involved.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap gap-2 my-2">
+    <div className="flex flex-wrap justify-center gap-2 my-2">
       {involved.map((entity, idx) => (
         <div
           key={idx}
