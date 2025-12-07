@@ -11,6 +11,7 @@ export type Tag =
   | "technological"
   | "natural-disaster"
   | "constitutional"
+  | "youth"
   | "diplomatic";
 
 export type Involved = {
@@ -24,6 +25,7 @@ export type Media = {
   sourceUrl: string;
   alt: string;
   caption?: string;
+  attribution?: string;
 };
 
 /**
