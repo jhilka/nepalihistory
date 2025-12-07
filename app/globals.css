@@ -385,5 +385,16 @@
 .prose-event em {
   font-style: italic;
 }
+
+.prose-event a {
+  color: var(--national-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: var(--national-maroon);
+  }
+}
 /* 
  */

@@ -30,7 +30,7 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
             <strong>{timeline?.entries?.length}</strong> entries
           </div>
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-3 text-white">
-            <h2 className="text-xl sm:text-lg font-oswald font-semibold line-clamp-2">
+            <h2 className="text-xl sm:text-lg font-oswald font-semibold line-clamp-2 leading-tight">
               {timeline.title}
             </h2>
             {/* {timeline.involved && timeline.involved.length > 0 && (
