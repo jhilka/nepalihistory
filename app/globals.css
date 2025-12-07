@@ -374,7 +374,7 @@
 }
 
 .prose-event p {
-  margin: 0.25rem 0;
+  margin: 0.5rem 0;
 }
 
 .prose-event strong {
@@ -394,6 +394,14 @@
 
   &:hover {
     color: var(--national-maroon);
+  }
+}
+
+.dark .prose-event a {
+  color: oklch(60% 0.15904 260.704);
+
+  &:hover {
+    color: oklch(70% 0.22195 20.073);
   }
 }
 /* 
