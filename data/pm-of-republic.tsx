@@ -18,9 +18,9 @@ export const primeMinistersRepublic: Timeline = {
     { name: "Sushila Karki", role: "Current Interim Prime Minister" },
   ],
   coverMedia: {
-    src: "/timelines/prime-ministers-republic/1163eeca.avif",
+    src: "/timelines/prime-ministers-republic/b1baa2ab.avif",
     sourceUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/0/0b/The_Prime_Minister_of_Nepal%2C_Mr._Pushpa_Kamal_Dahal_signing_the_visitor%27s_book%2C_at_Hyderabad_House%2C_in_New_Delhi_on_September_16%2C_2016._The_Prime_Minister%2C_Shri_Narendra_Modi_is_also_seen.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9c/Shri_K.P._Sharma_Oli%2C_in_New_Delhi_on_February_22%2C_2016.jpg",
     alt: "Pushpa Kamal Dahal signing a visitor's book",
     caption:
       "Pushpa Kamal Dahal, the first Prime Minister of republican Nepal, during a diplomatic visit.",
