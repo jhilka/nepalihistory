@@ -50,10 +50,7 @@ export default function TimelineSearch({ timelines }: Props) {
     params.delete("tag");
     selectedTags.forEach((t) => params.append("tag", t));
 
-    const base = `${location.pathname}${
-      params.toString() ? `?${params.toString()}` : ""
-    }`;
-    router.replace(base);
+    router.replace(params.toString() ? `?${params.toString()}` : "?");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debounced, selectedTags]);
 
