@@ -1,0 +1,4 @@
+1:"$Sreact.fragment"
+2:I[23493,["/nepalihistory/_next/static/chunks/8051d9fd5fdbb8e4.js","/nepalihistory/_next/static/chunks/fdd17075d0a66fbe.js","/nepalihistory/_next/static/chunks/d5a367720c0671ff.js"],"default"]
+3:I[26043,["/nepalihistory/_next/static/chunks/8051d9fd5fdbb8e4.js","/nepalihistory/_next/static/chunks/fdd17075d0a66fbe.js","/nepalihistory/_next/static/chunks/d5a367720c0671ff.js"],"default"]
+0:{"buildId":"wE1C26K0ZaOcBUrSIh7M_","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
