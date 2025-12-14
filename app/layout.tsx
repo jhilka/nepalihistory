@@ -33,18 +33,18 @@ export const metadata: Metadata = {
   ...SEO,
   icons: {
     icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
+      // {
+      //   url: "/icon-light-32x32.png",
+      //   media: "(prefers-color-scheme: light)",
+      // },
+      // {
+      //   url: "/icon-dark-32x32.png",
+      //   media: "(prefers-color-scheme: dark)",
+      // },
+      // {
+      //   url: "/icon.svg",
+      //   type: "image/svg+xml",
+      // },
     ],
     apple: "/apple-icon.png",
   },
@@ -59,6 +59,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/png"
+          sizes="32x32"
+        />
       </head>
       <body
         className={`min-h-screen font-sans antialiased overflow-y-auto ${geist.variable} ${geistMono.variable} ${germaniaOne.variable} ${oswald.variable} ${bebasNeue.variable}`}
