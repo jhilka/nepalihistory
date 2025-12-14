@@ -78,7 +78,7 @@ export default function TimelineSearch({ timelines }: Props) {
         {query && (
           <button
             aria-label="Clear search"
-            className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 inline-flex items-center justify-center text-muted-foreground rounded-md hover:bg-muted focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+            className="absolute right-2 top-1/2 -translate-y-1/2 size-6 inline-flex items-center justify-center text-muted-foreground rounded-md hover:bg-muted focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] cursor-pointer"
             onClick={() => {
               setQuery("");
               const el = document.getElementById(
@@ -87,13 +87,13 @@ export default function TimelineSearch({ timelines }: Props) {
               el?.focus();
             }}
           >
-            <X className="size-4" />
+            <X className="size-3.5" />
           </button>
         )}
       </div>
 
       {/* Tag filter chips */}
-      <div className="flex flex-wrap justify-center gap-2 mb-3">
+      <div className="flex flex-wrap justify-center gap-2 gap-y-1.5 my-4">
         {Array.from(
           new Set(timelines.flatMap((t) => t.tags || ([] as string[])))
         )
@@ -128,7 +128,7 @@ export default function TimelineSearch({ timelines }: Props) {
         )}
       </div>
 
-      <div className="flex justify-center items-center gap-2 text-xs text-muted-foreground my-8">
+      <div className="flex justify-center items-center gap-2 text-xs text-muted-foreground my-6 sm:my-8">
         <ChevronsDown className="size-4" aria-hidden="true" />
         <div>
           Showing <strong className="text-foreground">{filtered.length}</strong>{" "}
