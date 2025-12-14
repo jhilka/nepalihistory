@@ -1,5 +1,4 @@
 import { Media } from "@/types/timeline";
-
 import { SafeImage } from "@/components/safe-image";
 
 interface EntityMediaProps {
@@ -10,20 +9,25 @@ export function EntityMedia({ media }: EntityMediaProps) {
   if (!media || media.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap justify-center gap-2 my-4">
+    <div className="flex flex-wrap justify-center gap-4 my-4">
       {media.map((item, idx) => (
-        <div key={idx} className="space-y-1 inline-block">
-          <div className="relative max-h-64 rounded-md overflow-hidden shadow-md">
+        <figure key={idx} className="inline-block max-w-[336px]">
+          <div className="relative max-h-64 overflow-hidden rounded-md shadow-md">
             <SafeImage
               src={item.src || "/placeholder.svg"}
               alt={item.alt}
               width={500}
               height={500}
-              className="h-auto max-h-64 w-auto rounded-md"
               sizes="(max-width: 768px) 50vw, 336px"
+              className="h-auto w-full rounded-md"
             />
           </div>
-        </div>
+          {item?.caption && (
+            <figcaption className="text-xs text-center text-gray-600 dark:text-gray-400 mt-1 leading-tight">
+              {item.caption}
+            </figcaption>
+          )}
+        </figure>
       ))}
     </div>
   );
