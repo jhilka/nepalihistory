@@ -370,11 +370,12 @@
 }
 
 .prose-event li {
-  margin: 0.25rem 0;
+  margin: 0;
 }
 
 .prose-event p {
-  margin: 0.5rem 0;
+  margin: 0.65rem 0;
+  line-height: 1.5;
 }
 
 .prose-event strong {
