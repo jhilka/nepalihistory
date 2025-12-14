@@ -5,7 +5,7 @@ export const primeMinistersRepublic: Timeline = {
   title: "Prime Ministers of Republic",
   description:
     "A timeline showcasing the leaders who have steered Nepal through its republican era, from the end of monarchy to today's dynamic politics.",
-  tags: ["national", "political", "constitutional"],
+  tags: ["political"],
   involved: [
     { name: "Pushpa Kamal Dahal", role: "Multiple-term Prime Minister" },
     { name: "KP Sharma Oli", role: "Multiple-term Prime Minister" },
