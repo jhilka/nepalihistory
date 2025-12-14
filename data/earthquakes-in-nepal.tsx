@@ -19,8 +19,9 @@ export const earthquakesInNepal: Timeline = {
     },
   ],
   coverMedia: {
+    src: "/timelines/earthquakes-nepal/177e5073.avif",
     sourceUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Dharahara_after_2015_earthquake.jpg/800px-Dharahara_after_2015_earthquake.jpg",
+      "https://media.cnn.com/api/v1/images/stellar/prod/150430100137-02-nepal-baby.jpg?q=w_4375,h_2718,x_0,y_0,c_fill",
     alt: "Collapsed Dharahara Tower after 2015 Gorkha Earthquake",
     caption:
       "Dharahara (Bhimsen Tower) destroyed for the third time in less than 200 years (1833, 1934, 2015).",
@@ -55,8 +56,9 @@ export const earthquakesInNepal: Timeline = {
       casualties: 30000,
       media: [
         {
+          src: "/timelines/earthquakes-nepal/83d8a660.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/8/8f/Kathmandu_Valley_historical_map.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/5/56/Nepaul_valley_map_1802.jpg",
           alt: "Historical Kathmandu Valley",
           caption: "Kathmandu Valley during the Malla era.",
         },
@@ -94,8 +96,9 @@ export const earthquakesInNepal: Timeline = {
       casualties: 500,
       media: [
         {
+          src: "/timelines/earthquakes-nepal/c3932729.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/2/2e/Dharahara_before_1934.jpg",
+            "https://3.bp.blogspot.com/-IFAd6TWPK0c/UY5U-azJ2MI/AAAAAAAABCQ/7BM63E6Fzs4/s640/028.jpg",
           alt: "Dharahara before 1934",
           caption: "Dharahara rebuilt after 1833, before its second collapse.",
         },
@@ -130,9 +133,17 @@ export const earthquakesInNepal: Timeline = {
       casualties: 8500,
       media: [
         {
+          src: "/timelines/earthquakes-nepal/1ca4a643.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/8/8c/1934_Bihar_earthquake_damage_in_Kathmandu.jpg",
-          alt: "1934 damage in Kathmandu",
+            "https://1.bp.blogspot.com/-pqrmloCy5bw/UY5VAOpo9HI/AAAAAAAABCw/5fAZciF62J8/s640/030.jpg",
+          alt: "Dharahara tower after 1934 earthquake.",
+          caption: "Dharahara tower after 1934 earthquake.",
+        },
+        {
+          src: "/timelines/earthquakes-nepal/b57f9717.avif",
+          sourceUrl:
+            "https://publisher-publish.s3.eu-central-1.amazonaws.com/pb-nepalitimes/swp/asv65r/media/2023121410128_86bb2e274bae1d8e9f7470bc93b26fa687d8f7fe8956d1207aad4ea8e2805e4a.jpg",
+          alt: "Kathmandu Durbar Square after the 1934 earthquake.",
           caption: "Kathmandu Durbar Square after the 1934 earthquake.",
         },
       ],
@@ -161,6 +172,15 @@ export const earthquakesInNepal: Timeline = {
         </>
       ),
       tags: ["Eastern Nepal"],
+      media: [
+        {
+          src: "/timelines/earthquakes-nepal/e1c30afd.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/c/cb/1988_Nepal_earthquake_shake_map_USGS.jpg",
+          alt: "1988 Nepal earthquake shake map",
+          caption: "1988 Nepal earthquake shake map.",
+        },
+      ],
       casualties: 721,
       links: [
         {
@@ -193,11 +213,19 @@ export const earthquakesInNepal: Timeline = {
       casualties: 8962,
       media: [
         {
+          src: "/timelines/earthquakes-nepal/177e5073.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Dharahara_after_2015_earthquake.jpg/800px-Dharahara_after_2015_earthquake.jpg",
+            "https://media.cnn.com/api/v1/images/stellar/prod/150430100137-02-nepal-baby.jpg?q=w_4375,h_2718,x_0,y_0,c_fill",
           alt: "Dharahara collapsed 2015",
           caption:
             "Dharahara reduced to rubble for the third time in its history.",
+        },
+        {
+          src: "/timelines/earthquakes-nepal/a4379d9d.avif",
+          sourceUrl:
+            "https://historysshadow.wordpress.com/wp-content/uploads/2015/04/82575688_82575687.jpg",
+          alt: "House turned into rubbles",
+          caption: "Rescue efforts are hampered by the extensive destruction",
         },
       ],
       links: [
@@ -228,8 +256,9 @@ export const earthquakesInNepal: Timeline = {
       casualties: 218,
       media: [
         {
+          src: "/timelines/earthquakes-nepal/50fd7a59.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/4/4b/Langtang_village_after_2015_earthquake.jpg",
+            "https://thehimalayantimes.com/uploads/imported_images/wp-content/uploads/2016/04/langtang-before-after-earthquake.jpg",
           alt: "Langtang village buried",
           caption:
             "Langtang village wiped out by a massive earthquake-triggered landslide.",
@@ -253,6 +282,15 @@ export const earthquakesInNepal: Timeline = {
           </ul>
         </>
       ),
+      media: [
+        {
+          src: "/timelines/earthquakes-nepal/151ba480.avif",
+          sourceUrl:
+            "https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2019/third-party/thumb-1674554378.gif&w=900&height=601",
+          alt: "5.9 M earthquake with epicentre in Bajura recorded",
+          caption: "House turned into rubbles",
+        },
+      ],
       tags: ["Western Nepal", "Recent"],
       casualties: 1,
     },
@@ -283,8 +321,9 @@ export const earthquakesInNepal: Timeline = {
       tags: ["Risk", "Future"],
       media: [
         {
+          src: "/timelines/earthquakes-nepal/d485c389.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/7/7a/Himalayan_seismic_gap_map.svg",
+            "https://ars.els-cdn.com/content/image/1-s2.0-S0040195104003415-gr2.jpg",
           alt: "Central Himalayan seismic gap",
           caption: "The overdue central seismic gap in the Himalaya.",
         },
