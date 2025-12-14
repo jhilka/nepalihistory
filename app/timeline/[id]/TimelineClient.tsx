@@ -4,8 +4,8 @@ import Link from "next/link";
 import { timelines } from "@/data";
 import { groupEntriesByYear } from "@/lib/date-utils";
 
-import { EventCard } from "@/components/event-card";
-import { EventInvolved } from "@/components/event-involved";
+import { EntityCard } from "@/app/timeline/components/entity-card";
+import { EntityInvolved } from "@/app/timeline/components/entity-involved";
 import { SafeImage } from "@/components/safe-image";
 import { TimelineNavigation } from "@/components/timeline-navigation";
 
@@ -96,7 +96,7 @@ export default function TimelineClient({ params }: TimelinePageProps) {
                     const isLastOverall = entryCounter === totalEntries;
 
                     return (
-                      <EventCard
+                      <EntityCard
                         key={entry.id}
                         entry={entry}
                         entryNumber={entryCounter}
@@ -112,7 +112,7 @@ export default function TimelineClient({ params }: TimelinePageProps) {
         </>
         {timeline.involved && timeline.involved.length > 0 && (
           <div className="flex flex-wrap justify-center gap-2">
-            <EventInvolved involved={timeline.involved} />
+            <EntityInvolved involved={timeline.involved} />
           </div>
         )}
       </div>

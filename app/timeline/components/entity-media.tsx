@@ -1,11 +1,12 @@
 import { Media } from "@/types/timeline";
-import { SafeImage } from "./safe-image";
 
-interface EventMediaProps {
+import { SafeImage } from "@/components/safe-image";
+
+interface EntityMediaProps {
   media: Array<Media>;
 }
 
-export function EventMedia({ media }: EventMediaProps) {
+export function EntityMedia({ media }: EntityMediaProps) {
   if (!media || media.length === 0) return null;
 
   return (

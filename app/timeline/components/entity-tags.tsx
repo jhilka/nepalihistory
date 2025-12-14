@@ -1,8 +1,8 @@
-interface EventTagsProps {
+interface EntityTagsProps {
   tags: string[];
 }
 
-export function EventTags({ tags }: EventTagsProps) {
+export function EntityTags({ tags }: EntityTagsProps) {
   if (!tags || tags.length === 0) return null;
 
   return (
