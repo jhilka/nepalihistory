@@ -1,11 +1,12 @@
 import type { Involved } from "@/types/timeline";
-import { SafeImage } from "./safe-image";
 
-interface EventInvolvedProps {
+import { SafeImage } from "@/components/safe-image";
+
+interface EntityInvolvedProps {
   involved: Involved[];
 }
 
-export function EventInvolved({ involved }: EventInvolvedProps) {
+export function EntityInvolved({ involved }: EntityInvolvedProps) {
   if (!involved || involved.length === 0) return null;
 
   return (

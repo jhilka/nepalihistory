@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-interface EventLinksProps {
+interface EntityLinksProps {
   links: Array<{
     url: string;
     label: string;
   }>;
 }
 
-export function EventLinks({ links }: EventLinksProps) {
+export function EntityLinks({ links }: EntityLinksProps) {
   if (!links || links.length === 0) return null;
 
   return (

@@ -2,25 +2,27 @@
 
 import type { TimelineEntry } from "@/types/timeline";
 import Link from "next/link";
-import { formatDateDisplay } from "@/lib/date-utils";
-import { EventMedia } from "./event-media";
-import { EventInvolved } from "./event-involved";
-import { EventTags } from "./event-tags";
-import { EventLinks } from "./event-links";
 
-interface EventCardProps {
+import { formatDateDisplay } from "@/lib/date-utils";
+
+import { EntityMedia } from "./entity-media";
+import { EntityInvolved } from "./entity-involved";
+import { EntityTags } from "./entity-tags";
+import { EntityLinks } from "./entity-links";
+
+interface EntityCardProps {
   entry: TimelineEntry;
   entryNumber: number;
   totalEntries: number;
   isLast?: boolean;
 }
 
-export function EventCard({
+export function EntityCard({
   entry,
   entryNumber,
   totalEntries,
   isLast = false,
-}: EventCardProps) {
+}: EntityCardProps) {
   const { year, month, day } = formatDateDisplay(entry.date);
 
   return (
@@ -84,10 +86,12 @@ export function EventCard({
             </div>
           ))}
 
-        {!!entry?.media && <EventMedia media={entry?.media || []} />}
-        {!!entry?.involved && <EventInvolved involved={entry.involved || []} />}
-        {!!entry?.tags && <EventTags tags={entry.tags || []} />}
-        {!!entry?.links && <EventLinks links={entry.links || []} />}
+        {!!entry?.media && <EntityMedia media={entry?.media || []} />}
+        {!!entry?.involved && (
+          <EntityInvolved involved={entry.involved || []} />
+        )}
+        {/* {!!entry?.tags && <EntityTags tags={entry.tags || []} />} */}
+        {!!entry?.links && <EntityLinks links={entry.links || []} />}
       </div>
     </div>
   );
