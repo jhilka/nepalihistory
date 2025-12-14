@@ -5,7 +5,7 @@ export const revolutionsOfNepal: Timeline = {
   title: "Revolutions of Nepal",
   description:
     "A timeline of the pivotal revolutionary movements that have reshaped Nepal's governance, from the overthrow of hereditary prime ministers to the establishment of a federal democratic republic.",
-  tags: ["national", "political", "military", "social"],
+  tags: ["national", "political", "social"],
   involved: [
     {
       name: "King Tribhuvan",
