@@ -37,7 +37,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "1",
       date: "1743-04-03",
-      title: "Prithvi Narayan Shah Ascends the Throne of Gorkha",
+      title: "Prithvi Narayan Shah Ascends Throne",
       description: (
         <>
           <p>
@@ -94,8 +94,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "2",
       date: "1744-09-26",
-      title:
-        "Second Battle of Nuwakot — Capture of the Gateway to Kathmandu Valley",
+      title: "Second Battle of Nuwakot",
       description:
         "<p>Gorkha forces, led by Kalu Pande, captured Nuwakot in a decisive victory, controlling a key trade route between Tibet and the Kathmandu Valley. This marked the first major success in the unification campaign, providing a strategic foothold near the valley and disrupting enemy trade networks. (Note: A prior failed attempt occurred in 1742.)</p><ul><li>Secured trade route to Tibet via Kerung</li><li>Established a base near Kathmandu Valley</li><li>Boosted military confidence</li></ul>",
       tags: ["Military", "Strategy"],
@@ -140,7 +139,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "new-1",
       date: "1757-00-00",
-      title: "First Battle of Kirtipur — Early Setback and Loss of Kalu Pande",
+      title: "First Battle of Kirtipur",
       description:
         "<p>The first assault on Kirtipur ended in defeat for Gorkha forces, with heavy casualties including the death of Commander-in-Chief Kalu Pande. This battle tested Gorkha resolve and led to the promotion of new leaders like Dhiraj Thapa as commander.</p><ul><li>Major military setback</li><li>Death of key general Kalu Pande</li><li>Led to army reorganization</li></ul>",
       tags: ["Military", "Setback"],
@@ -176,7 +175,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "3",
       date: "1762-08-17",
-      title: "Annexation of Makwanpur — Southern Foothold Secured",
+      title: "Annexation of Makwanpur",
       description:
         "<p>Gorkha forces defeated the Sen dynasty of Makwanpur, annexing the kingdom and gaining control over southern trade routes. This victory cut off Kathmandu's access to Indian plains and provided captives, including royal family members, to bolster Gorkha's position.</p><ul><li>Defeat of Digbandhan Sen</li><li>Control over Tarai access</li><li>Strategic encirclement of Kathmandu Valley</li></ul>",
       tags: ["Conquest", "Expansion"],
@@ -213,7 +212,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "new-2",
       date: "1765-00-00",
-      title: "Second Battle of Kirtipur — Brutal Retaliation and Conquest",
+      title: "Second Battle of Kirtipur",
       description:
         "<p>In revenge for earlier defeats, Gorkha forces captured Kirtipur after a fierce siege. The victorious soldiers mutilated the defenders by cutting off noses and lips, a harsh act that shocked the valley kingdoms but secured a vital gateway to Kathmandu.</p><ul><li>Harsh reprisal against defenders</li><li>Opened path to Kathmandu Valley</li><li>Forced tactical innovations in siege warfare</li></ul>",
       tags: ["Military", "Siege", "Kirtipur"],
@@ -249,7 +248,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "4",
       date: "1768-09-25",
-      title: "Fall of Kathmandu (Kantipur) — Entry into the Valley",
+      title: "Fall of Kathmandu (Kantipur)",
       description: (
         <>
           <p>
@@ -299,7 +298,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "5",
       date: "1768-09-26",
-      title: "Submission of Lalitpur (Patan) — Peaceful Integration",
+      title: "Submission of Lalitpur (Patan)",
       description:
         "<p>Following Kathmandu's fall, Patan surrendered peacefully to avoid destruction, with Tej Narasingh Malla abdicating. This allowed Gorkha to consolidate control without widespread damage, further cementing authority over the valley and preserving its cultural heritage.</p><ul><li>Minimal resistance led to quick surrender</li><li>Preservation of city infrastructure and temples</li><li>Strengthened Gorkha control</li></ul>",
       tags: ["Kathmandu Valley", "Diplomacy"],
@@ -336,8 +335,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "6",
       date: "1769-11-25",
-      title:
-        "Capture of Bhaktapur — Completion of Kathmandu Valley Unification",
+      title: "Capture of Bhaktapur",
       description:
         "<p>Gorkha forces, after a prolonged siege, captured Bhaktapur, defeating Ranajit Malla and ending Malla rule in the valley. Kathmandu was declared the capital, completing the unification of the three major valley kingdoms under the Shah dynasty and laying the foundation of modern Nepal.</p><ul><li>End of centuries-long Malla rule</li><li>Unified three major valley kingdoms</li><li>Established political and cultural centralization in Kathmandu</li></ul>",
       tags: ["Kathmandu Valley", "Unification"],
@@ -374,7 +372,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "new-3",
       date: "1772-08-29",
-      title: "Invasion and Annexation of Eastern Kirant Regions",
+      title: "Annexation of Eastern Kirant",
       description:
         "<p>Under the command of Ram Krishna Kunwar and Abhiman Singh Basnyat, Gorkha forces invaded the Kirant (Limbuwan and Khambuwan) regions, defeating local rulers and annexing territories up to the Tista River. This expanded Nepal's eastern frontier significantly.</p><ul><li>Victory over Kirant kings like Karna Sen</li><li>Integration of Limbuwan and Khambuwan</li><li>Extended borders to Sikkim</li></ul>",
       tags: ["Eastern Expansion", "Conquest"],
@@ -415,7 +413,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "7",
       date: "1770-1780",
-      title: "Western Expansion and Consolidation Beyond the Valley",
+      title: "Western Expansion and Consolidation",
       description:
         "<p>With the valley secured, Shah forces under commanders like Swarup Singh Karki annexed western principalities such as Kaski (1775), Tanahun, and parts of the Sapta Gandaki region. This period integrated diverse ethnic groups and extended Nepal's influence westward.</p><ul><li>Annexation of Kaski and Tanahun</li><li>Integration of diverse populations like Magars and Gurungs</li><li>Expanded territorial control to the Seti River</li></ul>",
       tags: ["Expansion", "Consolidation"],
@@ -452,7 +450,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "8",
       date: "1775-01-11",
-      title: "Death of Prithvi Narayan Shah — Legacy of the Unifier",
+      title: "Death of Prithvi Narayan Shah",
       description:
         "<p>Prithvi Narayan Shah passed away at Devighat in Nuwakot at age 52. He left a unified core state encompassing the Kathmandu Valley and surrounding regions, with his son Pratap Singh Shah succeeding him. His 'Dibya Upadesh' (Divine Counsel) guided future rulers.</p><ul><li>Unified political entity from fragmented states</li><li>Legacy carried forward by successors like Pratap Singh Shah</li><li>Foundation for modern Nepal's borders</li></ul>",
       tags: ["Legacy", "Transition"],
@@ -492,7 +490,7 @@ export const unificationOfNepal: Timeline = {
     {
       id: "9",
       date: "1775-1816",
-      title: "Further Expansion and Consolidation under Shah Successors",
+      title: "Expansion under Shah Successors",
       description:
         "<p>Under Pratap Singh Shah (r. 1775–1777), Rajendra Laxmi (regent), and Bahadur Shah (commander until 1792), Nepal expanded dramatically westward to the Sutlej River and eastward to Sikkim. Key annexations included Jumla (1789), Doti, Kumaon, and Garhwal (1790), but overextension led to the Anglo-Nepalese War (1814–1816), resulting in territorial losses via the Treaty of Sugauli.</p><ul><li>Annexations under Pratap Singh and Bahadur Shah</li><li>Peak extent twice modern Nepal's size</li><li>Consolidation challenged by British intervention</li></ul>",
       tags: ["Expansion", "State-building"],
