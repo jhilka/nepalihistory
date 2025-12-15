@@ -1,7 +1,6 @@
 "use client";
 
 import type { TimelineEntry } from "@/types/timeline";
-import Link from "next/link";
 
 import { formatDateDisplay } from "@/lib/date-utils";
 
@@ -42,16 +41,25 @@ export function EntityCard({
             {entryNumber}/{totalEntries}
           </span>
         </div>
-        <time className="flex-1 font-mono text-sm sm:text-sm text-center sm:text-left font-medium text-muted-foreground tabular-nums tracking-wide">
-          {day && `${day}.`}
-          {month && `${month}.`}
-          {year}
-        </time>
+        <a
+          href={`#${entry.title}`}
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .getElementById(entry.title)
+              ?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+        >
+          <h3 className="text-lg ml-2 font-semibold leading-snug font-oswald text-balance">
+            {entry.title}
+          </h3>
+        </a>
       </div>
 
       {/* line */}
       <div
-        className="absolute left-3 sm:left-3.5 top-0 bottom-0 w-px sm:w-0.5 bg-national-blue drop-shadow-xs drop-shadow-white/20"
+        id={entry.title}
+        className="absolute left-3 sm:left-3.5 top-0 bottom-0 w-px sm:w-0.5 bg-national-blue drop-shadow-xs drop-shadow-white/20 scroll-mt-14 scroll-smooth"
         style={
           isLast
             ? {
@@ -65,22 +73,11 @@ export function EntityCard({
       />
 
       <div className="pl-8 sm:pl-14 space-y-5">
-        <Link
-          href={`#${entry.title}`}
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .getElementById(entry.title)
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          <h3
-            id={entry.title}
-            className="text-lg my-3 font-semibold leading-snug font-oswald text-balance scroll-mt-26 sm:scroll-mt-28"
-          >
-            {entry.title}
-          </h3>
-        </Link>
+        <time className="block font-mono text-sm sm:text-sm text-center sm:text-left font-bold my-2 -ml-4 sm:ml-0 tabular-nums tracking-wide">
+          {day && `${day}.`}
+          {month && `${month}.`}
+          {year}
+        </time>
         {entry.description &&
           (typeof entry.description === "string" ? (
             <div
