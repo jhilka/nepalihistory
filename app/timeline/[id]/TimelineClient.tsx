@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { ChevronsDown } from "lucide-react";
 
 import { timelines } from "@/data";
 import { groupEntriesByYear } from "@/lib/date-utils";
@@ -78,7 +79,8 @@ export default function TimelineClient({ params }: TimelinePageProps) {
                 {timeline.description}
               </p>
             )}
-            <p className="text-xs text-muted-foreground">
+            <p className="flex w-full justify-center gap-1 text-xs text-muted-foreground">
+              <ChevronsDown className="size-4" aria-hidden="true" />
               <strong>{totalEntries}</strong> entries
             </p>
           </div>
