@@ -14,7 +14,7 @@ export function EntityInvolved({ involved }: EntityInvolvedProps) {
       {involved.map((entity, idx) => (
         <div
           key={idx}
-          className="flex items-center gap-1 px-3 py-1.5 bg-muted-foreground/10 rounded-full text-xs shadow-2xs"
+          className="flex items-center gap-1 px-3 py-1.5 frosted bg-muted-foreground/5! rounded-full text-xs shadow-sm"
         >
           {entity.avatar && (
             <SafeImage
