@@ -9,7 +9,7 @@ export function EntityMedia({ media }: EntityMediaProps) {
   if (!media || media.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 my-4">
+    <div className="flex flex-wrap justify-center gap-4">
       {media.map((item, idx) => (
         <figure key={idx} className="inline-block max-w-[336px]">
           <div className="relative max-h-64 overflow-hidden rounded-md shadow-lg border-4 border-white">
