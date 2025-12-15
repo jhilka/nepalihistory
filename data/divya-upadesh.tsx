@@ -6,7 +6,14 @@ export const divyaUpadesh: Timeline = {
   description:
     "The Divine Counsel delivered by the founder of modern Nepal in 1774-1775 remains one of the most quoted and debated political texts in Nepali history. Written in classical Nepali, it is both a nationalist manifesto and a pragmatic guide to statecraft, astonishingly relevant to Nepal's current political instability, corruption, and ethnic/regional infighting.",
   period: { start: 1774, end: 1775 },
-  tags: ["national", "political", "diplomatic", "cultural", "social"],
+  tags: [
+    "national",
+    "political",
+    "diplomatic",
+    "cultural",
+    "social",
+    "constitutional",
+  ],
   involved: [
     {
       name: "Prithvi Narayan Shah",
