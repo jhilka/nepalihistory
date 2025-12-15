@@ -28,7 +28,7 @@ export function EntityCard({
     <div data-testid="event" className="relative group">
       {/* dot and time row */}
       <div
-        className="sticky top-14 flex items-center sm:gap-5 w-full border-border/40 frosted p-2 -ml-2 rounded-l-3xl z-20"
+        className="sticky top-14 flex items-center sm:gap-5 w-full border-border/40 frosted p-2 -ml-2 rounded-l-3xl z-20 shadow-md"
         style={{
           mask: "linear-gradient(to right, black 0%, black 85%, transparent 100%)",
           WebkitMask:
@@ -50,7 +50,7 @@ export function EntityCard({
               ?.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
         >
-          <h3 className="text-lg ml-2 font-semibold leading-snug font-oswald text-balance">
+          <h3 className="text-base sm:text-lg ml-2 font-semibold leading-tight font-oswald text-balance">
             {entry.title}
           </h3>
         </a>
