@@ -60,7 +60,7 @@ export default function TimelineClient({ params }: TimelinePageProps) {
 
         <header className="mb-8 flex flex-col items-center gap-6">
           {timeline.coverMedia && (
-            <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow">
+            <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow-lg">
               <SafeImage
                 src={timeline.coverMedia?.src || "/placeholder.svg"}
                 alt={timeline.coverMedia?.alt || ""}
@@ -70,7 +70,7 @@ export default function TimelineClient({ params }: TimelinePageProps) {
             </div>
           )}
           <div className="flex-1 text-center space-y-3 sm:space-y-4">
-            <h1 className="text-2xl md:text-3xl font-oswald font-bold tracking-tight text-balance">
+            <h1 className="text-2xl md:text-3xl font-oswald font-bold tracking-tight text-balance text-shadow-md">
               {timeline.title}
             </h1>
 

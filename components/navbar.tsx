@@ -42,7 +42,7 @@ export function Navbar({
       <div className="max-w-3xl mx-auto px-4 h-14 grid grid-cols-3 items-center gap-4">
         <Link
           href="/"
-          className="font-germania uppercase font-bold text-md sm:text-2xl text-national-maroon hover:text-national-blue dark:hover:drop-shadow-national-blue drop-shadow-2xl duration-200 transition-colors justify-self-start"
+          className="font-germania uppercase font-bold text-md sm:text-2xl text-national-maroon justify-self-start dark:hover:text-shadow-lg dark:hover:text-shadow-national-blue/60"
         >
           {NAV.title}
         </Link>
