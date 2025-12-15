@@ -12,7 +12,7 @@ export function EntityMedia({ media }: EntityMediaProps) {
     <div className="flex flex-wrap justify-center gap-4 my-4">
       {media.map((item, idx) => (
         <figure key={idx} className="inline-block max-w-[336px]">
-          <div className="relative max-h-64 overflow-hidden rounded-md shadow-md">
+          <div className="relative max-h-64 overflow-hidden rounded-md shadow-lg border-4 border-white">
             <SafeImage
               src={item.src || "/placeholder.svg"}
               alt={item.alt}
