@@ -64,7 +64,7 @@ export function EntityCard({
         aria-hidden="true"
       />
 
-      <div className="pl-8 sm:pl-14 space-y-3">
+      <div className="pl-8 sm:pl-14 space-y-5">
         <Link
           href={`#${entry.title}`}
           onClick={(e) => {
