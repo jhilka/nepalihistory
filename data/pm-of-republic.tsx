@@ -29,7 +29,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "1",
       date: "2008-08-18",
-      title: "Pushpa Kamal Dahal Becomes First Republican Prime Minister",
+      title: "Pushpa Kamal Dahal (1st PM of Republic)",
       description: (
         <>
           <p>
@@ -91,7 +91,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "2",
       date: "2009-05-25",
-      title: "Madhav Kumar Nepal Assumes Office",
+      title: "Madhav Kumar Nepal",
       description: (
         <>
           <p>
@@ -149,7 +149,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "3",
       date: "2011-02-06",
-      title: "Jhala Nath Khanal Elected Prime Minister",
+      title: "Jhala Nath Khanal",
       description: (
         <>
           <p>
@@ -209,7 +209,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "4",
       date: "2011-08-29",
-      title: "Baburam Bhattarai Becomes Prime Minister",
+      title: "Baburam Bhattarai",
       description: (
         <>
           <p>
@@ -268,7 +268,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "5",
       date: "2013-03-14",
-      title: "Khil Raj Regmi Appointed Interim Prime Minister",
+      title: "Khil Raj Regmi (Interim PM)",
       description: (
         <>
           <p>
@@ -322,7 +322,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "6",
       date: "2014-02-11",
-      title: "Sushil Koirala Takes Office",
+      title: "Sushil Koirala",
       description: (
         <>
           <p>
@@ -377,7 +377,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "7",
       date: "2015-10-12",
-      title: "KP Sharma Oli's First Term Begins",
+      title: "KP Sharma Oli (1st term)",
       description: (
         <>
           <p>
@@ -430,7 +430,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "8",
       date: "2016-08-04",
-      title: "Pushpa Kamal Dahal's Second Term",
+      title: "Pushpa Kamal Dahal (2nd term)",
       description: (
         <>
           <p>
@@ -484,7 +484,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "9",
       date: "2017-06-07",
-      title: "Sher Bahadur Deuba's Fourth Term",
+      title: "Sher Bahadur Deuba's (4th term)",
       description: (
         <>
           <p>
@@ -534,7 +534,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "10",
       date: "2018-02-15",
-      title: "KP Sharma Oli's Second Term",
+      title: "KP Sharma Oli (2nd term)",
       description: (
         <>
           <p>
@@ -593,7 +593,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "11",
       date: "2021-05-14",
-      title: "KP Sharma Oli's Third Term as Minority PM",
+      title: "KP Sharma Oli' (3rd term)",
       description: (
         <>
           <p>
@@ -644,7 +644,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "12",
       date: "2021-07-13",
-      title: "Sher Bahadur Deuba's Fifth Term",
+      title: "Sher Bahadur Deuba (5th term)",
       description: (
         <>
           <p>
@@ -698,7 +698,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "13",
       date: "2022-12-26",
-      title: "Pushpa Kamal Dahal's Third Term",
+      title: "Pushpa Kamal Dahal (3rd term)",
       description: (
         <>
           <p>
@@ -756,7 +756,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "14",
       date: "2024-07-15",
-      title: "KP Sharma Oli's Fourth Term",
+      title: "KP Sharma Oli (4th term)",
       description: (
         <>
           <p>
@@ -814,7 +814,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "15",
       date: "2025-09-12",
-      title: "Sushila Karki Appointed Interim Prime Minister",
+      title: "Sushila Karki (Interim PM)",
       description: (
         <>
           <p>
