@@ -26,7 +26,7 @@ export function EntityCard({
   const { year, month, day } = formatDateDisplay(entry.date);
 
   return (
-    <div data-testid="event" className="relative pb-6 sm:pb-8 group">
+    <div data-testid="event" className="relative group">
       {/* dot and time row */}
       <div
         className="sticky top-14 flex items-center sm:gap-5 w-full border-border/40 frosted p-2 -ml-2 rounded-l-3xl z-20"
@@ -50,12 +50,19 @@ export function EntityCard({
       </div>
 
       {/* line */}
-      {!isLast && (
-        <div
-          className="absolute left-3 sm:left-3.5 top-0 bottom-0 w-px sm:w-0.5 bg-national-blue drop-shadow-xs drop-shadow-white/20"
-          aria-hidden="true"
-        />
-      )}
+      <div
+        className="absolute left-3 sm:left-3.5 top-0 bottom-0 w-px sm:w-0.5 bg-national-blue drop-shadow-xs drop-shadow-white/20"
+        style={
+          isLast
+            ? {
+                mask: "linear-gradient(to bottom, black 0%, black 10%, transparent 70%)",
+                WebkitMask:
+                  "linear-gradient(to bottom, black 0%, black 10%, transparent 70%)",
+              }
+            : undefined
+        }
+        aria-hidden="true"
+      />
 
       <div className="pl-8 sm:pl-14 space-y-3">
         <Link
