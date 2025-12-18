@@ -593,7 +593,7 @@ export const primeMinistersRepublic: Timeline = {
     {
       id: "11",
       date: "2021-05-14",
-      title: "KP Sharma Oli' (3rd term)",
+      title: "KP Sharma Oli (3rd term)",
       description: (
         <>
           <p>
