@@ -2,7 +2,7 @@ export function BackgroundPattern() {
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
       <div
-        className="absolute inset-0 opacity-15 dark:opacity-10"
+        className="absolute inset-0 opacity-25 dark:opacity-15"
         style={{
           backgroundImage: `linear-gradient(to right, var(--border) 1px, transparent 1px), linear-gradient(to bottom, var(--border) 1px, transparent 1px)`,
           backgroundSize: "25px 25px",
