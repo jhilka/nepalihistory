@@ -19,7 +19,15 @@ const Table = ({
       {data.map((row, idx) => (
         <React.Fragment key={idx}>
           <tr>
-            <td colSpan={2} style={{ textAlign: "center", fontWeight: 600 }}>
+            <td
+              colSpan={2}
+              style={{
+                textAlign: "center",
+                fontWeight: 600,
+                fontSize: "0.8rem",
+                padding: "6px 8px",
+              }}
+            >
               {row.date}
             </td>
           </tr>
