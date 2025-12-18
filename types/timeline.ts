@@ -79,4 +79,6 @@ export type Timeline = {
 
   entries: TimelineEntry[];
   tags: Tag[];
+
+  state?: "public" | "draft" | "archived";
 };

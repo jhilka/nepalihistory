@@ -6,8 +6,10 @@ import { constitutionsOfNepal } from "./constitutions-of-nepal";
 import { divyaUpadesh } from "./divya-upadesh";
 import { earthquakesInNepal } from "./earthquakes-in-nepal";
 import { primeMinistersRepublic } from "./pm-of-republic";
+import { nepalPoliticalHistory } from "./nepal-political-history";
 
 export const timelines = [
+  nepalPoliticalHistory,
   primeMinistersRepublic,
   earthquakesInNepal,
   divyaUpadesh,
@@ -16,4 +18,4 @@ export const timelines = [
   unificationOfNepal,
   worldHistory,
   technology,
-];
+].filter((timeline) => timeline.state !== "archived");
