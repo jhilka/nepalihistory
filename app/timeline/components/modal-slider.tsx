@@ -49,39 +49,39 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
       {/* stacked thumbnails preview (always visible) */}
       <div className="relative w-[220px] h-42 mx-auto">
         {media.slice(0, 4).map((m, i) => {
-          const z = 1 - i;
-          const transform = `translate(${i * 8}px, calc(-50% + ${
-            -i * 6
-          }px)) rotate(${i * 4}deg)`;
+          const zIndex = 1 - i;
+          const rotation = i * 4;
+
           return (
             <button
               key={i}
               onClick={() => openAt(i)}
-              className="absolute left-0 focus:outline-none"
+              aria-label={`Open photo ${i + 1} of ${media.length}`}
+              className="absolute focus:outline-none"
               style={{
                 top: "50%",
-                transform: transform,
-                zIndex: z,
+                left: "50%",
+                transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
+                zIndex,
               }}
-              aria-label={`Open photo ${i + 1} of ${media.length}`}
             >
-              <div className="h-36 w-auto overflow-hidden rounded-md shadow-lg border-4 border-white">
+              {/* IMAGE CARD */}
+              <div className="relative w-56 h-36 overflow-hidden rounded-md shadow-lg border-4 border-white">
                 <SafeImage
                   src={m.src || "/placeholder.svg"}
-                  alt={m.alt}
-                  width={400}
-                  height={400}
-                  sizes="(max-width: 768px) 40vw, 220px"
-                  className="h-full w-auto rounded-md"
+                  alt={m.alt || ""}
+                  fill
+                  sizes="220px"
+                  className="object-cover rounded-md"
                 />
               </div>
             </button>
           );
         })}
 
-        {media.length > 4 && (
-          <div className="absolute bottom-0 right-0 bg-white/90 dark:bg-gray-800 rounded px-2 py-1 text-sm shadow">
-            +{media.length - 4}
+        {media.length && (
+          <div className="absolute -top-2 right-0 frosted rounded px-2 py-1 text-sm shadow-lg z-1">
+            +{media.length - 1}
           </div>
         )}
       </div>
@@ -110,10 +110,11 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
                       onClick={() =>
                         (modalInstanceRef.current as any)?.moveToIdx?.(i)
                       }
-                      className="absolute left-0 focus:outline-none"
+                      className="absolute focus:outline-none"
                       style={{
                         top: '50%',
-                        transform: `translate(${i * 6}px, calc(-50% + ${-i * 4}px)) rotate(${rot}deg)`,
+                        left: '50%',
+                        transform: `translate(-50%,-50%) translate(${i * 6}px, ${-i * 3}px) rotate(${rot}deg)`,
                         zIndex: z,
                         width: 96,
                         height: 56,
@@ -145,7 +146,7 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
             <button
               aria-label="Close gallery"
               onClick={close}
-              className="float-right px-3 py-1 hover:bg-white/90 hover:dark:bg-gray-800 rounded cursor-pointer"
+              className="float-right px-3 py-1 text-white/90 rounded cursor-pointer"
             >
               ✕
             </button>
