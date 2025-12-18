@@ -20,9 +20,14 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
     setIsOpen(true);
     // attempt to move slider after it initializes
     setTimeout(() => (modalInstanceRef.current as any)?.moveToIdx?.(index), 0);
+    // set body overflow hidden to prevent background scroll
+    document.body.style.overflow = "hidden";
   };
 
-  const close = () => setIsOpen(false);
+  const close = () => {
+    setIsOpen(false);
+    document.body.style.overflow = "auto";
+  };
 
   const [modalRef, modalInstanceRef] = useKeenSlider<HTMLDivElement>({
     initial: startIndex,
@@ -45,6 +50,9 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
       <div className="relative w-[220px] h-42 mx-auto">
         {media.slice(0, 4).map((m, i) => {
           const z = 1 - i;
+          const transform = `translate(${i * 8}px, calc(-50% + ${
+            -i * 6
+          }px)) rotate(${i * 4}deg)`;
           return (
             <button
               key={i}
@@ -52,9 +60,7 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
               className="absolute left-0 focus:outline-none"
               style={{
                 top: "50%",
-                transform: `translate(${i * 8}px, calc(-50% + ${
-                  -i * 6
-                }px)) rotate(${(i - 1.5) * 4}deg)`,
+                transform: transform,
                 zIndex: z,
               }}
               aria-label={`Open photo ${i + 1} of ${media.length}`}
