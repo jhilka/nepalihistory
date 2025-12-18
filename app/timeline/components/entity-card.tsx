@@ -16,14 +16,23 @@ interface EntityCardProps {
   isLast?: boolean;
 }
 
+const Date = ({ date }: { date: string | number }) => {
+  const { year, month, day } = formatDateDisplay(date);
+  return (
+    <time className="block font-mono text-xs sm:text-sm text-center sm:text-left font-bold my-2 tabular-nums tracking-wide">
+      {day && `${day}.`}
+      {month && `${month}.`}
+      {year}
+    </time>
+  );
+};
+
 export function EntityCard({
   entry,
   entryNumber,
   totalEntries,
   isLast = false,
 }: EntityCardProps) {
-  const { year, month, day } = formatDateDisplay(entry.date);
-
   return (
     <div data-testid="event" className="relative group">
       {/* dot and time row */}
@@ -63,9 +72,9 @@ export function EntityCard({
         style={
           isLast
             ? {
-                mask: "linear-gradient(to bottom, black 0%, black 10%, transparent 70%)",
+                mask: "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
                 WebkitMask:
-                  "linear-gradient(to bottom, black 0%, black 10%, transparent 70%)",
+                  "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
               }
             : undefined
         }
@@ -73,11 +82,15 @@ export function EntityCard({
       />
 
       <div className="pl-8 sm:pl-14 space-y-5">
-        <time className="block font-mono text-sm sm:text-sm text-center sm:text-left font-bold my-2 -ml-4 sm:ml-0 tabular-nums tracking-wide">
-          {day && `${day}.`}
-          {month && `${month}.`}
-          {year}
-        </time>
+        <div className="flex gap-2 items-center my-2">
+          <Date date={entry.date} />
+          {entry.endDate && (
+            <>
+              <span className="text-muted-foreground">-</span>
+              <Date date={entry.endDate} />
+            </>
+          )}
+        </div>
         {entry.description &&
           (typeof entry.description === "string" ? (
             <div
