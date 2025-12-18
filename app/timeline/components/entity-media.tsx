@@ -34,14 +34,6 @@ const SingleImage: React.FC<{ item: Media }> = ({ item }) => (
 export function EntityMedia({ media }: EntityMediaProps) {
   if (!media || media.length === 0) return null;
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [startIndex, setStartIndex] = useState(0);
-
-  const openAt = (index: number) => {
-    setStartIndex(index);
-    setIsOpen(true);
-  };
-
   // If there's only one image, render it inline (no modal)
   if (media.length === 1) {
     return <SingleImage item={media[0]} />;
