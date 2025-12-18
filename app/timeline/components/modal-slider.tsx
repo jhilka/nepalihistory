@@ -42,18 +42,19 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
   return (
     <>
       {/* stacked thumbnails preview (always visible) */}
-      <div className="relative w-[220px] h-36 mx-auto">
+      <div className="relative w-[220px] h-42 mx-auto">
         {media.slice(0, 4).map((m, i) => {
           const z = 1 - i;
           return (
             <button
               key={i}
               onClick={() => openAt(i)}
-              className="absolute top-0 left-0 focus:outline-none"
+              className="absolute left-0 focus:outline-none"
               style={{
-                transform: `translate(${i * 8}px, ${-i * 6}px) rotate(${
-                  (i - 1.5) * 4
-                }deg)`,
+                top: "50%",
+                transform: `translate(${i * 8}px, calc(-50% + ${
+                  -i * 6
+                }px)) rotate(${(i - 1.5) * 4}deg)`,
                 zIndex: z,
               }}
               aria-label={`Open photo ${i + 1} of ${media.length}`}
@@ -103,11 +104,10 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
                       onClick={() =>
                         (modalInstanceRef.current as any)?.moveToIdx?.(i)
                       }
-                      className="absolute top-0 left-0 focus:outline-none"
+                      className="absolute left-0 focus:outline-none"
                       style={{
-                        transform: `translate(${i * 6}px, ${
-                          -i * 4
-                        }px) rotate(${rot}deg)`,
+                        top: '50%',
+                        transform: `translate(${i * 6}px, calc(-50% + ${-i * 4}px)) rotate(${rot}deg)`,
                         zIndex: z,
                         width: 96,
                         height: 56,
