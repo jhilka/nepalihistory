@@ -72,7 +72,7 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
                   alt={m.alt || ""}
                   fill
                   sizes="220px"
-                  className="object-cover rounded-md"
+                  className="object-cover"
                 />
               </div>
             </button>
