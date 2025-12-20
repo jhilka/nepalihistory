@@ -21,6 +21,7 @@ const Table = ({
           <tr>
             <td
               colSpan={2}
+              className="bg-border/20 dark:bg-background/80"
               style={{
                 textAlign: "center",
                 fontWeight: 600,
