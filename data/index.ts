@@ -18,4 +18,6 @@ export const timelines = [
   unificationOfNepal,
   worldHistory,
   technology,
-].filter((timeline) => timeline.state !== "archived");
+].filter((timeline) =>
+  process.env.NODE_ENV === "production" ? timeline.state !== "archived" : true
+);
