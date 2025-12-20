@@ -49,61 +49,6 @@ export function Navbar({
         <NepalMap className="w-11 sm:w-14 h-fit fill-national-maroon justify-self-center" />
 
         <div className="flex items-center gap-2 justify-self-end">
-          {showSearch && (
-            <>
-              {isSearchOpen ? (
-                <div className="flex items-center gap-2">
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={handleSearch}
-                    placeholder={searchPlaceholder}
-                    className="px-3 py-1.5 text-sm bg-muted rounded-md border border-border focus:outline-none focus:ring-2 focus:ring-ring w-48"
-                    autoFocus
-                  />
-                  <button
-                    type="button"
-                    onClick={clearSearch}
-                    className="p-1.5 hover:bg-muted rounded-md transition-colors"
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              ) : (
-                <button
-                  onClick={() => setIsSearchOpen(true)}
-                  className="p-2 hover:bg-muted rounded-md transition-colors"
-                  aria-label="Search"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                </button>
-              )}
-            </>
-          )}
           <ThemeToggle />
         </div>
       </div>
