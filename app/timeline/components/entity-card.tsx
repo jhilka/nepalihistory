@@ -51,11 +51,11 @@ export function EntityCard({
           </span>
         </div>
         <a
-          href={`#${entry.title}`}
+          href={`#${entry.title.toLocaleLowerCase()}-${entry.id}`}
           onClick={(e) => {
             e.preventDefault();
             document
-              .getElementById(entry.title)
+              .getElementById(`${entry.title.toLocaleLowerCase()}-${entry.id}`)
               ?.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
         >
@@ -67,7 +67,7 @@ export function EntityCard({
 
       {/* line */}
       <div
-        id={entry.title}
+        id={`${entry.title.toLocaleLowerCase()}-${entry.id}`}
         className="absolute left-3 sm:left-3.5 top-0 bottom-0 w-px sm:w-0.5 bg-national-blue drop-shadow-xs drop-shadow-white/20 scroll-mt-14 scroll-smooth"
         style={
           isLast
