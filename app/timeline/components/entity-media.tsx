@@ -20,7 +20,7 @@ const SingleImage: React.FC<{ item: Media }> = ({ item }) => (
         width={500}
         height={500}
         sizes="(max-width: 768px) 50vw, 336px"
-        className="h-auto w-full rounded-md"
+        className="h-auto w-full"
       />
     </div>
     {item?.caption && (
