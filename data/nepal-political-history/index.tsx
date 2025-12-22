@@ -80,7 +80,6 @@ const Table = ({
 );
 
 export const nepalPoliticalHistory: Timeline = {
-  state: "archived",
   id: "nepal-political-history",
   title: "Comprehensive political summary (1923 - 2025)",
   description:
@@ -110,23 +109,22 @@ export const nepalPoliticalHistory: Timeline = {
       name: "Pushpa Kamal Dahal (Prachanda)",
       role: "Maoist leader and prime minister",
     },
-    {
-      name: "Khadga Prasad Sharma Oli",
-      role: "Multiple-term prime minister",
-    },
+    { name: "Khadga Prasad Sharma Oli", role: "Multiple-term prime minister" },
   ],
+
   coverMedia: {
     sourceUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/2/2e/King_Tribhuvan_of_Nepal.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tribhuvan_Bir_Bikram_Shah.jpg",
     alt: "King Tribhuvan of Nepal",
     caption: "King Tribhuvan, central to the events ending Rana rule.",
   },
+
   entries: [
     {
       id: "1",
       date: "1846",
       endDate: "1951",
-      title: " Pre Democracy (Rana Rule) Era",
+      title: "Pre Democracy (Rana Rule) Era",
       description: (
         <>
           <p>
@@ -157,16 +155,16 @@ export const nepalPoliticalHistory: Timeline = {
       media: [
         {
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/2/2e/King_Tribhuvan_of_Nepal.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tribhuvan_Bir_Bikram_Shah.jpg",
           alt: "King Tribhuvan portrait",
           caption: "King Tribhuvan during the revolutionary period.",
         },
         {
-          src: "/timelines/nepal-political-history/8b2b32c0.avif",
+          src: "/timelines/nepal-political-history/c3e7ca90.avif",
           sourceUrl:
-            "https://english.onlinekhabar.com/wp-content/uploads/2020/08/Women-movement-1951-1024x683.jpg",
-          alt: "1951 revolution participants",
-          caption: "Civilians active in the anti-Rana movement.",
+            "https://english.onlinekhabar.com/wp-content/uploads/2020/08/Women-movement-1951.jpg",
+          alt: "Women marching during 1951 revolution",
+          caption: "Civilians active in the anti-Rana movement in 1951.",
         },
       ],
     },
@@ -192,20 +190,21 @@ export const nepalPoliticalHistory: Timeline = {
       ],
       links: [
         {
-          url: "https://en.wikipedia.org/wiki/1960_Nepalese_coup_d'%C3%A9tat",
+          url: "https://en.wikipedia.org/wiki/1960_Nepalese_coup_d%27%C3%A9tat",
           label: "1960 Coup",
         },
       ],
       media: [
         {
-          src: "/timelines/nepal-political-history/857bbd35.avif",
           sourceUrl:
-            "https://english.pardafas.com/uploads/photos/History/nepal-1-election.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/6/6e/Nepal_1959_general_election_voters_queue.jpg",
           alt: "1959 voters",
-          caption: "Nepal's first parliamentary election.",
+          caption:
+            "Voters lining up during Nepal's first parliamentary election in 1959.",
         },
       ],
     },
+
     {
       id: "3",
       date: "1960",
@@ -238,11 +237,10 @@ export const nepalPoliticalHistory: Timeline = {
       ],
       media: [
         {
-          src: "/timelines/nepal-political-history/b17ec298.avif",
           sourceUrl:
-            "https://ichef.bbci.co.uk/images/ic/480x270/p08hzx40.jpg.webp",
+            "https://ichef.bbci.co.uk/news/976/cpsprodpb/15D5/production/_112889820_nepal_protest_1990_afp.jpg",
           alt: "1990 protests",
-          caption: "Crowds during Jana Andolan I.",
+          caption: "Crowds during Jana Andolan I in Kathmandu, 1990.",
         },
       ],
     },
@@ -285,11 +283,16 @@ export const nepalPoliticalHistory: Timeline = {
       ],
       media: [
         {
-          src: "/timelines/nepal-political-history/46a89967.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/5/50/Arjun_Narasingha_KC_arrested_by_King_during_Nepal_Uprising.jpg",
-          alt: "2006 protests",
-          caption: "Demonstrations forcing royal concessions.",
+            "https://upload.wikimedia.org/wikipedia/commons/9/96/Maoist_insurgents_in_Rolpa%2C_Nepal.jpg",
+          alt: "Maoist insurgents in Nepal",
+          caption: "Maoist combatants during the Nepalese Civil War.",
+        },
+        {
+          sourceUrl:
+            "https://cbsnews2.cbsistatic.com/hub/i/r/2006/04/20/c8b9e6a8-9a12-11e2-a3f0-029118418759/thumbnail/1200x630/e41f0e53f3d5ab7f7d05463e99e36fc0/image2246663.jpg",
+          alt: "2006 protests in Kathmandu",
+          caption: "Demonstrators in Jana Andolan II, April 2006.",
         },
       ],
     },
@@ -338,21 +341,23 @@ export const nepalPoliticalHistory: Timeline = {
           sourceUrl:
             "https://assets-cdn.kathmandupost.com/uploads/source/news/2015/miscellaneous/21092015075547PRESENTING_NEW_CONSTITUTION_CA_04.jpg",
           alt: "2015 constitution signing",
-          caption: "Promulgation of federal constitution.",
+          caption:
+            "Promulgation of Nepal’s 2015 federal constitution at CA Hall.",
         },
         {
           src: "/timelines/nepal-political-history/b196dea0.avif",
           sourceUrl:
             "https://cdn.britannica.com/30/277030-050-7B2C138B/singha-durbur-administrative-building-fire-nepal-government-social-media-ban-protests-september-2025.jpg",
           alt: "2025 protests parliament fire",
-          caption: "Government building during 2025 unrest.",
+          caption:
+            "Administrative building burning during the 2025 Gen Z protests.",
         },
         {
           src: "/timelines/nepal-political-history/b48af291.avif",
           sourceUrl:
             "https://www.aljazeera.com/wp-content/uploads/2025/09/2025-09-11T071814Z_1301895365_RC2FK5977XP1_RTRMADP_3_NEPAL-PROTESTS-INTERIM-PM-1757692741.jpg",
           alt: "Sushila Karki 2025",
-          caption: "Interim leader Sushila Karki.",
+          caption: "Interim leader Sushila Karki during the 2025 uprising.",
         },
       ],
     },
