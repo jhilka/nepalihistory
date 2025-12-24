@@ -9,7 +9,7 @@ interface SafeImageProps extends Omit<ImageProps, "src" | "onError"> {
 }
 
 export function SafeImage({ src, alt, ...props }: SafeImageProps) {
-  const [imgSrc, setImgSrc] = useState(assetPath(src));
+  const [imgSrc, setImgSrc] = useState(assetPath(src || ""));
 
   if (!imgSrc) return null;
 
