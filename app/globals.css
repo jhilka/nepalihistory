@@ -375,12 +375,12 @@
 
 .prose-event p {
   margin: 0.65rem 0;
-  line-height: 1.5;
+  line-height: 1.375;
 }
 
 .prose-event p:first-child {
-    margin-top: 0;
-  }
+  margin-top: 0;
+}
 
 .prose-event strong {
   font-weight: 600;
@@ -440,6 +440,7 @@
   padding: 0.5rem;
   border-bottom: 1px solid var(--border);
   vertical-align: top;
+  line-height: 1.375;
 }
 
 .prose-event tbody tr:last-child td {

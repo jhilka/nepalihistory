@@ -12,6 +12,8 @@ import {
   thirdCategory,
   ninthCategory,
 } from "./events";
+import DateComponent from "@/app/components/DateComponent";
+import { cn } from "@/lib/utils";
 
 const NO_OUTCOME_PLACEHOLDER = "";
 
@@ -27,43 +29,29 @@ const Table = ({
           <tr>
             <td
               colSpan={2}
-              className="bg-border/20 dark:bg-background/80 text-center font-semibold text-sm py-1.5 px-2"
+              className="bg-border/20 dark:bg-background/80 py-1.5 px-2 text-center"
             >
-              {row.date}
+              <DateComponent
+                className="sm:text-center font-semibold sm:text-xs"
+                date={row.date}
+              />
             </td>
           </tr>
-          <tr>
-            <td
-              style={
-                row.outcome
-                  ? {
-                      borderBottom: "none",
-                      paddingBottom: 0,
-                    }
-                  : {}
-              }
-            >
+          <tr className="text-sm">
+            <td className={cn({ "pb-0! border-b-0!": !!row.outcome })}>
               <strong>Event: </strong>
             </td>
-            <td
-              style={
-                row.outcome
-                  ? {
-                      borderBottom: "none",
-                      paddingBottom: 0,
-                    }
-                  : {}
-              }
-            >
+
+            <td className={cn({ "pb-0! border-b-0! pl-0!": !!row.outcome })}>
               {row.event}
             </td>
           </tr>
           {row.outcome && (
-            <tr>
-              <td style={{ paddingTop: 5 }}>
+            <tr className="text-sm">
+              <td className="pt-1.5!">
                 <strong>Outcome: </strong>
               </td>
-              <td style={{ paddingTop: 5 }}>
+              <td className="pt-1.5! pl-0!">
                 {row.outcome || NO_OUTCOME_PLACEHOLDER}
               </td>
             </tr>
