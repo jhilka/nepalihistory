@@ -1,14 +1,12 @@
-import { notFound } from "next/navigation";
-import Link from "next/link";
 import { ChevronsDown } from "lucide-react";
-
-import { groupEntriesByYear } from "@/lib/date-utils";
-import { Timeline } from "@/types/timeline";
-
 import { EntityCard } from "@/app/timeline/components/entity-card";
 import { EntityInvolved } from "@/app/timeline/components/entity-involved";
+import Link from "next/link";
 import { SafeImage } from "@/components/safe-image";
+import { Timeline } from "@/types/timeline";
 import { TimelineNavigation } from "@/components/timeline-navigation";
+import { groupEntriesByYear } from "@/lib/date-utils";
+import { notFound } from "next/navigation";
 
 interface TimelinePageProps {
   params: string;
@@ -35,7 +33,7 @@ export default async function TimelineClient({
   return (
     <>
       <TimelineNavigation />
-      <div className="max-w-3xl mx-auto px-4 py-6 md:py-8 relative">
+      <div className="max-w-3xl mx-auto p-4 md:py-4 relative">
         <Link
           href="/"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-6"

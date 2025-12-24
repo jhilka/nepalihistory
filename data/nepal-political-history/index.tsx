@@ -1,5 +1,6 @@
-import type { Timeline } from "@/types/timeline";
 import React from "react";
+
+import type { Timeline } from "@/types/timeline";
 import {
   eighthCategory,
   fifthCategory,
@@ -26,13 +27,7 @@ const Table = ({
           <tr>
             <td
               colSpan={2}
-              className="bg-border/20 dark:bg-background/80"
-              style={{
-                textAlign: "center",
-                fontWeight: 600,
-                fontSize: "0.8rem",
-                padding: "6px 8px",
-              }}
+              className="bg-border/20 dark:bg-background/80 text-center font-semibold text-sm py-1.5 px-2"
             >
               {row.date}
             </td>

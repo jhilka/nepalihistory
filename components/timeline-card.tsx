@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import type { Timeline } from "@/types/timeline";
 import { assetPath } from "@/lib/asset-path";
 
