@@ -122,7 +122,7 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
                     />
                   </div>
                   {item?.caption && (
-                    <figcaption className="text-xs text-center text-gray-200 mt-4 leading-tight max-w-[90vw]">
+                    <figcaption className="absolute bottom-0 text-xs text-center text-gray-200 mt-4 leading-tight max-w-[90vw]">
                       {item.caption}
                     </figcaption>
                   )}

@@ -72,12 +72,14 @@ export const unificationOfNepal: Timeline = {
           sourceUrl:
             "https://upload.wikimedia.org/wikipedia/commons/7/7c/Prithvi_Narayan_Shah_statue.jpg",
           alt: "Statue of Prithvi Narayan Shah",
+          caption: "Statue of Prithvi Narayan Shah",
         },
         {
           src: "/timelines/unification-nepal/b499be1f.avif",
           sourceUrl:
             "https://upload.wikimedia.org/wikipedia/commons/0/09/Gorkha_Palace_durbar.jpg",
-          alt: "Gorkha Palace — ancestral seat of Shah dynasty",
+          alt: "Gorkha Palace - ancestral seat of Shah dynasty",
+          caption: "Gorkha Palace - ancestral seat of Shah dynasty",
         },
       ],
       links: [
@@ -162,7 +164,7 @@ export const unificationOfNepal: Timeline = {
           src: "/timelines/unification-nepal/395ee9d9.avif",
           sourceUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Kirtipur%2C_1950_-_1955.jpg/800px-Kirtipur%2C_1950_-_1955.jpg",
-          alt: "Kirtipur — ridge town in Nepal",
+          alt: "Kirtipur - ridge town in Nepal",
         },
       ],
       links: [
@@ -280,7 +282,7 @@ export const unificationOfNepal: Timeline = {
           src: "/timelines/unification-nepal/19b6fc2a.avif",
           sourceUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Kathmandu_Durbar_Square_IMG_2284_18.jpg/800px-Kathmandu_Durbar_Square_IMG_2284_18.jpg",
-          alt: "Kathmandu Durbar Square — historic view",
+          alt: "Kathmandu Durbar Square - historic view",
           caption: "Kathmandu Durbar Square, center of Malla power.",
         },
       ],
@@ -432,7 +434,7 @@ export const unificationOfNepal: Timeline = {
           src: "/timelines/unification-nepal/58df7a2d.avif",
           sourceUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Kathmandu_valley_scene_Shivapuri_Nagarjun.JPG/800px-Kathmandu_valley_scene_Shivapuri_Nagarjun.JPG",
-          alt: "Hilly regions of Nepal — landscape view",
+          alt: "Hilly regions of Nepal - landscape view",
           caption: "Western hills integrated during expansion.",
         },
       ],
@@ -472,7 +474,7 @@ export const unificationOfNepal: Timeline = {
         {
           sourceUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Devighat_Nepal.jpg/800px-Devighat_Nepal.jpg",
-          alt: "Devighat, Nepal — memorial site",
+          alt: "Devighat, Nepal - memorial site",
           caption: "Devighat, where Prithvi Narayan Shah died.",
         },
       ],
