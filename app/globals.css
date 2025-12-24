@@ -378,6 +378,10 @@
   line-height: 1.5;
 }
 
+.prose-event p:first-child {
+    margin-top: 0;
+  }
+
 .prose-event strong {
   font-weight: 600;
   color: var(--foreground);

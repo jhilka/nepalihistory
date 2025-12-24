@@ -19,7 +19,7 @@ interface EntityCardProps {
 const Date = ({ date }: { date: string | number }) => {
   const { year, month, day } = formatDateDisplay(date);
   return (
-    <time className="block font-mono text-xs sm:text-sm text-center sm:text-left font-bold my-2 tabular-nums tracking-wide">
+    <time className="block font-mono text-xs sm:text-sm text-center sm:text-left font-bold tabular-nums tracking-wide">
       {day && `${day}.`}
       {month && `${month}.`}
       {year}
@@ -81,8 +81,8 @@ export function EntityCard({
         aria-hidden="true"
       />
 
-      <div className="pl-8 sm:pl-10 space-y-5">
-        <div className="flex gap-2 items-center my-2">
+      <div className="pl-7 sm:pl-9 space-y-5">
+        <div className="flex gap-2 items-center my-1 sm:my-2">
           <Date date={entry.date} />
           {entry.endDate && (
             <>
