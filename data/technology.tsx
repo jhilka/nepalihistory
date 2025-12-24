@@ -1,6 +1,7 @@
 import type { Timeline } from "@/types/timeline";
 
 export const technology: Timeline = {
+  state: "archived",
   id: "technology",
   title: "History of Technology",
   description: "Innovations that transformed the modern world",

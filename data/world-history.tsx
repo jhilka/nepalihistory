@@ -1,6 +1,7 @@
 import type { Timeline } from "@/types/timeline";
 
 export const worldHistory: Timeline = {
+  state: "archived",
   id: "world-history",
   title: "World History",
   description: "Major events that shaped human civilization",
