@@ -34,5 +34,5 @@ const SingleImage: React.FC<{ item: Media }> = ({ item }) => (
 export function EntityMedia({ media }: EntityMediaProps) {
   if (!media || media.length === 0) return null;
 
-  return <ModalSlider media={media} />;
+  return <ModalSlider media={media.filter((m) => m?.src)} />;
 }

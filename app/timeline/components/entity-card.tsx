@@ -70,7 +70,7 @@ export function EntityCard({
       />
 
       <div className="pl-7 sm:pl-9 space-y-5">
-        <div className="flex gap-2 items-center my-1 sm:my-2">
+        <div className="flex gap-2 items-center my-2">
           <DateComponent date={entry.date} />
           {entry.endDate && (
             <>

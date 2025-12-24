@@ -44,6 +44,8 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
     return () => window.removeEventListener("keydown", onKey);
   }, [isOpen]);
 
+  if (media.length === 0) return null;
+
   return (
     <>
       {/* stacked thumbnails preview (always visible) */}
@@ -68,7 +70,7 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
               {/* IMAGE CARD */}
               <div className="relative size-[260px] sm:size-70 overflow-hidden rounded-md shadow-lg border-4 border-white">
                 <SafeImage
-                  src={m.src || "/placeholder.svg"}
+                  src={m.src}
                   alt={m.alt || ""}
                   fill
                   sizes="220px"
