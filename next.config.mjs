@@ -1,5 +1,5 @@
 const getPath = () => {
-  if (process.env.IS_GITHUB_PAGES === "true") {
+  if (process.env.NEXT_PUBLIC_IS_GITHUB_PAGES === "true") {
     return "/nepalihistory";
   }
   return "";
