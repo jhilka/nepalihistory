@@ -1,4 +1,4 @@
-export function assetPath(path: string): string {
-  const base = process.env.NODE_ENV === "production" ? "/nepalihistory" : "";
+export function assetPath(path = ""): string {
+  const base = process.env.IS_GITHUB_PAGES === "true" ? "/nepalihistory" : "";
   return `${base}${path}`;
 }
