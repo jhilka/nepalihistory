@@ -12,7 +12,7 @@ const DateComponent = ({
   return (
     <time
       className={cn(
-        "block font-mono text-xs sm:text-sm text-center sm:text-left font-bold tabular-nums tracking-wide",
+        "block font-mono text-xs sm:text-sm text-center sm:text-left font-bold tabular-nums tracking-wide leading-6",
         className
       )}
     >

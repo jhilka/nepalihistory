@@ -5,7 +5,7 @@ import Image, { ImageProps } from "next/image";
 import { assetPath } from "@/lib/asset-path";
 
 interface SafeImageProps extends Omit<ImageProps, "src" | "onError"> {
-  src: string;
+  src?: string;
 }
 
 export function SafeImage({ src, alt, ...props }: SafeImageProps) {
@@ -18,7 +18,7 @@ export function SafeImage({ src, alt, ...props }: SafeImageProps) {
       {...props}
       src={imgSrc}
       alt={alt}
-      loading={props.priority ? undefined : (props.loading ?? "lazy")}
+      loading={props.loading ?? "lazy"}
       onError={() => setImgSrc("")}
     />
   );
