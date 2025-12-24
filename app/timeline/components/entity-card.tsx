@@ -45,7 +45,7 @@ export function EntityCard({
         }}
       >
         {/* dot */}
-        <div className="size-6 sm:size-7 bg-national-blue shadow-lg text-white rounded-full shrink-0 flex items-center justify-center font-oswald text-[10px] sm:text-xs font-bold">
+        <div className="size-6 sm:size-7 bg-national-blue shadow-lg text-white rounded-full shrink-0 flex items-center justify-center font-oswald text-[10px] sm:text-xs font-bold leading-none">
           <span className="tabular-nums">
             {entryNumber}/{totalEntries}
           </span>
