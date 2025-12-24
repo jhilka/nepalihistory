@@ -35,9 +35,9 @@ export function EntityCard({
 }: EntityCardProps) {
   return (
     <div data-testid="event" className="relative group">
-      {/* dot and time row */}
+      {/* dot and title row */}
       <div
-        className="sticky top-14 flex items-center sm:gap-5 w-full border-border/40 frosted p-2 -ml-2 rounded-l-3xl z-20 shadow-md"
+        className="sticky top-14 flex items-center sm:gap-5 w-full border border-border/60 dark:border-border/40 frosted p-2 -ml-2 rounded-l-3xl z-20 shadow-md"
         style={{
           mask: "linear-gradient(to right, black 0%, black 85%, transparent 100%)",
           WebkitMask:
