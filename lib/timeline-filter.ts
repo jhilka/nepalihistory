@@ -9,6 +9,9 @@ export const filterTimelines = (
   const hasTagFilters = Array.isArray(tags) && tags.length > 0;
 
   return timelines.filter((tl) => {
+    // Exclude archived timelines
+    if (tl.state === "archived") return false;
+
     if (hasTagFilters) {
       const tlTags = tl.tags || [];
       const intersects = tags.some((t) => tlTags.includes(t as any));
