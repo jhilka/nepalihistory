@@ -17,9 +17,7 @@ interface TimelinePageProps {
 export default function TimelineClient({ params }: TimelinePageProps) {
   const timeline = timelines.find((t) => t.id === params.id);
 
-  if (!timeline) {
-    notFound();
-  }
+  if (!timeline) notFound();
 
   // Support both entries and events (backward compatibility)
   const entries = timeline.entries || [];
@@ -93,7 +91,7 @@ export default function TimelineClient({ params }: TimelinePageProps) {
             return (
               <div key={year} className="relative">
                 <>
-                  {yearEntries.map((entry, idx) => {
+                  {yearEntries.map((entry) => {
                     entryCounter++;
                     const isLastOverall = entryCounter === totalEntries;
 
@@ -113,7 +111,8 @@ export default function TimelineClient({ params }: TimelinePageProps) {
           })}
         </>
         {timeline.involved && timeline.involved.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-4 my-3 sm:my-4">
+            <div className="text-xs">Key figures:</div>
             <EntityInvolved involved={timeline.involved} />
           </div>
         )}
