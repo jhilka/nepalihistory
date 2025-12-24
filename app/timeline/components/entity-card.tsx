@@ -2,8 +2,7 @@
 
 import type { TimelineEntry } from "@/types/timeline";
 
-import { formatDateDisplay } from "@/lib/date-utils";
-
+import DateComponent from "@/app/components/DateComponent";
 import { EntityMedia } from "./entity-media";
 import { EntityInvolved } from "./entity-involved";
 import { EntityTags } from "./entity-tags";
@@ -15,17 +14,6 @@ interface EntityCardProps {
   totalEntries: number;
   isLast?: boolean;
 }
-
-const Date = ({ date }: { date: string | number }) => {
-  const { year, month, day } = formatDateDisplay(date);
-  return (
-    <time className="block font-mono text-xs sm:text-sm text-center sm:text-left font-bold tabular-nums tracking-wide">
-      {day && `${day}.`}
-      {month && `${month}.`}
-      {year}
-    </time>
-  );
-};
 
 export function EntityCard({
   entry,
@@ -83,11 +71,11 @@ export function EntityCard({
 
       <div className="pl-7 sm:pl-9 space-y-5">
         <div className="flex gap-2 items-center my-1 sm:my-2">
-          <Date date={entry.date} />
+          <DateComponent date={entry.date} />
           {entry.endDate && (
             <>
               <span className="text-muted-foreground">-</span>
-              <Date date={entry.endDate} />
+              <DateComponent date={entry.endDate} />
             </>
           )}
         </div>
