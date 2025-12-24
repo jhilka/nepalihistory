@@ -34,11 +34,5 @@ const SingleImage: React.FC<{ item: Media }> = ({ item }) => (
 export function EntityMedia({ media }: EntityMediaProps) {
   if (!media || media.length === 0) return null;
 
-  // If there's only one image, render it inline (no modal)
-  if (media.length === 1) {
-    return <SingleImage item={media[0]} />;
-  }
-
-  // For multiple images, delegate preview and modal behavior to ModalSlider
   return <ModalSlider media={media} />;
 }

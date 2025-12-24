@@ -446,3 +446,34 @@
   background-color: var(--muted);
   transition: background-color 150ms ease;
 } */
+
+.media-frame {
+  position: relative;
+
+  /* CRITICAL: always define BOTH */
+  width: 90vw;
+  height: 80vh;
+
+  max-width: 900px;
+  max-height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Portrait → prioritize height */
+@media (orientation: portrait) {
+  .media-frame {
+    max-width: 100%;
+    max-height: auto;
+  }
+}
+
+/* Landscape → prioritize width */
+@media (orientation: landscape) {
+  .media-frame {
+    max-width: 100%;
+    max-height: auto;
+  }
+}
