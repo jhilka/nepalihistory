@@ -32,7 +32,7 @@ const Table = ({
               className="bg-border/20 dark:bg-background/80 py-1.5 px-2 text-center"
             >
               <DateComponent
-                className="sm:text-center font-semibold sm:text-xs"
+                className="sm:text-center font-semibold sm:text-xs leading-4"
                 date={row.date}
               />
             </td>
