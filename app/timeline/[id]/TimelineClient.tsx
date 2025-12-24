@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronsDown } from "lucide-react";
 
-import { timelines } from "@/data";
 import { groupEntriesByYear } from "@/lib/date-utils";
+import { Timeline } from "@/types/timeline";
 
 import { EntityCard } from "@/app/timeline/components/entity-card";
 import { EntityInvolved } from "@/app/timeline/components/entity-involved";
@@ -11,14 +11,14 @@ import { SafeImage } from "@/components/safe-image";
 import { TimelineNavigation } from "@/components/timeline-navigation";
 
 interface TimelinePageProps {
-  params: { id: string };
+  params: string;
+  timeline: Timeline;
 }
 
-export default function TimelineClient({ params }: TimelinePageProps) {
-  const timeline = timelines.find((t) => t.id === params.id);
-
-  if (!timeline) notFound();
-
+export default async function TimelineClient({
+  params,
+  timeline,
+}: TimelinePageProps) {
   // Support both entries and events (backward compatibility)
   const entries = timeline.entries || [];
 
