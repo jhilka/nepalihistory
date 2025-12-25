@@ -19,7 +19,7 @@ export const TagToggle = ({
       onPressedChange={(val) => onToggle?.(Boolean(val))}
       aria-pressed={active}
       variant={"outline"}
-      className="capitalize frosted data-[state=on]:bg-primary/80 data-[state=on]:text-primary-foreground text-xs py-1 h-6 cursor-pointer font-normal"
+      className="capitalize data-[state=on]:bg-primary/80 data-[state=on]:text-primary-foreground text-muted-foreground frosted border-border/65! text-xs py-1 h-6 cursor-pointer font-medium"
     >
       {tag}
     </Toggle>
