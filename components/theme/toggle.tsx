@@ -23,7 +23,7 @@ export function ThemeToggle() {
       aria-label="Toggle theme"
     >
       <span className="dark:hidden">
-        <NepalMoon className="size-10" />
+        <NepalMoon className="size-10 fill-national-blue" />
       </span>
       <span className="hidden dark:block">
         <NepalSun className="size-8" />

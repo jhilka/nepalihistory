@@ -6,7 +6,9 @@ const Hero = () => (
       {HERO.preface}
     </span>
     <h1 className="text-3xl sm:text-4xl font-bold font-oswald capitalize tracking-tight text-balance my-1">
-      <span className="text-national-maroon">{HERO.title.split(" ")[0]} </span>
+      <span className="bg-linear-to-br from-national-maroon dark:via-white to-national-blue bg-clip-text text-transparent">
+        {HERO.title.split(" ")[0]}{" "}
+      </span>
       {HERO.title.split(" ").slice(1).join(" ")}
     </h1>
     <p className="text-muted-foreground text-xs sm:text-sm leading-snug max-w-xl text-center">
