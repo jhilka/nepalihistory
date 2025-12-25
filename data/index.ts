@@ -7,8 +7,12 @@ import { divyaUpadesh } from "./divya-upadesh";
 import { earthquakesInNepal } from "./earthquakes-in-nepal";
 import { primeMinistersRepublic } from "./pm-of-republic";
 import { nepalPoliticalHistory } from "./nepal-political-history";
+import { preUnificationDynastiesNepal } from "./pre-unification-nepal";
+import { sinjaValleyCivilization } from "./sinja-valley-civilization";
 
 export const timelines = [
+  sinjaValleyCivilization,
+  preUnificationDynastiesNepal,
   nepalPoliticalHistory,
   primeMinistersRepublic,
   earthquakesInNepal,
