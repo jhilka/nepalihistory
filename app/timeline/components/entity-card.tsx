@@ -5,7 +5,7 @@ import type { TimelineEntry } from "@/types/timeline";
 import DateComponent from "@/app/components/DateComponent";
 import { EntityMedia } from "./entity-media";
 import { EntityInvolved } from "./entity-involved";
-import { EntityTags } from "./entity-tags";
+// import { EntityTags } from "./entity-tags";
 import { EntityLinks } from "./entity-links";
 
 interface EntityCardProps {
@@ -57,7 +57,6 @@ export function EntityCard({
 
       {/* line */}
       <div
-        id={`${entry.title.toLocaleLowerCase()}-${entry.id}`}
         className="absolute left-2 sm:left-2.5 top-0 bottom-0 w-px sm:w-0.5 bg-national-blue scroll-mt-14 scroll-smooth"
         style={
           isLast
@@ -71,7 +70,7 @@ export function EntityCard({
         aria-hidden="true"
       />
 
-      <div className="pl-7 sm:pl-9 space-y-5">
+      <div className="pl-7 sm:pl-9 space-y-5 pb-4">
         <div className="flex gap-2 items-center my-2">
           <DateComponent date={entry.date} />
           {entry.endDate && (
