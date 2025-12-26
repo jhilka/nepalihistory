@@ -11,7 +11,7 @@ export function EntityLinks({ links }: EntityLinksProps) {
   if (!links || links.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap gap-3 pb-6">
+    <div className="flex flex-wrap gap-3">
       {links.map((link, idx) => (
         <Link
           key={idx}
