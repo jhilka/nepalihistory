@@ -57,6 +57,7 @@ export function EntityCard({
 
       {/* line */}
       <div
+        id={id}
         className="absolute left-2 sm:left-2.5 top-0 bottom-0 w-px sm:w-0.5 bg-national-blue scroll-mt-14 scroll-smooth"
         style={
           isLast

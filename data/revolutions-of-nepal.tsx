@@ -88,17 +88,18 @@ export const revolutionsOfNepal: Timeline = {
       ],
       media: [
         {
+          src: "/timelines/revolutions-of-nepal/d93f0358.avif",
+          sourceUrl:
+            "https://upload.wikimedia.org/wikipedia/commons/e/e9/India-Nepal_Treaty_1950.jpg",
+          alt: "Indo-Nepal Treaty document",
+          caption: "",
+        },
+        {
           src: "/timelines/revolutions-of-nepal/8963a76c.avif",
           sourceUrl:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Nepali_Congress_1951.jpg/1100px-Nepali_Congress_1951.jpg",
           alt: "Nepali Congress leaders in 1951",
           caption: "Key figures of the Nepali Congress during the revolution.",
-        },
-        {
-          src: "/timelines/revolutions-of-nepal/d93f0358.avif",
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/e/e9/India-Nepal_Treaty_1950.jpg",
-          alt: "Indo-Nepal Treaty document",
         },
       ],
       links: [
