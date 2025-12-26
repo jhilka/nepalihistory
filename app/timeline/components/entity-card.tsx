@@ -39,6 +39,7 @@ export function EntityCard({
           </span>
         </div>
         <a
+          className="w-full"
           href={`#${entry.title.toLocaleLowerCase()}-${entry.id}`}
           onClick={(e) => {
             e.preventDefault();
@@ -47,7 +48,7 @@ export function EntityCard({
               ?.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
         >
-          <h3 className="text-base sm:text-lg ml-2 sm:ml-0 font-semibold leading-none font-oswald text-balance">
+          <h3 className="w-full text-base sm:text-lg ml-2 sm:ml-0 font-semibold leading-none font-oswald text-balance text-shadow-md">
             {entry.title}
           </h3>
         </a>
