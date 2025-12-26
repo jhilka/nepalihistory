@@ -21,6 +21,7 @@ export function EntityCard({
   totalEntries,
   isLast = false,
 }: EntityCardProps) {
+  const id = `${entry.title.toLocaleLowerCase()}-${entry.id}`;
   return (
     <div data-testid="event" className="relative group">
       {/* dot and title row */}
@@ -33,18 +34,18 @@ export function EntityCard({
         }}
       >
         {/* dot */}
-        <div className="size-6 sm:size-7 bg-national-blue shadow-lg text-white rounded-full shrink-0 flex items-center justify-center font-oswald text-[10px] sm:text-xs font-bold leading-none">
+        <div className="size-6 sm:size-7 bg-national-blue shadow-lg text-white rounded-full shrink-0 flex items-center justify-center font-oswald text-[10px] font-bold leading-none">
           <span className="tabular-nums">
             {entryNumber}/{totalEntries}
           </span>
         </div>
         <a
           className="w-full"
-          href={`#${entry.title.toLocaleLowerCase()}-${entry.id}`}
+          href={`#${id}`}
           onClick={(e) => {
             e.preventDefault();
             document
-              .getElementById(`${entry.title.toLocaleLowerCase()}-${entry.id}`)
+              .getElementById(id)
               ?.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
         >
