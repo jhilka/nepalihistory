@@ -1,8 +1,8 @@
 import type { Timeline } from "@/types/timeline";
 
-export const sinjaValleyCivilization: Timeline = {
-  id: "sinja-valley-civilization",
-  title: "Sinja Valley Civilization",
+export const khashKingdom: Timeline = {
+  id: "khas-kingdom",
+  title: "Khash Kingdom",
   description:
     "A timeline chronicling the rise and fall of the Khas Malla dynasty in Sinja Valley, the cradle of Nepali language and culture, spanning from the 11th to 14th centuries and influencing the Himalayan region through expansions, cultural shifts, and religious transitions.",
   tags: ["national", "political", "cultural", "military", "religious"],
@@ -14,9 +14,10 @@ export const sinjaValleyCivilization: Timeline = {
     { name: "Jitari Malla", role: "Invasion Leader and Title Adopter" },
   ],
   coverMedia: {
+    src: "/timelines/khas-kingdom/32f99018.avif",
     sourceUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Sinja_Valley.jpg/1200px-Sinja_Valley.jpg",
-    alt: "Sinja Valley, heart of Khas Malla Kingdom",
+      "https://upload.wikimedia.org/wikipedia/commons/5/5f/Ripu_Malla.jpg",
+    alt: "Painting of Khasa Buddhist King Ripu Malla and his son Sangrama worshiping the Goddess Tara (center) c. 1312",
     caption:
       "The scenic Sinja Valley, ancient capital and origin of Nepali language.",
   },
@@ -53,16 +54,10 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Nagaraja", role: "Founder King" }],
       media: [
         {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
+          src: "/timelines/khas-kingdom/dd6eace8.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley landscape",
-          caption: "The cradle of the Khas Malla dynasty in Sinja Valley.",
-        },
-        {
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/4/4e/Jumla_District_location.png",
-          alt: "Map of Jumla District",
+            "https://upload.wikimedia.org/wikipedia/commons/5/5a/Tila_Valley_Jumla.JPG",
+          alt: "Jumla District",
           caption: "Location of Jumla, near the capital Semja.",
         },
       ],
@@ -109,9 +104,9 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Chaap", role: "Successor King" }],
       media: [
         {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
+          src: "/timelines/khas-kingdom/889efaf6.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
+            "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzEyCY85Kggmo3Ua_ESSHxZGOTrvSZ__jt0aAERZFjKPq5czzB40y_EdmAoH91DskCp2ZS_gKuDVMUbfRPjlR-ok7yXaGuLep5NoSzp6vjJO0KS4iLDHfjkOf_ND6nIwx7aNS6hWw=s680-w680-h510-rw",
           alt: "Sinja Valley",
           caption: "Heartland consolidated under early kings like Chaap.",
         },
@@ -153,8 +148,9 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Chapilla", role: "King" }],
       media: [
         {
+          src: "/timelines/khas-kingdom/19d1a2d3.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/7/7e/Karnali_River_in_Nepal.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/4/46/Karnali_river.JPG",
           alt: "Karnali River",
           caption: "The Karnali basin, core territory under Chapilla.",
         },
@@ -193,15 +189,7 @@ export const sinjaValleyCivilization: Timeline = {
       ),
       tags: ["political"],
       involved: [{ name: "Krashichalla", role: "King" }],
-      media: [
-        {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley ruins",
-          caption: "Ruins reflecting the era of Krashichalla.",
-        },
-      ],
+      media: [],
       links: [
         {
           url: "https://en.wikipedia.org/wiki/Khasa_kingdom",
@@ -237,14 +225,7 @@ export const sinjaValleyCivilization: Timeline = {
       ),
       tags: ["political", "religious"],
       involved: [{ name: "Kradhichalla", role: "King" }],
-      media: [
-        {
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/8/8b/Himalayan_landscape.jpg",
-          alt: "Himalayan landscape",
-          caption: "The rugged terrain strengthened under Kradhichalla.",
-        },
-      ],
+      media: [],
       links: [
         {
           url: "https://en.wikipedia.org/wiki/Khasa_kingdom",
@@ -289,18 +270,19 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Krachalla", role: "Expansionist King" }],
       media: [
         {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
+          src: "/timelines/khas-kingdom/b17ed4dd.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley ruins",
-          caption: "Ruins in Sinja Valley from Krachalla's era.",
+            "https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/484507188_623299850507270_6464245771555400826_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6EZ_jGFIcH0Q7kNvwE-7bBl&_nc_oc=AdlZcCmT779KWXf3QcPSHpncfyJsdXIa5dqxyeajmvPww7jAJh_jJ9MouE4-7zGEb-k&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_gid=9kQ-O49XzEDXO4mi9zvxhw&oh=00_Afle-eyQTgjGzFsgthFS4c2Wajw1j_4D25axQetpGLqbWg&oe=6959E406",
+          alt: "Kakre bihar",
+          caption: "Buddhist-Hindu shrine linked to Krachalla.",
+          attribution: "mandalas.life",
         },
         {
+          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/4/4b/Kakrebihar_ruins.jpg",
-          alt: "Kakrebihar ruins",
-          caption: "Buddhist-Hindu shrine linked to Krachalla.",
-          attribution: "Wikimedia Commons",
+            "https://res.cloudinary.com/chasset/f_webp,h_480,w_720/hbimages/desktop/1686390861200-Baleshwar-Temple-Champawat-Uttarakhand.jpg",
+          alt: "Baleshwar temple in Uttarakhand, India",
+          caption: "Baleshwar temple in Uttarakhand, India.",
         },
       ],
       links: [
@@ -346,17 +328,11 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Ashok Challa", role: "Emperor" }],
       media: [
         {
+          src: "/timelines/khas-kingdom/efd596f2.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/5/5f/Bodhgaya_Mahabodhi_Temple.jpg",
+            "https://hblimg.mmtcdn.com/content/hubble/img/gaya_imgs/mmt/activities/m_Mahabodhi_temple_3_l_526_788.jpg",
           alt: "Bodhgaya Temple",
           caption: "Site of Ashok Challa's inscriptions in Bihar.",
-        },
-        {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley",
-          caption: "Capital during Ashok Challa's imperial reign.",
         },
       ],
       links: [
@@ -411,17 +387,11 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Jitari Malla", role: "Invasion Leader" }],
       media: [
         {
+          src: "/timelines/khas-kingdom/00f1507a.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/0/0f/Kathmandu_Valley_seen_from_Palanse.jpg",
+            "https://miro.medium.com/v2/resize:fit:1400/1*OdVDqmWaa_AnjCPQQbh57A.jpeg",
           alt: "Kathmandu Valley",
           caption: "The Kathmandu Valley, target of Jitari Malla's invasions.",
-        },
-        {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley",
-          caption: "Base from which Jitari launched his campaigns.",
         },
       ],
       links: [
@@ -465,15 +435,7 @@ export const sinjaValleyCivilization: Timeline = {
       ),
       tags: ["political", "religious"],
       involved: [{ name: "Ananda Malla", role: "King" }],
-      media: [
-        {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley",
-          caption: "Continued rule in Sinja under Ananda Malla.",
-        },
-      ],
+      media: [],
       links: [
         {
           url: "https://en.wikipedia.org/wiki/Khasa_kingdom",
@@ -513,14 +475,16 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Ripu Malla", role: "Expansionist King" }],
       media: [
         {
+          src: "/timelines/khas-kingdom/d70c4365.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/9/9e/Lumbini_pillar_inscription_by_Ripu_Malla.JPG",
+            "https://upload.wikimedia.org/wikipedia/commons/0/0b/Nigali_Sagar_pillar_13th_century_inscription.jpg",
           alt: "Ripu Malla inscription at Lumbini",
-          caption: "Inscription by Ripu Malla on Ashoka Pillar.",
+          caption: `13th-century inscription by King Ripu Malla on the Nigali Sagar pillar of Ashoka. The inscription reads "Oṃ maṇi padme huṃ" and "Sri Ripumalla Chiram Jayatu 1234" ("Long live Sri Ripumalla"; year 1234 of the Saka Era corresponds to 1312 CE).`,
         },
         {
+          src: "/timelines/khas-kingdom/b1f5f987.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/1/1c/Lumbini_02.JPG",
+            "https://upload.wikimedia.org/wikipedia/commons/9/94/Lumbini_pillar_Medieval_inscription.jpg",
           alt: "Lumbini site",
           caption: "Lumbini, where Ripu Malla left his mark.",
         },
@@ -562,14 +526,7 @@ export const sinjaValleyCivilization: Timeline = {
       ),
       tags: ["political", "cultural"],
       involved: [{ name: "Sangrama Malla", role: "Prince and King" }],
-      media: [
-        {
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/9/9e/Lumbini_pillar_inscription_by_Ripu_Malla.JPG",
-          alt: "Lumbini inscription",
-          caption: "Inscription mentioning Sangrama with his father.",
-        },
-      ],
+      media: [],
       links: [
         {
           url: "https://en.wikipedia.org/wiki/Khasa_kingdom",
@@ -603,14 +560,7 @@ export const sinjaValleyCivilization: Timeline = {
       ),
       tags: ["political"],
       involved: [{ name: "Aditya Malla", role: "King" }],
-      media: [
-        {
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/0/0f/Kathmandu_Valley_seen_from_Palanse.jpg",
-          alt: "Kathmandu Valley",
-          caption: "Influenced by prior invasions under Aditya's rule.",
-        },
-      ],
+      media: [],
       links: [
         {
           url: "https://en.wikipedia.org/wiki/Khasa_kingdom",
@@ -642,7 +592,7 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Kalyana Malla", role: "King" }],
       media: [
         {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
+          src: "/timelines/khas-kingdom/f18130f5.avif",
           sourceUrl:
             "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
           alt: "Sinja Valley",
@@ -680,15 +630,7 @@ export const sinjaValleyCivilization: Timeline = {
       ),
       tags: ["political"],
       involved: [{ name: "Pratapa Malla", role: "King" }],
-      media: [
-        {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley",
-          caption: "Peak era under Pratapa Malla.",
-        },
-      ],
+      media: [],
       links: [
         {
           url: "https://en.wikipedia.org/wiki/Khasa_kingdom",
@@ -724,21 +666,7 @@ export const sinjaValleyCivilization: Timeline = {
       ),
       tags: ["political", "religious"],
       involved: [{ name: "Punya Malla", role: "Hindu Reformer King" }],
-      media: [
-        {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley",
-          caption: "Cultural shifts in Sinja under Punya Malla.",
-        },
-        {
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/7/7e/Pashupatinath_Temple_E8.jpg",
-          alt: "Pashupatinath Temple",
-          caption: "Symbol of emerging Hindu influences.",
-        },
-      ],
+      media: [],
       links: [
         {
           url: "https://en.wikipedia.org/wiki/Khasa_kingdom",
@@ -782,23 +710,14 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Prithvi Malla", role: "Peak Ruler" }],
       media: [
         {
+          src: "/timelines/khas-kingdom/41b97b2d.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/4/4b/Dullu_Pillar_Inscription.jpg",
+            "https://scontent-arn2-1.xx.fbcdn.net/v/t1.6435-9/100878990_2348265045474630_8758831062768943104_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Kj1WxGc6WxIQ7kNvwH8WVc1&_nc_oc=Admfk16FvYjA_NN1oadkkRq8agN5A0NdD_mVbD5kOG0RP3xQY_kiRXLGu0F4p28O8hQ&_nc_zt=23&_nc_ht=scontent-arn2-1.xx&_nc_gid=paSwDiAsgigYD0YGpz7ELA&oh=00_AfnrYf_2fK_02bZqVKYZjAJ5-hNZC_Tq097_5KIvql-INA&oe=697B5263",
           alt: "Dullu Pillar Inscription",
-          caption: "Inscription from Prithvi Malla's reign at Dullu.",
-        },
-        {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley",
-          caption: "Expanded empire from Sinja.",
-        },
-        {
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/6d/Map_of_Baise_Rajya.png",
-          alt: "Map of later principalities",
-          caption: "Territories influenced by Prithvi's expansions.",
+          caption:
+            "Inscription from Prithvi Malla's reign at Dullu, Dailekh, Karnali Region.",
+          attribution:
+            "https://www.facebook.com/photo/?fbid=2348265042141297&set=a.1652304438404031",
         },
       ],
       links: [
@@ -831,15 +750,7 @@ export const sinjaValleyCivilization: Timeline = {
       ),
       tags: ["political"],
       involved: [{ name: "Surya Malla", role: "King" }],
-      media: [
-        {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
-          alt: "Sinja Valley",
-          caption: "Continued governance in Sinja.",
-        },
-      ],
+      media: [],
       links: [
         {
           url: "https://en.wikipedia.org/wiki/Khasa_kingdom",
@@ -854,8 +765,8 @@ export const sinjaValleyCivilization: Timeline = {
       description: (
         <>
           <p>
-            Abhaya Malla, the final king of the unified Khas Malla dynasty,
-            oversaw the kingdom's fragmentation after his death.
+            Abhaya Malla, the <strong>last</strong> king of the unified Khas
+            Malla dynasty, oversaw the kingdom's fragmentation after his death.
           </p>
           <ul>
             <li>
@@ -882,15 +793,16 @@ export const sinjaValleyCivilization: Timeline = {
       involved: [{ name: "Abhaya Malla", role: "Final King" }],
       media: [
         {
+          src: "/timelines/khas-kingdom/c580d544.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/6d/Map_of_Baise_Rajya.png",
+            "https://i.ytimg.com/vi/-g9OapGDCb8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAiA9wdnJVnzaUWRP5TgWS7OAu3-w",
           alt: "Map of Baise Rajya",
           caption: "Fragmentation into Baise Rajya after Abhaya.",
         },
         {
-          src: "/timelines/sinja-valley-civilization/f18130f5.avif",
+          src: "/timelines/khas-kingdom/23be056c.avif",
           sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/6/61/Narakot_Sinja_Valley.JPG",
+            "https://nepaltraveller.com/uploads/destination/bhurti-temple-complex-of-dailekh.jpg",
           alt: "Sinja Valley ruins",
           caption: "Ruins symbolizing the dynasty's end.",
         },
