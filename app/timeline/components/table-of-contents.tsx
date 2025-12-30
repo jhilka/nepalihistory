@@ -27,7 +27,7 @@ export function TableOfContents({ entries, className }: TableOfContentsProps) {
             return (
               <tr
                 key={entry.id}
-                className="text-sm text-muted-foreground hover:text-foreground hover:text-shadow-sm transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground hover:text-shadow-sm transition-colors backdrop-blur-xs"
               >
                 <td className="pr-2 text-right py-0.5">{index + 1}</td>
                 <td className="py-0.5 line-clamp-1">

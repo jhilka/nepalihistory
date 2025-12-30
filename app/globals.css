@@ -140,7 +140,7 @@
 
 @layer utilities {
   .frosted {
-    @apply bg-background/80 backdrop-blur-lg supports-backdrop-filter:bg-background/60;
+    @apply bg-background/80 backdrop-blur-sm supports-backdrop-filter:bg-background/60;
   }
   .fade-in {
     animation: fadeIn 150ms ease-in;
