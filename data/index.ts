@@ -8,10 +8,10 @@ import { earthquakesInNepal } from "./earthquakes-in-nepal";
 import { primeMinistersRepublic } from "./pm-of-republic";
 import { nepalPoliticalHistory } from "./nepal-political-history";
 import { preUnificationDynastiesNepal } from "./pre-unification-nepal";
-import { sinjaValleyCivilization } from "./sinja-valley-civilization";
+import { khashKingdom } from "./khash-kingdom";
 
 export const timelines = [
-  sinjaValleyCivilization,
+  khashKingdom,
   preUnificationDynastiesNepal,
   nepalPoliticalHistory,
   primeMinistersRepublic,
