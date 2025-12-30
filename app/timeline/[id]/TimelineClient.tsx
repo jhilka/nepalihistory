@@ -110,11 +110,10 @@ export default async function TimelineClient({
               );
             })}
           </div>
-          <aside className="hidden xl:block w-64 shrink-0">
-            <div className="sticky top-20">
-              <TableOfContents entries={entries} />
-            </div>
-          </aside>
+          <TableOfContents
+            entries={entries}
+            className="hidden xl:block w-64 shrink-0 sticky top-20 self-start"
+          />
         </div>
         {timeline.involved && timeline.involved.length > 0 && (
           <>
