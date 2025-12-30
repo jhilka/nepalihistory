@@ -193,6 +193,10 @@
   .animation-delay-4000 {
     animation-delay: 4s;
   }
+
+  .page-content-width {
+    @apply max-w-3xl mx-auto;
+  }
 }
 
 @keyframes fadeIn {
