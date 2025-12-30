@@ -1,6 +1,7 @@
 import { ChevronsDown } from "lucide-react";
 import { EntityCard } from "@/app/timeline/components/entity-card";
 import { EntityInvolved } from "@/app/timeline/components/entity-involved";
+import { TableOfContents } from "@/app/timeline/components/table-of-contents";
 import Link from "next/link";
 import { SafeImage } from "@/components/safe-image";
 import { Timeline } from "@/types/timeline";
@@ -33,28 +34,27 @@ export default async function TimelineClient({
   return (
     <>
       <TimelineNavigation />
-      <div className="max-w-3xl mx-auto p-4 md:py-4 relative">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-6"
-        >
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+      <div className="p-4 md:py-4 relative">
+        <header className="page-content-width mb-8 flex flex-col items-center gap-6">
+          <Link
+            href="/"
+            className="inline-flex self-start items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-6"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-          Back
-        </Link>
-
-        <header className="mb-8 flex flex-col items-center gap-6">
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            Back
+          </Link>
           {timeline.coverMedia && (
             <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow-lg">
               <SafeImage
@@ -82,32 +82,40 @@ export default async function TimelineClient({
           </div>
         </header>
 
-        <>
-          {years.map((year) => {
-            const yearEntries = groupedEntries[year];
+        <div className="grid grid-cols-[1fr_auto_1fr] justify-items-center">
+          <div></div>
+          <div className="page-content-width px-4">
+            {years.map((year) => {
+              const yearEntries = groupedEntries[year];
 
-            return (
-              <div key={year} className="relative">
-                <>
-                  {yearEntries.map((entry) => {
-                    entryCounter++;
-                    const isLastOverall = entryCounter === totalEntries;
+              return (
+                <div key={year} className="relative">
+                  <>
+                    {yearEntries.map((entry) => {
+                      entryCounter++;
+                      const isLastOverall = entryCounter === totalEntries;
 
-                    return (
-                      <EntityCard
-                        key={entry.id}
-                        entry={entry}
-                        entryNumber={entryCounter}
-                        totalEntries={totalEntries}
-                        isLast={isLastOverall}
-                      />
-                    );
-                  })}
-                </>
-              </div>
-            );
-          })}
-        </>
+                      return (
+                        <EntityCard
+                          key={entry.id}
+                          entry={entry}
+                          entryNumber={entryCounter}
+                          totalEntries={totalEntries}
+                          isLast={isLastOverall}
+                        />
+                      );
+                    })}
+                  </>
+                </div>
+              );
+            })}
+          </div>
+          <aside className="hidden xl:block w-64 shrink-0">
+            <div className="sticky top-20">
+              <TableOfContents entries={entries} />
+            </div>
+          </aside>
+        </div>
         {timeline.involved && timeline.involved.length > 0 && (
           <>
             <div className="text-xs text-center my-2">Key figures:</div>
