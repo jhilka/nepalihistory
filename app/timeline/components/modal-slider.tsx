@@ -18,25 +18,25 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
   const [startIndex, setStartIndex] = useState(0);
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
     return () => {
-      // reset body overflow when unmounting
-      if (!isOpen) return;
       document.body.style.overflow = "auto";
     };
-  }, []);
+  }, [isOpen]);
 
   const openAt = (index: number) => {
     setStartIndex(index);
     setIsOpen(true);
     // attempt to move slider after it initializes
     setTimeout(() => (modalInstanceRef.current as any)?.moveToIdx?.(index), 0);
-    // set body overflow hidden to prevent background scroll
-    document.body.style.overflow = "hidden";
   };
 
   const close = () => {
     setIsOpen(false);
-    document.body.style.overflow = "auto";
   };
 
   const [modalRef, modalInstanceRef] = useKeenSlider<HTMLDivElement>({
