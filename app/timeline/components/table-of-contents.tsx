@@ -4,11 +4,12 @@ import type { TimelineEntry } from "@/types/timeline";
 
 interface TableOfContentsProps {
   entries: TimelineEntry[];
+  className?: string;
 }
 
-export function TableOfContents({ entries }: TableOfContentsProps) {
+export function TableOfContents({ entries, className }: TableOfContentsProps) {
   return (
-    <nav className="p-4 rounded-lg">
+    <nav className={className}>
       <table className="max-w-fit">
         <thead>
           <tr>
