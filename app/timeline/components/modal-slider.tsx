@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { Media } from "@/types/timeline";
-import { SafeImage } from "@/components/safe-image";
 // import { CrossIcon } from "lucide-react";
+
+import { Media } from "@/types/timeline";
+
+import { SafeImage } from "@/components/safe-image";
 
 export type ModalSliderProps = {
   media: Media[];
@@ -14,6 +16,14 @@ export type ModalSliderProps = {
 const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
+
+  useEffect(() => {
+    return () => {
+      // reset body overflow when unmounting
+      if (!isOpen) return;
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
   const openAt = (index: number) => {
     setStartIndex(index);
