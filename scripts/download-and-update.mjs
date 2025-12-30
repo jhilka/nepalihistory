@@ -43,7 +43,7 @@ const downloadImage = async (url, timelineId) => {
     const filepath = join(downloadDir, filename);
     await sharp(Buffer.from(buffer))
       .resize(1200, null, { withoutEnlargement: true })
-      .avif({ quality: 80 })
+      .avif({ quality: 100 })
       .toFile(filepath);
     const localPath = `/timelines/${timelineId}/${filename}`;
     downloadCache.set(url, localPath);
@@ -66,8 +66,7 @@ const processTimeline = async (filePath) => {
   const timelineId = idMatch[1];
 
   // Process coverMedia
-  const coverMediaRegex =
-    /coverMedia:\s*\{[^}]*sourceUrl:\s*"([^"]+)"[^}]*\}/g;
+  const coverMediaRegex = /coverMedia:\s*\{[^}]*sourceUrl:\s*"([^"]+)"[^}]*\}/g;
   const coverMatches = [...content.matchAll(coverMediaRegex)];
   for (const match of coverMatches) {
     const fullMatch = match[0];
