@@ -1,7 +1,7 @@
 import { HERO } from "@/app/constants";
 
 const Hero = () => (
-  <header className="min-h-32 sm:min-h-54 flex flex-col items-center justify-center gap-4 mb-10">
+  <header className="min-h-32 sm:min-h-54 flex flex-col items-center justify-center gap-4 sm:gap-5 mb-10">
     <span className="text-[10px] sm:text-xs frosted bg-stone-200/45! dark:bg-stone-200/20! px-2 sm:px-3 py-0.5 sm:py-1 rounded-xl text-shadow-md">
       {HERO.preface}
     </span>
