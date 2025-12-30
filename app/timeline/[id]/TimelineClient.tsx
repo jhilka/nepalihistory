@@ -109,10 +109,12 @@ export default async function TimelineClient({
           })}
         </>
         {timeline.involved && timeline.involved.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-4 my-3 sm:my-4">
-            <div className="text-xs">Key figures:</div>
-            <EntityInvolved involved={timeline.involved} />
-          </div>
+          <>
+            <div className="text-xs text-center my-2">Key figures:</div>
+            <div className="flex flex-wrap justify-center gap-4 my-3 sm:my-4">
+              <EntityInvolved involved={timeline.involved} />
+            </div>
+          </>
         )}
       </div>
     </>
