@@ -2,7 +2,7 @@
 
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { X, ChevronsDown } from "lucide-react";
+import { X, ChevronsDown, Search } from "lucide-react";
 
 import type { Timeline } from "@/types/timeline";
 import { filterTimelines } from "@/lib/timeline-filter";
@@ -66,9 +66,10 @@ export default function TimelineSearch({ timelines }: Props) {
           Search timelines
         </label>
         <div className="relative mb-3">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground z-1" />
           <Input
             id="timeline-search"
-            className="frosted pr-10"
+            className="px-10 bg-muted/50 backdrop-blur-lg shadow-sm"
             placeholder="Search timelines (title, tags, events)"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
