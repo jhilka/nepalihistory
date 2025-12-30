@@ -472,8 +472,8 @@ export const unificationOfNepal: Timeline = {
       ],
       media: [
         {
-          sourceUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Devighat_Nepal.jpg/800px-Devighat_Nepal.jpg",
+          src: "/timelines/unification-nepal/dev-ghat-boulder.webp",
+          sourceUrl: "",
           alt: "Devighat, Nepal - memorial site",
           caption: "Devighat, where Prithvi Narayan Shah died.",
         },
