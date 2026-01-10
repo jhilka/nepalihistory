@@ -7,7 +7,7 @@ import NepalMap, { OutlineNepalMap } from "./NepalMap";
 
 export const Navbar = () => (
   <nav className="fixed top-0 z-50 w-full frosted shadow-2xs">
-    <div className="page-content-width px-4 h-14 grid grid-cols-3 items-center gap-4">
+    <div className="page-content-width px-4! h-14 grid grid-cols-3 items-center gap-4">
       <Link
         href="/"
         className="font-germania uppercase font-bold text-md sm:text-xl justify-self-start text-national-maroon"
