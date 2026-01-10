@@ -1,8 +1,10 @@
-# Markdown Rendering Implementation Plan - Senior Level Architecture
+# Book Reader Implementation Plan - Divya Upadesh
 
-**Project:** Nepali History (Next.js + Tailwind CSS + React-Markdown)  
+**Project:** Nepali History - Book Reader Module  
 **Date Started:** January 4, 2026  
-**Objective:** Implement enterprise-grade markdown rendering with plugin architecture for extensibility
+**Objective:** Create `/books/dibyaupadesh` route to render 128 pages of extracted markdown content with minimal, clean architecture
+
+**Data Source:** `scripts/dibya_upadesh_extracted/` (page_001.md to page_128.md)
 
 ---
 
@@ -10,234 +12,211 @@
 
 ### Design Principles
 
-- **Plugin Architecture**: Extensible system for markdown features (tooltips, admonitions, code highlighting, etc.)
-- **Composition over Inheritance**: Component-based rendering strategy
-- **Separation of Concerns**: Parsing logic, rendering logic, and styling are independently managed
-- **Type Safety**: Full TypeScript implementation with strict typing
-- **Configuration-Driven**: Centralized configuration for plugins, themes, and behavior
-- **Performance-First**: Memoization, code splitting, lazy loading where applicable
-- **Accessibility**: WCAG 2.1 AA compliance from the ground up
-- **Testability**: Designed for future test coverage (tests deferred to Phase 2)
+- **Minimal Implementation**: Only what's needed for book reading experience
+- **Static Generation**: Pre-render all 128 pages at build time
+- **Type Safety**: TypeScript for book data structures
+- **Performance-First**: Static pages, optimized navigation
+- **Accessibility**: Semantic HTML, keyboard navigation
+- **Reusable**: Architecture can extend to other books
 
 ### Architecture Layers
 
 ```
 ┌─────────────────────────────────────────────┐
-│  Components Layer (React Components)        │
-│  - MarkdownRenderer (entry point)           │
-│  - Custom component overrides               │
+│  Route Layer                                │
+│  /books/dibyaupadesh (book index)           │
+│  /books/dibyaupadesh/[page] (page reader)   │
 ├─────────────────────────────────────────────┤
-│  Hook Layer (Business Logic)                │
-│  - useMarkdownConfig()                      │
-│  - useMarkdownPlugins()                     │
-│  - useTooltipData()                         │
+│  Components Layer                           │
+│  - BookReader (page display)                │
+│  - PageNavigation (prev/next)               │
+│  - TableOfContents (optional)               │
 ├─────────────────────────────────────────────┤
-│  Plugin System (Extensibility)              │
-│  - BasePlugin interface                     │
-│  - PluginRegistry                           │
-│  - Built-in plugins (Tooltip, etc.)         │
+│  Data Layer                                 │
+│  - Book metadata (title, pages, etc.)       │
+│  - Page loader (read .md files)             │
 ├─────────────────────────────────────────────┤
-│  Parser Layer (Remark plugins)              │
-│  - Custom directive parsing                 │
-│  - AST transformation                       │
-├─────────────────────────────────────────────┤
-│  Configuration Layer (Config & Types)       │
-│  - MarkdownConfig type                      │
-│  - PluginRegistry type definitions          │
-│  - Theme configuration                      │
+│  Rendering Layer                            │
+│  - react-markdown (simple setup)            │
+│  - Tailwind typography (prose classes)      │
 └─────────────────────────────────────────────┘
 ```
 
 ---
 
-## Step 1: Setup Type Definitions & Configuration Structure
+## Step 1: Setup Type Definitions for Book Data
 
-- [ ] Create `types/markdown.ts` with core interfaces:
-  - `MarkdownConfig` - configuration object
-  - `MarkdownPlugin` - plugin interface
-  - `PluginRegistry` - registry type
-  - `RenderComponentProps` - component props
-- [ ] Create `config/markdown.config.ts` with default settings
-- [ ] Define plugin capabilities (directives, processors, component overrides)
+- [x] Create `types/book.ts` with interfaces:
+  - `Book` - book metadata (id, title, description, totalPages)
+  - `BookPage` - page data (pageNumber, content, title)
+- [x] Keep it minimal - only essential fields
+
+**Status:** ✅ Completed  
+**Notes:** Created minimal Book and BookPage interfaces
+
+---
+
+## Step 2: Install Dependencies
+
+- [x] Install `react-markdown` for markdown rendering
+- [x] Install `remark-gfm` for GitHub Flavored Markdown support
+- [x] Verify compatibility with Next.js 16 and React 19
+
+**Status:** ✅ Completed  
+**Notes:** Dependencies installed via npm
+
+---
+
+## Step 3: Create Book Data Structure
+
+- [x] Create `data/books/dibyaupadesh.ts`:
+  - Export book metadata (title, description, totalPages: 128)
+  - Function to get page file path
+  - Function to load page content from markdown files
+- [x] Create `data/books/index.ts` - Export all books
+
+**Status:** ✅ Completed  
+**Notes:** Created book metadata and page loader utility in lib/books/
+
+---
+
+## Step 4: Create Book Index Page
+
+- [x] Create `app/books/dibyaupadesh/page.tsx`:
+  - Display book title and description
+  - Show total pages
+  - "Start Reading" button → navigates to page 1
+  - Use existing design patterns from timeline pages
+
+**Status:** ✅ Completed  
+**Notes:** Landing page with Nepali text and start reading button
+
+---
+
+## Step 5: Create Dynamic Page Route
+
+- [x] Create `app/books/dibyaupadesh/[page]/page.tsx`:
+  - Server component that loads markdown content
+  - Use `generateStaticParams()` to pre-render all 128 pages
+  - Pass content to client component
+- [x] Create `app/books/dibyaupadesh/[page]/loading.tsx`:
+  - Simple loading state
+
+**Status:** ✅ Completed  
+**Notes:** Static generation for all 128 pages with loading state
+
+---
+
+## Step 6: Create Book Reader Client Component
+
+- [x] Create `app/books/dibyaupadesh/[page]/BookReader.tsx`:
+  - Client component with "use client" directive
+  - Render markdown using react-markdown
+  - Apply Tailwind typography (prose classes)
+  - Page navigation (Previous/Next buttons)
+  - Page indicator (e.g., "Page 5 of 128")
+  - Responsive design for mobile
+- [x] **Tooltip Support** (see [TOOLTIP_IMPLEMENTATION.md](./TOOLTIP_IMPLEMENTATION.md)):
+  - Custom `<sup>` component with Radix UI tooltips
+  - Reference extraction from markdown tables
+  - Works in code blocks and regular text
+  - Mobile-friendly with tap support
+  - Accessible with ARIA labels
+
+**Status:** ✅ Completed  
+**Notes:** Includes keyboard navigation (arrow keys, Home, End) and interactive tooltips for references
+
+---
+
+## Step 7: Create Page Navigation Component
+
+- [ ] Create `app/books/dibyaupadesh/components/page-navigation.tsx`:
+  - Previous/Next buttons with proper disabled states
+  - Page number display
+  - Keyboard navigation support (arrow keys)
+  - Mobile-friendly touch targets
 
 **Status:** Not Started  
 **Notes:**
 
 ---
 
-## Step 2: Install Dependencies (Only Missing Ones)
+## Step 8: Style Book Reader
 
-- [ ] Check and install: `react-markdown`, `remark-directive`, `unist-util-visit`
-- [ ] Verify no version conflicts with existing Radix UI
-- [ ] Update `package.json` documentation
+- [x] Add book-specific styles to `globals.css`:
+  - Nepali font support (ensure proper rendering)
+  - Typography for book content
+  - Page layout (max-width, padding, line-height)
+  - Dark mode support
+- [x] Use Tailwind prose classes for markdown
+- [x] Ensure readability on mobile devices
+
+**Status:** ✅ Completed  
+**Notes:** Added prose typography with enhanced line-height for readability
+
+---
+
+## Step 9: Add Book to Navigation
+
+- [ ] Update navbar to include link to `/books/dibyaupadesh`
+- [ ] Add "Books" section to homepage
+- [ ] Create book card component (similar to timeline-card)
+- [ ] List available books on homepage
 
 **Status:** Not Started  
 **Notes:**
 
 ---
 
-## Step 3: Create Plugin Architecture Foundation
+## Step 10: Implement Keyboard Navigation
 
-- [ ] Create `lib/markdown/plugins/base.plugin.ts` - Abstract plugin base class
-- [ ] Create `lib/markdown/plugins/registry.ts` - Plugin registry system
-- [ ] Create `lib/markdown/plugins/index.ts` - Plugin exports
-- [ ] Implement plugin interface with lifecycle methods:
-  - `beforeParse()`
-  - `beforeRender()`
-  - `afterRender()`
-  - `getRemarkPlugins()`
-  - `getComponentOverrides()`
+- [ ] Add keyboard event listeners:
+  - Left arrow → Previous page
+  - Right arrow → Next page
+  - Home → First page
+  - End → Last page
+- [ ] Add visual indicators for keyboard shortcuts
+- [ ] Ensure accessibility (focus management)
 
 **Status:** Not Started  
 **Notes:**
 
 ---
 
-## Step 4: Create Custom Hooks for Logic Abstraction
+## Step 11: Optional Enhancements
 
-- [ ] Create `hooks/useMarkdownConfig.ts` - Config context hook
-- [ ] Create `hooks/useMarkdownPlugins.ts` - Plugin management hook
-- [ ] Create `hooks/useTooltipPlugin.ts` - Tooltip-specific plugin hook
-- [ ] Implement context provider for configuration
-- [ ] Add error handling and fallback logic
+- [ ] Table of Contents (extract headings from all pages)
+- [ ] Search within book
+- [ ] Bookmark/progress tracking (localStorage)
+- [ ] Print-friendly view
+- [ ] Share specific page (URL with page number)
+- [ ] Reading progress indicator
+
+**Status:** Not Started  
+**Notes:** These are optional - implement only if time permits
+
+---
+
+## Step 12: Testing & Validation
+
+- [ ] Test all 128 pages render correctly
+- [ ] Test navigation (first page, last page, middle pages)
+- [ ] Test on mobile devices
+- [ ] Test dark mode
+- [ ] Verify Nepali text renders properly
+- [ ] Check performance (page load times)
 
 **Status:** Not Started  
 **Notes:**
 
 ---
 
-## Step 5: Create Remark Plugin System (Parsing Layer)
+## Step 13: Documentation
 
-- [ ] Create `lib/markdown/plugins/tooltip.plugin.ts`:
-  - Implement `remark-directive` integration
-  - Parse `::tooltip{content}` directives
-  - Transform AST to include tooltip metadata
-  - Add error handling for malformed directives
-- [ ] Create `lib/markdown/plugins/directive-processor.ts`:
-  - Generic directive processor
-  - Validation and error messages
-  - Support for future custom directives
-- [ ] Create unit tests for parser logic
-
-**Status:** Not Started  
-**Notes:**
-
----
-
-## Step 6: Create React-Markdown Component Renderer
-
-- [ ] Create `components/markdown/MarkdownRenderer.tsx`:
-  - Main entry component with error boundary
-  - Props: markdown content, config, plugins
-  - Memoized component to prevent unnecessary re-renders
-- [ ] Create `components/markdown/components/` directory:
-  - `TooltipSpan.tsx` - Tooltip component override
-  - `CodeBlock.tsx` - Code block with syntax highlighting
-  - `Image.tsx` - Safe image rendering
-  - `Link.tsx` - Link handling with validation
-- [ ] Implement Radix UI Tooltip integration (leverage existing tooltip.tsx)
-
-**Status:** Not Started  
-**Notes:**
-
----
-
-## Step 7: Create Configuration Provider & Context
-
-- [ ] Create `components/markdown/MarkdownProvider.tsx`:
-  - Context provider for markdown config
-  - Default configuration injection
-  - Plugin registration
-- [ ] Create `lib/markdown/context.ts`:
-  - React Context for configuration
-  - Type-safe context hooks
-  - Fallback to defaults if not provided
-
-**Status:** Not Started  
-**Notes:**
-
----
-
-## Step 8: Integrate with EntityCard Component (Usage)
-
-- [ ] Update `app/timeline/components/entity-card.tsx`:
-  - Replace `dangerouslySetInnerHTML` with `<MarkdownRenderer>`
-  - Pass description content to renderer
-  - Add error boundary wrapper
-  - Maintain backward compatibility
-- [ ] Create migration path for existing HTML descriptions
-- [ ] Test with existing timeline data
-
-**Status:** Not Started  
-**Notes:**
-
----
-
-## Step 9: Styling & Theme Integration
-
-- [ ] Create `components/markdown/styles/markdown.css`:
-  - Base markdown typography styles
-  - Utility classes for common markdown elements (p, h1-h6, lists, etc.)
-  - Tooltip-specific styling (dotted underline, cursor)
-  - Dark mode support using CSS variables
-- [ ] Integrate with existing Tailwind configuration
-- [ ] Update `globals.css` with markdown base styles
-
-**Status:** Not Started  
-**Notes:**
-
----
-
-## Step 10: Create Custom Hooks for Consumer Components
-
-- [ ] Create `hooks/useMarkdownRenderer.ts`:
-  - Encapsulates markdown rendering logic
-  - Returns memoized renderer and config
-  - Handles error states
-- [ ] Add performance monitoring hooks
-- [ ] Document hook usage patterns
-
-**Status:** Not Started  
-**Notes:**
-
----
-
-## Step 11: Accessibility & Performance Optimization
-
-- [ ] Add ARIA attributes to all interactive elements (tooltips)
-- [ ] Implement lazy loading for markdown content (if needed)
-- [ ] Add performance metrics (memoization, component-level optimization)
-- [ ] Test on mobile/touch devices (tooltips -> click to show)
-- [ ] Validate with accessibility checker (axe, WAVE)
-- [ ] Handle keyboard navigation for tooltips
-
-**Status:** Not Started  
-**Notes:**
-
----
-
-## Step 12: Documentation & Examples
-
-- [ ] Create `docs/markdown/` directory:
-  - `README.md` - Overview and quick start
-  - `PLUGIN_DEVELOPMENT.md` - How to create custom plugins
-  - `CONFIGURATION.md` - Configuration options
-  - `EXAMPLES.md` - Real-world usage examples
-  - `MIGRATION.md` - Migration from current HTML approach
-- [ ] Add JSDoc comments to all public APIs
-- [ ] Create example plugin (future reference)
-
-**Status:** Not Started  
-**Notes:**
-
----
-
-## Step 13: Deploy & Monitor
-
-- [ ] Build and test in production environment
-- [ ] Add error logging for failed markdown parsing
-- [ ] Monitor performance metrics
-- [ ] Create runbook for troubleshooting
+- [ ] Update README.md with book reader feature
+- [ ] Document how to add new books
+- [ ] Add comments to code for future maintainers
+- [ ] Create BOOKS.md with book data structure guide
 
 **Status:** Not Started  
 **Notes:**
@@ -248,29 +227,40 @@
 
 ### New Files to Create
 
-- Type definitions: `types/markdown.ts`
-- Configuration: `config/markdown.config.ts`
-- Plugin system: `lib/markdown/plugins/` (base, registry, tooltip)
-- Remark plugins: `lib/markdown/plugins/directive-processor.ts`
-- Context: `lib/markdown/context.ts`
-- Components: `components/markdown/` (Renderer, Provider, component overrides)
-- Custom hooks: `hooks/useMarkdownConfig.ts`, `hooks/useMarkdownPlugins.ts`, etc.
-- Styles: `components/markdown/styles/markdown.css`
-- Documentation: `docs/markdown/`
+**Type Definitions:**
+- `types/book.ts` - Book and BookPage interfaces
+
+**Data Layer:**
+- `data/books/dibyaupadesh.ts` - Book metadata and page loader
+- `data/books/index.ts` - Export all books
+
+**Routes:**
+- `app/books/dibyaupadesh/page.tsx` - Book index page
+- `app/books/dibyaupadesh/[page]/page.tsx` - Dynamic page route (server)
+- `app/books/dibyaupadesh/[page]/BookReader.tsx` - Page reader (client)
+- `app/books/dibyaupadesh/[page]/loading.tsx` - Loading state
+
+**Components:**
+- `app/books/dibyaupadesh/components/page-navigation.tsx` - Navigation controls
+- `app/books/dibyaupadesh/components/sup-with-tooltip.tsx` - ✅ Tooltip for references
+- `app/books/dibyaupadesh/components/code-block.tsx` - ✅ Code block with tooltip support
+- `components/book-card.tsx` - Book preview card (optional)
+
+**Utilities:**
+- `lib/books/page-loader.ts` - Load markdown files from disk
+- `lib/books/extract-references.ts` - ✅ Extract references from tables
 
 ### Files to Modify
 
-- `app/timeline/components/entity-card.tsx` - Replace HTML rendering with MarkdownRenderer
-- `globals.css` - Add markdown base styles
-- `package.json` - Add dependencies
-- `tsconfig.json` - Ensure strict mode enabled
+- `app/page.tsx` - Add books section to homepage
+- `components/navbar.tsx` - Add books link (optional)
+- `app/globals.css` - Add book typography styles
+- `package.json` - Add react-markdown and remark-gfm
 
 ### Dependencies to Install
 
-- `react-markdown` (if not present)
-- `remark-directive` (if not present)
-- `unist-util-visit` (if not present)
-- Consider: `remark-gfm`, `@radix-ui/react-tooltip` (already present)
+- `react-markdown` - Markdown rendering
+- `remark-gfm` - GitHub Flavored Markdown support
 
 ---
 
@@ -278,6 +268,13 @@
 
 | Decision                    | Rationale                                             | Fallback                                       |
 | --------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
+| Static Generation           | Pre-render all 128 pages for instant loading          | Dynamic rendering (slower)                     |
+| File-based Content          | Markdown files in scripts/ directory                  | Database storage (more complex)                |
+| react-markdown              | Simple, reliable, well-maintained                     | Custom markdown parser (reinventing wheel)     |
+| Tailwind Typography         | Consistent styling with existing app                  | Custom CSS (more maintenance)                  |
+| Dynamic Routes [page]       | Clean URLs like /books/dibyaupadesh/5                 | Query params (?page=5)                         |
+| Client Component for Reader | Interactivity (navigation, keyboard)                  | Server-only (no interactivity)                 |
+| Minimal Features First      | Ship fast, iterate based on usage                     | Over-engineer upfront (slower delivery)        |-------------------------------------------- | ---------------------------------------------- |
 | Plugin Architecture         | Extensibility for future markdown features            | Monolithic approach with harder future changes |
 | React Context for Config    | Type-safe, performant, follows React patterns         | Prop drilling (verbose, prone to errors)       |
 | Radix UI Tooltip (existing) | Leverages existing UI library, consistent design      | react-tooltip library (unnecessary duplicate)  |
@@ -287,8 +284,84 @@
 
 ---
 
+## Project Structure
+
+```
+app/
+├── books/
+│   └── dibyaupadesh/
+│       ├── page.tsx                    # Book index/landing page
+│       ├── [page]/
+│       │   ├── page.tsx                # Server component (loads content)
+│       │   ├── BookReader.tsx          # Client component (renders + nav)
+│       │   └── loading.tsx             # Loading state
+│       └── components/
+│           └── page-navigation.tsx     # Prev/Next navigation
+├── components/
+│   └── book-card.tsx                   # Book preview card (optional)
+data/
+├── books/
+│   ├── dibyaupadesh.ts                 # Book metadata
+│   └── index.ts                        # Export all books
+types/
+└── book.ts                             # Book type definitions
+lib/
+└── books/
+    └── page-loader.ts                  # Load markdown from files
+scripts/
+└── dibya_upadesh_extracted/
+    ├── page_001.md                     # Source content
+    ├── page_002.md
+    └── ... (128 pages total)
+```
+
+---
+
+## Data Flow
+
+1. User visits `/books/dibyaupadesh` → sees book landing page
+2. Clicks "Start Reading" → navigates to `/books/dibyaupadesh/1`
+3. Server component loads `page_001.md` from disk
+4. Content passed to BookReader client component
+5. react-markdown renders Nepali text with Tailwind prose
+6. User clicks "Next" → navigates to `/books/dibyaupadesh/2`
+7. Process repeats for all 128 pages
+
+---
+
 ## Progress Log
 
 | Date | Step | Status | Notes |
 | ---- | ---- | ------ | ----- |
-|      |      |        |       |
+| Jan 4, 2026 | Step 1 | ✅ Complete | Type definitions created |
+| Jan 4, 2026 | Step 2 | ✅ Complete | Dependencies installed (react-markdown, remark-gfm) |
+| Jan 4, 2026 | Step 3 | ✅ Complete | Book data structure and page loader |
+| Jan 4, 2026 | Step 4 | ✅ Complete | Book landing page |
+| Jan 4, 2026 | Step 5 | ✅ Complete | Dynamic page route with static generation |
+| Jan 4, 2026 | Step 6 | ✅ Complete | BookReader component with keyboard nav + tooltips |
+| Jan 4, 2026 | Tooltips | ✅ Complete | See TOOLTIP_IMPLEMENTATION.md for details |
+| Jan 4, 2026 | Step 7 | ⏭️ Skipped | Navigation inline in BookReader |
+| Jan 4, 2026 | Step 8 | ✅ Complete | Typography styles added |
+| | Step 9 | 🔜 Next | Add to navbar/homepage |
+| | Step 10 | ✅ Complete | Keyboard nav already in Step 6 |
+| | Step 11-13 | ⏸️ Pending | Optional enhancements |
+
+---
+
+## Future Enhancements (Post-MVP)
+
+- Add more books (same architecture, different data)
+- Table of contents with chapter markers
+- Search across all pages
+- Annotations/notes system
+- Reading progress tracking
+- Export to PDF
+- Audio narration (text-to-speech for Nepali)
+- Multi-language support (if translations available)
+
+---
+
+## Related Documentation
+
+- **[TOOLTIP_IMPLEMENTATION.md](./TOOLTIP_IMPLEMENTATION.md)** - Detailed documentation of the tooltip system for reference numbers
+- **[BOOK_READER_SUMMARY.md](./BOOK_READER_SUMMARY.md)** - Quick reference guide for the book reader implementation

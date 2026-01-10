@@ -195,7 +195,7 @@
   }
 
   .page-content-width {
-    @apply max-w-3xl mx-auto px-0 sm:px-4;
+    @apply max-w-4xl mx-auto px-0 sm:px-4;
   }
 }
 
@@ -406,7 +406,10 @@
       color: var(--national-maroon);
     }
   }
+}
 
+.prose-event,
+.prose {
   table {
     width: 100%;
     border-collapse: collapse;
@@ -420,8 +423,10 @@
     }
   }
 
+  --b-opacity: 0.3;
+
   thead {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid oklch(from var(--border) l c h / var(--b-opacity));
   }
 
   th {
@@ -432,7 +437,7 @@
 
   td {
     padding: 0.5rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid oklch(from var(--border) l c h / var(--b-opacity));
     vertical-align: top;
     line-height: 1.375;
   }
@@ -454,6 +459,73 @@
   background-color: var(--muted);
   transition: background-color 150ms ease;
 } */
+
+/* Book reader typography */
+.prose {
+  line-height: 1.8;
+  font-size: 1.125rem;
+
+  h1 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  h2 {
+    @apply text-xl sm:text-2xl leading-tight;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply leading-[1] font-bold text-center;
+  }
+
+  h3,
+  h4 {
+    @apply font-bold;
+  }
+
+  article {
+    @apply px-1;
+  }
+
+  p {
+    @apply px-2 my-4 text-justify;
+  }
+
+  em {
+    font-style: italic;
+    color: var(--muted-foreground);
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  ul,
+  ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Tooltip enhancements */
+[role="tooltip"] {
+  animation-duration: 200ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ensure tooltips work on mobile */
+@media (hover: none) and (pointer: coarse) {
+  [data-tooltip-content] {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
 
 .media-frame {
   position: relative;
