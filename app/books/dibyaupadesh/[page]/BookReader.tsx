@@ -9,7 +9,7 @@ import Link from "next/link";
 import { extractReferences } from "@/lib/books/extract-references";
 import { SupWithTooltip } from "../components/sup-with-tooltip";
 import { CodeBlock } from "../components/code-block";
-import { ChevronLeft } from "lucide-react";
+import { ArrowLeftRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface BookReaderProps {
   content: string;
@@ -53,15 +53,16 @@ export default function BookReader({
             href="/books/dibyaupadesh"
             className="flex items-center justify-center gap-1 text-muted-foreground hover:text-foreground"
           >
-            <ChevronLeft className="size-4" aria-hidden="true" /> {bookTitle}
+            <ChevronLeft className="size-4 stroke-3" aria-hidden="true" />{" "}
+            <span className="-mb-1">{bookTitle}</span>
           </Link>
-          <span className="text-muted-foreground font-germania">
+          <span className="text-muted-foreground">
             पृष्ठ {currentPage} / {totalPages}
           </span>
         </div>
 
         {/* Content */}
-        <article className="prose prose-lg dark:prose-invert mb-8 space-y-3 text-sm sm:text-lg">
+        <article className="prose prose-lg dark:prose-invert mb-8 space-y-3 text-sm sm:text-lg text-shadow-sm">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
@@ -109,9 +110,10 @@ export default function BookReader({
           {currentPage > 1 ? (
             <Link
               href={`/books/dibyaupadesh/${currentPage - 1}`}
-              className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="flex items-center justify-center rounded-md bg-primary pl-1 pr-4 py-1 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              ← अघिल्लो
+              <ChevronLeft />
+              <span className="leading-snug -mb-1">अघिल्लो</span>
             </Link>
           ) : (
             <div className="w-24"></div>
@@ -124,9 +126,10 @@ export default function BookReader({
           {currentPage < totalPages ? (
             <Link
               href={`/books/dibyaupadesh/${currentPage + 1}`}
-              className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="flex items-center justify-center rounded-md bg-primary pr-1 pl-4 py-1 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
-              अर्को →
+              <span className="leading-snug -mb-1">अर्को</span>{" "}
+              <ChevronLeft className="rotate-180" />
             </Link>
           ) : (
             <div className="w-24"></div>
@@ -134,8 +137,12 @@ export default function BookReader({
         </div>
 
         {/* Keyboard shortcuts hint */}
-        <div className="mt-8 text-center text-xs text-muted-foreground">
-          <p>← → तीरहरू प्रयोग गरेर पृष्ठहरू नेभिगेट गर्नुहोस्</p>
+        <div className="flex items-center justify-center mt-8 text-sm text-muted-foreground leading-snug">
+          <span className="leading-snug -mb-1">अकिबोर्डकोर्को</span>
+          <ArrowLeftRight className="mx-2" />
+          <span className="leading-snug -mb-1">
+            प्रयोग गरेर पृष्ठहरू नेभिगेट गर्नुहोस्
+          </span>
         </div>
       </div>
     </div>

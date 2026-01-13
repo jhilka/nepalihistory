@@ -1,3 +1,5 @@
+<div class="text-base italic text-right">श्री ५ पृथ्वीनारायण शाहको संक्षिप्त परिचय</div>
+
 <div style="text-align:right;">
 श्री ५ पृथ्वीनारायण शाहको ...
 </div>

@@ -421,6 +421,7 @@
 
     @media (min-width: 640px) {
       display: table;
+      font-size: 1rem;
     }
   }
 
