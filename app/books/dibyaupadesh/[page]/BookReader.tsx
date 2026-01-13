@@ -9,6 +9,7 @@ import Link from "next/link";
 import { extractReferences } from "@/lib/books/extract-references";
 import { SupWithTooltip } from "../components/sup-with-tooltip";
 import { CodeBlock } from "../components/code-block";
+import { ChevronLeft } from "lucide-react";
 
 interface BookReaderProps {
   content: string;
@@ -44,23 +45,23 @@ export default function BookReader({
   }, [currentPage, totalPages, router]);
 
   return (
-    <div className="min-h-screen bg-background/80">
+    <div className="min-h-screen bg-background/80 font-dev">
       <div className="container page-content-width mx-auto px-4! py-8">
         {/* Header */}
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between text-lg font-bold">
           <Link
             href="/books/dibyaupadesh"
-            className="text-sm text-muted-foreground hover:text-foreground"
+            className="flex items-center justify-center gap-1 text-muted-foreground hover:text-foreground"
           >
-            ← {bookTitle}
+            <ChevronLeft className="size-4" aria-hidden="true" /> {bookTitle}
           </Link>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-muted-foreground font-germania">
             पृष्ठ {currentPage} / {totalPages}
           </span>
         </div>
 
         {/* Content */}
-        <article className="prose prose-lg dark:prose-invert mb-8 space-y-3 text-sm">
+        <article className="prose prose-lg dark:prose-invert mb-8 space-y-3 text-sm sm:text-lg">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
@@ -70,13 +71,13 @@ export default function BookReader({
                   {children}
                 </SupWithTooltip>
               ),
-              abbr: (props) => (
+              abbr: ({ node, ...props }) => (
                 <abbr
                   className="underline decoration-dotted cursor-help"
                   {...props}
                 />
               ),
-              span: (props) => {
+              span: ({ node, ...props }) => {
                 const { title } = props;
                 if (title) {
                   return (
@@ -88,17 +89,15 @@ export default function BookReader({
                 }
                 return <span {...props} />;
               },
-              div: (props) => <div {...props} />,
-              p: (props) => <p {...props} />,
+              div: ({ node, ...props }) => <div {...props} />,
+              em: ({ node, ...props }) => <em {...props} />,
+              p: ({ node, ...props }) => <p {...props} />,
               pre: ({ children }) => {
                 return (
                   <CodeBlock references={references}>{children}</CodeBlock>
                 );
               },
-              code: (props) => {
-                const { children } = props;
-                return <>{children}</>;
-              },
+              code: ({ node, children, ...props }) => <>{children}</>,
             }}
           >
             {content}

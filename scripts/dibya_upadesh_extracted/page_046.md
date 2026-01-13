@@ -1,3 +1,5 @@
+<div class="text-base italic text-right">दिव्योउपदेशको मूल पाठ</div>
+
 #### उपदेशको मूल पाठ
 
 ```
