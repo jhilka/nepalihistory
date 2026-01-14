@@ -85,9 +85,9 @@ export default async function TimelineClient({
           </div>
         </header>
 
-        <div className="grid grid-cols-[1fr_auto_1fr] justify-items-center">
+        <div className="grid grid-cols-[1fr_auto_1fr]">
           <div></div>
-          <div className="page-content-width px-4">
+          <div className="page-content-width px-4 justify-self-center">
             {years.map((year) => {
               const yearEntries = groupedEntries[year];
 
@@ -115,7 +115,7 @@ export default async function TimelineClient({
           </div>
           <TableOfContents
             entries={entries}
-            className="hidden xl:block w-64 shrink-0 sticky top-20 self-start"
+            className="hidden xl:block w-64 shrink-0 sticky top-24 self-start justify-self-start pl-8"
           />
         </div>
         {timeline.involved && timeline.involved.length > 0 && (
