@@ -484,6 +484,10 @@
     @apply px-1;
   }
 
+  img {
+    @apply mx-auto;
+  }
+
   p {
     @apply my-4 text-justify tracking-normal;
 
