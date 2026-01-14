@@ -1,39 +1,56 @@
 "use client";
 
-import { useState } from "react";
+import React, { ReactNode } from "react";
+import { AbbrWithTooltip } from "./abbr-with-tooltip";
 
 interface CodeBlockProps {
-  children: React.ReactNode;
-  references: Map<string, string>;
+  children?: ReactNode;
+  references?: Map<string, string>;
+}
+
+function extractText(node: ReactNode): string {
+  if (typeof node === "string") return node;
+  if (typeof node === "number") return String(node);
+  if (!node) return "";
+
+  if (Array.isArray(node)) {
+    return node.map(extractText).join("");
+  }
+
+  if (typeof node === "object" && "props" in node) {
+    return extractText((node as any).props.children);
+  }
+
+  return "";
 }
 
 export function CodeBlock({ children, references }: CodeBlockProps) {
-  const [showReferences, setShowReferences] = useState(false);
+  const code = extractText(children);
+  const parts = code.split(
+    /(<sup>.*?<\/sup>|<abbr\s+title="[^"]*">.*?<\/abbr>)/g
+  );
 
   return (
-    <div className="my-4">
-      <pre className="bg-muted p-4 rounded-md overflow-x-auto">
-        {children}
-      </pre>
-      {references.size > 0 && (
-        <div className="mt-2">
-          <button
-            onClick={() => setShowReferences(!showReferences)}
-            className="text-sm text-muted-foreground hover:text-foreground"
-          >
-            {showReferences ? "Hide" : "Show"} references ({references.size})
-          </button>
-          {showReferences && (
-            <div className="mt-2 text-sm space-y-1">
-              {Array.from(references.entries()).map(([key, value]) => (
-                <div key={key} className="text-muted-foreground">
-                  <span className="font-mono">{key}</span>: {value}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
+    <pre className="bg-muted-foreground/10 rounded-lg p-4 overflow-x-auto my-4">
+      <code className="italic text-base sm:text-lg leading-snug whitespace-pre-wrap wrap-break-words tracking-tight">
+        {parts.map((part, index) => {
+          const abbrMatch = part.match(
+            /<abbr\s+title="([^"]*)">([^<]*)<\/abbr>/
+          );
+
+          if (abbrMatch) {
+            const tooltipText = abbrMatch[1];
+            const displayText = abbrMatch[2];
+            return (
+              <AbbrWithTooltip key={index} title={tooltipText}>
+                {displayText}
+              </AbbrWithTooltip>
+            );
+          }
+
+          return <React.Fragment key={index}>{part}</React.Fragment>;
+        })}
+      </code>
+    </pre>
   );
 }
