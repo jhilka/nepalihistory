@@ -31,12 +31,18 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
   const openAt = (index: number) => {
     setStartIndex(index);
     setIsOpen(true);
+    // Push a state to history to handle back gesture
+    window.history.pushState({ modal: true }, "");
     // attempt to move slider after it initializes
     setTimeout(() => (modalInstanceRef.current as any)?.moveToIdx?.(index), 0);
   };
 
   const close = () => {
     setIsOpen(false);
+    // Remove the history state if it exists
+    if (window.history.state?.modal) {
+      window.history.back();
+    }
   };
 
   const [modalRef, modalInstanceRef] = useKeenSlider<HTMLDivElement>({
@@ -50,8 +56,15 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") close();
     }
+    function onPopState() {
+      setIsOpen(false);
+    }
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener("popstate", onPopState);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("popstate", onPopState);
+    };
   }, [isOpen]);
 
   if (media.length === 0) return null;
