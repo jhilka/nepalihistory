@@ -133,8 +133,8 @@ export default function BookReader({
           )}
         </div>
 
-        <div className="flex items-center justify-center mt-8 text-sm text-muted-foreground leading-snug">
-          <span className="leading-snug -mb-1">अकिबोर्डकोर्को</span>
+        <div className="flex items-center justify-center mt-8 text-sm sm:text-base text-muted-foreground leading-snug">
+          <span className="leading-snug -mb-1">किबोर्डको</span>
           <ArrowLeftRight className="mx-2" />
           <span className="leading-snug -mb-1">
             प्रयोग गरेर पृष्ठहरू नेभिगेट गर्नुहोस्

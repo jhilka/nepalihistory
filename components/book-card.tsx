@@ -11,8 +11,10 @@ export function BookCard({ book }: BookCardProps) {
       href={`/books/${book.id}`}
       title={book.title}
       description={book.description}
+      className="font-dev"
       coverImage={book.coverImage}
       coverAlt={`${book.title} cover`}
+      aspectRatio="portrait"
       badge={{
         label: "pages",
         value: book.totalPages,

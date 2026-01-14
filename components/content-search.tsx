@@ -28,6 +28,7 @@ type ContentSearchProps<T extends ContentItem> = {
   emptyTitle?: string;
   emptyDescription?: string;
   renderCard: (item: T) => ReactNode;
+  bookContent?: ReactNode;
 };
 
 export default function ContentSearch<T extends ContentItem>({
@@ -37,6 +38,7 @@ export default function ContentSearch<T extends ContentItem>({
   emptyTitle = "No results found",
   emptyDescription = "Try a different search term or clear the filter.",
   renderCard,
+  bookContent,
 }: ContentSearchProps<T>) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -69,7 +71,8 @@ export default function ContentSearch<T extends ContentItem>({
   }, [debounced, selectedTags]);
 
   const filtered = useMemo(
-    () => filterContent(items, debounced, selectedTags),
+    () =>
+      filterContent(items as any, debounced, selectedTags) as unknown as T[],
     [items, debounced, selectedTags]
   );
 
@@ -168,10 +171,19 @@ export default function ContentSearch<T extends ContentItem>({
             </EmptyContent>
           </Empty>
         ) : (
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 items-center-safe">
-            {filtered.map((item) => (
-              <div key={item.id}>{renderCard(item)}</div>
-            ))}
+          <div className="space-y-4 sm:space-y-8">
+            {bookContent}
+
+            <div>
+              <h2 className="text-xl font-oswald font-semibold mb-4 text-center">
+                Timelines
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 items-center-safe">
+                {filtered.map((item) => (
+                  <div key={item.id}>{renderCard(item)}</div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>

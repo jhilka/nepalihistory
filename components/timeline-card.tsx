@@ -13,6 +13,7 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
       description={timeline.description}
       coverImage={timeline.coverMedia?.src}
       coverAlt={timeline.coverMedia?.alt}
+      aspectRatio="portrait"
       badge={{
         label: "entries",
         value: timeline.entries?.length || 0,

@@ -15,6 +15,7 @@ type ContentCardProps = {
   };
   metadata?: string;
   className?: string;
+  aspectRatio?: "landscape" | "portrait";
 };
 
 export function ContentCard({
@@ -26,6 +27,7 @@ export function ContentCard({
   badge,
   metadata,
   className,
+  aspectRatio = "landscape",
 }: ContentCardProps) {
   return (
     <Link
@@ -35,14 +37,24 @@ export function ContentCard({
         className
       )}
     >
-      <div className="relative w-full aspect-16/10 bg-muted">
+      <div
+        className={cn(
+          "relative w-full bg-muted",
+          aspectRatio === "portrait" ? "aspect-10/16" : "aspect-16/10"
+        )}
+      >
         <Image
           src={assetPath(coverImage || "/placeholder.avif")}
           alt={coverAlt || title}
           fill
-          sizes="(max-width: 768px) 100vw, 400px"
+          sizes={
+            aspectRatio === "portrait"
+              ? "(max-width: 768px) 100vw, 200px"
+              : "(max-width: 768px) 100vw, 400px"
+          }
           className={cn(
-            "object-cover object-top group-hover:scale-105 transition-transform duration-300",
+            "object-cover group-hover:scale-105 transition-transform duration-300",
+            aspectRatio === "portrait" ? "object-center" : "object-top",
             { "object-center": !coverImage }
           )}
           priority
@@ -56,7 +68,7 @@ export function ContentCard({
         )}
 
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-3 text-white">
-          <h2 className="text-xl sm:text-lg font-oswald font-semibold line-clamp-2 leading-[1.15] mb-1">
+          <h2 className="text-md sm:text-lg font-oswald font-semibold line-clamp-2 leading-[1.15] mb-1">
             {title}
           </h2>
           {description && (

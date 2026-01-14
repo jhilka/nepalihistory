@@ -70,7 +70,7 @@ export default async function BookLandingPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="min-h-screen bg-gradient-to-br from-background to-muted">
+      <div className="min-h-screen bg-linear-to-br from-background to-muted">
         <div className="container mx-auto px-4 py-16 max-w-4xl">
           <div className="bg-card rounded-lg shadow-lg p-8 md:p-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
