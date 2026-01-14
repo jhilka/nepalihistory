@@ -1,7 +1,7 @@
 "use client";
 
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 
 interface AbbrWithTooltipProps {
   children: ReactNode;
@@ -11,12 +11,19 @@ interface AbbrWithTooltipProps {
 export function AbbrWithTooltip({ children, title }: AbbrWithTooltipProps) {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const timer = setTimeout(() => setOpen(false), 2000);
+    return () => clearTimeout(timer);
+  }, [open]);
+
   return (
     <TooltipPrimitive.Provider delayDuration={200}>
       <TooltipPrimitive.Root open={open} onOpenChange={setOpen}>
         <TooltipPrimitive.Trigger asChild>
           <abbr
-            className="underline decoration-dotted cursor-help select-none touch-manipulation"
+            className="underline decoration-dotted cursor-help select-none touch-manipulation text-amber-700 dark:text-amber-400"
             aria-label={title}
             onClick={(e) => {
               e.preventDefault();

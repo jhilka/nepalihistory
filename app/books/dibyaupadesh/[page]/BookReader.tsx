@@ -6,10 +6,10 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import Link from "next/link";
+
 import { extractReferences } from "@/lib/books/extract-references";
-import { SupWithTooltip } from "../components/sup-with-tooltip";
 import { CodeBlock } from "../components/code-block";
-import { ArrowLeftRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeftRight, ChevronLeft } from "lucide-react";
 
 interface BookReaderProps {
   content: string;
@@ -70,11 +70,6 @@ export default function BookReader({
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
             components={{
-              sup: ({ children }) => (
-                <SupWithTooltip references={references}>
-                  {children}
-                </SupWithTooltip>
-              ),
               abbr: ({ node, ...props }) => (
                 <abbr
                   className="underline decoration-dotted cursor-help"
