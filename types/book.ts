@@ -9,6 +9,8 @@ export interface Book {
   publishedYear?: number;
   language?: string;
   isbn?: string;
+  keywords?: string[];
+  genre?: string;
 }
 
 export interface BookPage {

@@ -20,11 +20,18 @@ export async function generateMetadata({
   return {
     title: `${book.title} | Nepali History`,
     description: book.description,
+    keywords: book.keywords,
     openGraph: {
       title: book.title,
       description: book.description,
       type: 'book',
-      images: book.coverImage ? [{ url: book.coverImage }] : [],
+      images: book.coverImage ? [{ url: book.coverImage, alt: book.title }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: book.title,
+      description: book.description,
+      images: book.coverImage ? [book.coverImage] : [],
     },
   };
 }
@@ -45,11 +52,14 @@ export default async function BookLandingPage({
     name: book.title,
     description: book.description,
     numberOfPages: book.totalPages,
+    bookFormat: 'https://schema.org/EBook',
     ...(book.author && { author: { '@type': 'Person', name: book.author } }),
-    ...(book.publishedYear && { datePublished: book.publishedYear }),
+    ...(book.publishedYear && { datePublished: String(book.publishedYear) }),
     ...(book.language && { inLanguage: book.language }),
     ...(book.isbn && { isbn: book.isbn }),
     ...(book.coverImage && { image: book.coverImage }),
+    ...(book.genre && { genre: book.genre }),
+    ...(book.keywords && { keywords: book.keywords.join(', ') }),
   };
 
   return (
