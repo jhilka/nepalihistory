@@ -10,8 +10,6 @@ import { Spinner } from "@/components/ui/spinner";
 export default function HomePage() {
   const allContent = [...books, ...timelines];
 
-  console.log("Books:", books.length, "Timelines:", timelines.length);
-
   return (
     <Suspense
       fallback={
