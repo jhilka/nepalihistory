@@ -5,4 +5,8 @@ export const dibyaupadesh: Book = {
   title: "दिव्य उपदेश",
   description: "बडामहाराजाधिराज श्री ५ पृथ्वीनारायण शाहको दिव्य उपदेश",
   totalPages: 128,
+  author: "पृथ्वीनारायण शाह",
+  publishedYear: 1774,
+  language: "ne",
+  coverImage: "/dibyaupadesh-cover.avif",
 };

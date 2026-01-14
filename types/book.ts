@@ -4,6 +4,11 @@ export interface Book {
   description: string;
   totalPages: number;
   coverImage?: string;
+  author?: string;
+  publisher?: string;
+  publishedYear?: number;
+  language?: string;
+  isbn?: string;
 }
 
 export interface BookPage {
