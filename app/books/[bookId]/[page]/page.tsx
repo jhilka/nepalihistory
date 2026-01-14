@@ -24,13 +24,24 @@ export async function generateMetadata({
 
   if (!book || isNaN(pageNumber)) return {};
 
+  const pageTitle = `${book.title} - पृष्ठ ${pageNumber}`;
+  const pageDescription = `${book.title}को पृष्ठ ${pageNumber} पढ्नुहोस्। ${book.author}द्वारा लिखित ${book.publishedYear ? `(${book.publishedYear})` : ''}। ${book.description.slice(0, 100)}...`;
+
   return {
-    title: `${book.title} - Page ${pageNumber} | Nepali History`,
-    description: `Read page ${pageNumber} of ${book.title} by ${book.author || 'Unknown'}`,
+    title: `${pageTitle} | Nepali History`,
+    description: pageDescription,
+    keywords: book.keywords,
     openGraph: {
-      title: `${book.title} - Page ${pageNumber}`,
-      description: book.description,
+      title: pageTitle,
+      description: pageDescription,
       type: 'book',
+      images: book.coverImage ? [{ url: book.coverImage, alt: book.title }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: pageTitle,
+      description: pageDescription,
+      images: book.coverImage ? [book.coverImage] : [],
     },
   };
 }
@@ -50,13 +61,44 @@ export default async function BookPage({
 
   const content = await loadBookPage(book.id, pageNumber);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: book.title,
+    description: book.description,
+    numberOfPages: book.totalPages,
+    bookFormat: "https://schema.org/EBook",
+    ...(book.author && { author: { "@type": "Person", name: book.author } }),
+    ...(book.publishedYear && { datePublished: String(book.publishedYear) }),
+    ...(book.language && { inLanguage: book.language }),
+    ...(book.isbn && { isbn: book.isbn }),
+    ...(book.coverImage && { image: book.coverImage }),
+    ...(book.genre && { genre: book.genre }),
+    ...(book.keywords && { keywords: book.keywords.join(", ") }),
+    hasPart: {
+      "@type": "WebPage",
+      name: `पृष्ठ ${pageNumber}`,
+      position: pageNumber,
+      isPartOf: {
+        "@type": "Book",
+        name: book.title,
+      },
+    },
+  };
+
   return (
-    <BookReader
-      content={content}
-      currentPage={pageNumber}
-      totalPages={book.totalPages}
-      bookTitle={book.title}
-      bookId={book.id}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BookReader
+        content={content}
+        currentPage={pageNumber}
+        totalPages={book.totalPages}
+        bookTitle={book.title}
+        bookId={book.id}
+      />
+    </>
   );
 }
