@@ -15,7 +15,7 @@ const SingleImage: React.FC<{ item: Media }> = ({ item }) => (
   <figure className="block mx-auto max-w-[336px]">
     <div className="relative max-h-64 overflow-hidden rounded-md shadow-lg border-4 border-white">
       <SafeImage
-        src={item.src || "/placeholder.svg"}
+        src={item.src || "/placeholder.avif"}
         alt={item.alt}
         width={500}
         height={500}

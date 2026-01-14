@@ -6,6 +6,7 @@ import {
   Germania_One,
   Oswald,
   Bebas_Neue,
+  Noto_Sans_Devanagari,
 } from "next/font/google";
 
 import "./globals.css";
@@ -15,6 +16,10 @@ import { Navbar } from "@/components/navbar";
 import { BackgroundPattern } from "@/components/background-pattern";
 import { ThemeScript, AfterHydration } from "@/components/theme";
 
+const devnagari = Noto_Sans_Devanagari({
+  subsets: ["devanagari"],
+  variable: "--font-dev",
+});
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 const germaniaOne = Germania_One({
@@ -67,7 +72,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`min-h-screen font-sans antialiased overflow-y-auto ${geist.variable} ${geistMono.variable} ${germaniaOne.variable} ${oswald.variable} ${bebasNeue.variable}`}
+        className={`min-h-screen font-sans antialiased overflow-y-auto ${devnagari.variable} ${geist.variable} ${geistMono.variable} ${germaniaOne.variable} ${oswald.variable} ${bebasNeue.variable}`}
       >
         <AfterHydration />
         <BackgroundPattern />

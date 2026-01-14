@@ -1,7 +1,7 @@
 import type { Timeline } from "@/types/timeline";
 
 export const divyaUpadesh: Timeline = {
-  id: "divya-upadesh",
+  id: "dibyaupadesh",
   title: "Divya Upadesh",
   description:
     "The Divine Counsel delivered by the founder of modern Nepal in 1774-1775 remains one of the most quoted and debated political texts in Nepali history. Written in classical Nepali, it is both a nationalist manifesto and a pragmatic guide to statecraft, astonishingly relevant to Nepal's current political instability, corruption, and ethnic/regional infighting.",
@@ -18,7 +18,7 @@ export const divyaUpadesh: Timeline = {
     {
       name: "Prithvi Narayan Shah",
       role: "Founder of modern Nepal and sole author",
-      avatar: "/timelines/divya-upadesh/prithvi-narayan.avif",
+      avatar: "/timelines/dibyaupadesh/prithvi-narayan.avif",
     },
     {
       name: "Bahadur Shah",

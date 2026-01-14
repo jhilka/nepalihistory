@@ -8,6 +8,7 @@ import { Timeline } from "@/types/timeline";
 import { TimelineNavigation } from "@/components/timeline-navigation";
 import { groupEntriesByYear } from "@/lib/date-utils";
 import { notFound } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface TimelinePageProps {
   params: string;
@@ -58,10 +59,12 @@ export default async function TimelineClient({
           {timeline.coverMedia && (
             <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow-lg">
               <SafeImage
-                src={timeline.coverMedia?.src || "/placeholder.svg"}
+                src={timeline.coverMedia?.src || "/placeholder.avif"}
                 alt={timeline.coverMedia?.alt || ""}
                 fill
-                className="object-cover"
+                className={cn("object-cover", {
+                  "scale-125": !timeline.coverMedia?.src,
+                })}
               />
             </div>
           )}
@@ -82,9 +85,9 @@ export default async function TimelineClient({
           </div>
         </header>
 
-        <div className="grid grid-cols-[1fr_auto_1fr] justify-items-center">
+        <div className="grid grid-cols-[1fr_auto_1fr]">
           <div></div>
-          <div className="page-content-width px-4">
+          <div className="page-content-width px-4 justify-self-center">
             {years.map((year) => {
               const yearEntries = groupedEntries[year];
 
@@ -112,7 +115,7 @@ export default async function TimelineClient({
           </div>
           <TableOfContents
             entries={entries}
-            className="hidden xl:block w-64 shrink-0 sticky top-20 self-start"
+            className="hidden xl:block w-64 shrink-0 sticky top-24 self-start justify-self-start pl-8"
           />
         </div>
         {timeline.involved && timeline.involved.length > 0 && (

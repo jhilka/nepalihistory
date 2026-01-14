@@ -1,14 +1,11 @@
 "use client";
 
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState, ReactNode } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { X, ChevronsDown, Search } from "lucide-react";
 
-import type { Timeline } from "@/types/timeline";
-import { filterTimelines } from "@/lib/timeline-filter";
-
+import { filterContent } from "@/lib/content-filter";
 import { Input } from "@/components/ui/input";
-import { TimelineCard } from "@/components/timeline-card";
 import {
   Empty,
   EmptyContent,
@@ -17,11 +14,32 @@ import {
 } from "@/components/ui/empty";
 import TagToggle from "@/components/tag-toggle";
 
-type Props = {
-  timelines: Timeline[];
+type ContentItem = {
+  id: string;
+  title: string;
+  tags?: string[];
+  keywords?: string[];
 };
 
-export default function TimelineSearch({ timelines }: Props) {
+type ContentSearchProps<T extends ContentItem> = {
+  items: T[];
+  placeholder?: string;
+  searchLabel?: string;
+  emptyTitle?: string;
+  emptyDescription?: string;
+  renderCard: (item: T) => ReactNode;
+  bookContent?: ReactNode;
+};
+
+export default function ContentSearch<T extends ContentItem>({
+  items,
+  placeholder = "Search content (title, tags, description)",
+  searchLabel = "Search content",
+  emptyTitle = "No results found",
+  emptyDescription = "Try a different search term or clear the filter.",
+  renderCard,
+  bookContent,
+}: ContentSearchProps<T>) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -38,7 +56,6 @@ export default function TimelineSearch({ timelines }: Props) {
   }, [query]);
 
   useEffect(() => {
-    // sync debounced & selectedTags -> url params
     const params = new URLSearchParams(Array.from(searchParams.entries()));
     if (debounced) {
       params.set("q", debounced);
@@ -46,7 +63,6 @@ export default function TimelineSearch({ timelines }: Props) {
       params.delete("q");
     }
 
-    // clear any existing tag params then add selected ones
     params.delete("tag");
     selectedTags.forEach((t) => params.append("tag", t));
 
@@ -55,22 +71,36 @@ export default function TimelineSearch({ timelines }: Props) {
   }, [debounced, selectedTags]);
 
   const filtered = useMemo(
-    () => filterTimelines(timelines, debounced, selectedTags),
-    [timelines, debounced, selectedTags]
+    () =>
+      filterContent(items as any, debounced, selectedTags) as unknown as T[],
+    [items, debounced, selectedTags]
+  );
+
+  const allTags = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          items.flatMap((item) => [
+            ...(item.tags || []),
+            ...(item.keywords || []),
+          ])
+        )
+      ).sort((a, b) => a.localeCompare(b)),
+    [items]
   );
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="my-8">
-        <label className="sr-only" htmlFor="timeline-search">
-          Search timelines
+        <label className="sr-only" htmlFor="content-search">
+          {searchLabel}
         </label>
         <div className="relative mb-3">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground z-1" />
           <Input
-            id="timeline-search"
+            id="content-search"
             className="px-10 bg-muted/50 backdrop-blur-lg shadow-sm"
-            placeholder="Search timelines (title, tags, events)"
+            placeholder={placeholder}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -81,7 +111,7 @@ export default function TimelineSearch({ timelines }: Props) {
               onClick={() => {
                 setQuery("");
                 const el = document.getElementById(
-                  "timeline-search"
+                  "content-search"
                 ) as HTMLInputElement | null;
                 el?.focus();
               }}
@@ -91,13 +121,9 @@ export default function TimelineSearch({ timelines }: Props) {
           )}
         </div>
 
-        {/* Tag filter chips */}
-        <div className="flex flex-wrap justify-center gap-2 gap-y-1.5 my-4">
-          {Array.from(
-            new Set(timelines.flatMap((t) => t.tags || ([] as string[])))
-          )
-            .sort((a, b) => a.localeCompare(b))
-            .map((tag) => {
+        {allTags.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-2 gap-y-1.5 my-4">
+            {allTags.map((tag) => {
               const active = selectedTags.includes(tag);
               return (
                 <TagToggle
@@ -115,41 +141,49 @@ export default function TimelineSearch({ timelines }: Props) {
               );
             })}
 
-          {selectedTags.length > 0 && (
-            <button
-              aria-label="Clear selected tags"
-              className="frosted flex items-center gap-1 text-xs py-1 h-6 px-2 rounded-md border border-input text-muted-foreground hover:bg-muted cursor-pointer"
-              onClick={() => setSelectedTags([])}
-            >
-              <X className="size-3" />
-              Clear tags
-            </button>
-          )}
-        </div>
+            {selectedTags.length > 0 && (
+              <button
+                aria-label="Clear selected tags"
+                className="frosted flex items-center gap-1 text-xs py-1 h-6 px-2 rounded-md border border-input text-muted-foreground hover:bg-muted cursor-pointer"
+                onClick={() => setSelectedTags([])}
+              >
+                <X className="size-3" />
+                Clear tags
+              </button>
+            )}
+          </div>
+        )}
 
         <div className="flex justify-center items-center gap-2 text-xs text-muted-foreground my-6 sm:my-8">
           <ChevronsDown className="size-4" aria-hidden="true" />
           <div>
             Showing{" "}
             <strong className="text-foreground">{filtered.length}</strong> of{" "}
-            {timelines.length}
+            {items.length}
           </div>
         </div>
 
         {filtered.length === 0 ? (
           <Empty>
             <EmptyContent>
-              <EmptyTitle>No timelines found</EmptyTitle>
-              <EmptyDescription>
-                Try a different search term or clear the filter.
-              </EmptyDescription>
+              <EmptyTitle>{emptyTitle}</EmptyTitle>
+              <EmptyDescription>{emptyDescription}</EmptyDescription>
             </EmptyContent>
           </Empty>
         ) : (
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 items-center-safe">
-            {filtered.map((timeline) => (
-              <TimelineCard key={timeline.id} timeline={timeline} />
-            ))}
+          <div className="space-y-4 sm:space-y-8">
+            {bookContent}
+
+            <div>
+              <h2 className="text-xl font-oswald font-semibold mb-4 text-center">
+                Timelines
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 items-center-safe">
+                {filtered.map((item) => (
+                  <div key={item.id}>{renderCard(item)}</div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>

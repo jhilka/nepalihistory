@@ -81,6 +81,7 @@
 }
 
 @theme inline {
+  --font-dev: "Noto Sans Devanagari", "Noto Sans Devanagari Fallback";
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --font-germania: "Germania One", cursive;
@@ -379,12 +380,7 @@
   }
 
   p {
-    margin: 0.65rem 0;
-    line-height: 1.5;
-
-    &:first-child {
-      margin-top: 0;
-    }
+    @apply my-[0.65rem] leading-normal first:mt-0;
   }
 
   strong {
@@ -406,7 +402,10 @@
       color: var(--national-maroon);
     }
   }
+}
 
+.prose-event,
+.prose {
   table {
     width: 100%;
     border-collapse: collapse;
@@ -417,11 +416,14 @@
 
     @media (min-width: 640px) {
       display: table;
+      font-size: 1rem;
     }
   }
 
+  --b-opacity: 0.3;
+
   thead {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid oklch(from var(--border) l c h / var(--b-opacity));
   }
 
   th {
@@ -432,13 +434,135 @@
 
   td {
     padding: 0.5rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid oklch(from var(--border) l c h / var(--b-opacity));
     vertical-align: top;
     line-height: 1.375;
   }
 
   tbody tr:last-child td {
     border-bottom: none;
+  }
+}
+
+.dark .prose-event a {
+  color: oklch(60% 0.15904 260.704);
+
+  &:hover {
+    color: oklch(70% 0.22195 20.073);
+  }
+}
+
+/* .prose-event tbody tr:hover {
+  background-color: var(--muted);
+  transition: background-color 150ms ease;
+} */
+
+/* Book reader typography */
+.prose {
+  line-height: 1.8;
+  font-size: 1.125rem;
+
+  h1 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  h2 {
+    @apply text-xl sm:text-2xl leading-tight font-bold;
+  }
+
+  h3,
+  h4 {
+    @apply font-bold;
+  }
+
+  article {
+    @apply px-1;
+  }
+
+  img {
+    @apply mx-auto;
+  }
+
+  p {
+    @apply my-4 text-justify tracking-normal;
+
+    strong {
+      @apply font-extrabold;
+    }
+  }
+
+  em {
+    @apply text-muted-foreground italic! font-medium sm:font-semibold! tracking-tighter;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  ul,
+  ol {
+    @apply my-2 sm:my-4 pl-3 sm:pl-6;
+  }
+
+  li {
+    @apply my-2 sm:my-2;
+
+    p {
+      @apply my-0!;
+    }
+  }
+}
+
+/* Tooltip enhancements */
+[role="tooltip"] {
+  animation-duration: 200ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ensure tooltips work on mobile */
+@media (hover: none) and (pointer: coarse) {
+  [data-tooltip-content] {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.media-frame {
+  position: relative;
+
+  /* CRITICAL: always define BOTH */
+  width: 90vw;
+  height: 80vh;
+
+  max-width: 900px;
+  max-height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Portrait → prioritize height */
+@media (orientation: portrait) {
+  .media-frame {
+    max-width: 100%;
+    max-height: auto;
+  }
+}
+
+/* Landscape → prioritize width */
+@media (orientation: landscape) {
+  .media-frame {
+    max-width: 100%;
+    max-height: auto;
+  }
+}
+/* Optional – more aggressive fake italic for broken fonts */
+@supports not (font-style: italic) {
+  em,
+  i {
+    font-style: normal;
+    transform: skewX(-14deg); /* fake italic – adjust angle to taste */
+    display: inline-block;
   }
 }
 

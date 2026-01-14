@@ -1,12 +1,15 @@
 import { Suspense } from "react";
 
 import { timelines } from "@/data";
+import { books } from "@/data/books";
 
 import Hero from "./components/Hero";
-import TimelineSearch from "./components/TimelineSearch";
+import HomeContentSearch from "./components/HomeContentSearch";
 import { Spinner } from "@/components/ui/spinner";
 
 export default function HomePage() {
+  const allContent = [...books, ...timelines];
+
   return (
     <Suspense
       fallback={
@@ -22,7 +25,7 @@ export default function HomePage() {
     >
       <div className="max-w-3xl mx-auto px-4 py-8 md:py-12 relative">
         <Hero />
-        <TimelineSearch timelines={timelines} />
+        <HomeContentSearch items={allContent} />
       </div>
     </Suspense>
   );
