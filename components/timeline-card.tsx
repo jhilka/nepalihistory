@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import type { Timeline } from "@/types/timeline";
 import { assetPath } from "@/lib/asset-path";
+import { cn } from "@/lib/utils";
 
 interface TimelineCardProps {
   timeline: Timeline;
@@ -19,11 +20,14 @@ export function TimelineCard({ timeline }: TimelineCardProps) {
       {media && (
         <div className="relative w-full aspect-16/10 bg-muted">
           <Image
-            src={assetPath(media.src || "/placeholder.svg")}
+            src={assetPath(media.src || "/placeholder.avif")}
             alt={media.alt}
             fill
             sizes="(max-width: 768px) 100vw, 400px"
-            className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+            className={cn(
+              "object-cover object-top group-hover:scale-105 transition-transform duration-300",
+              { "object-center": !media.src }
+            )}
             priority
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />

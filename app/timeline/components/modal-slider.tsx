@@ -126,7 +126,7 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
                 >
                   <div className="zoom-layer">
                     <SafeImage
-                      src={item.src || "/placeholder.svg"}
+                      src={item.src || "/placeholder.avif"}
                       alt={item.alt}
                       fill
                       sizes="(max-width: 768px) 90vw, 80vw"

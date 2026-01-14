@@ -8,6 +8,7 @@ import { Timeline } from "@/types/timeline";
 import { TimelineNavigation } from "@/components/timeline-navigation";
 import { groupEntriesByYear } from "@/lib/date-utils";
 import { notFound } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface TimelinePageProps {
   params: string;
@@ -58,10 +59,12 @@ export default async function TimelineClient({
           {timeline.coverMedia && (
             <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow-lg">
               <SafeImage
-                src={timeline.coverMedia?.src || "/placeholder.svg"}
+                src={timeline.coverMedia?.src || "/placeholder.avif"}
                 alt={timeline.coverMedia?.alt || ""}
                 fill
-                className="object-cover"
+                className={cn("object-cover", {
+                  "scale-125": !timeline.coverMedia?.src,
+                })}
               />
             </div>
           )}
