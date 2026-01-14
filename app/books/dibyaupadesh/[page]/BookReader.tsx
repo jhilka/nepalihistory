@@ -45,7 +45,7 @@ export default function BookReader({
   }, [currentPage, totalPages, router]);
 
   return (
-    <div className="min-h-screen bg-background/80 font-dev">
+    <div className="min-h-[calc(100vh-4rem)] bg-background/80 font-dev">
       <div className="container page-content-width mx-auto px-4! py-8">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between text-lg font-bold">
