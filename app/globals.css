@@ -196,11 +196,7 @@
   }
 
   .page-content-width {
-<<<<<<< HEAD
-    @apply max-w-4xl mx-auto px-0 sm:px-4;
-=======
     @apply max-w-3xl mx-auto px-0 sm:px-4;
->>>>>>> 489f9dc3d3726d319ec8ab2991740056d2f5762d
   }
 }
 
@@ -571,41 +567,6 @@
     font-style: normal;
     transform: skewX(-14deg); /* fake italic – adjust angle to taste */
     display: inline-block;
-  }
-}
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.875rem;
-    overflow-x: auto;
-    display: block;
-
-    @media (min-width: 640px) {
-      display: table;
-    }
-  }
-
-  thead {
-    border-bottom: 1px solid var(--border);
-  }
-
-  th {
-    padding: 0.5rem;
-    font-weight: 600;
-    color: var(--foreground);
-  }
-
-  td {
-    padding: 0.5rem;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-    line-height: 1.375;
-  }
-
-  tbody tr:last-child td {
-    border-bottom: none;
   }
 }
 
