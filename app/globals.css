@@ -492,7 +492,7 @@
   }
 
   em {
-    @apply text-muted-foreground/95 italic! font-bold! tracking-tight;
+    @apply text-muted-foreground italic! font-medium sm:font-semibold! tracking-tighter;
   }
 
   strong {

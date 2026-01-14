@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
 import { books } from "@/data/books";
-import type { Metadata } from "next";
+
+import { SafeImage } from "@/components/safe-image";
 
 export async function generateStaticParams() {
   return books.map((book) => ({ bookId: book.id }));
@@ -70,25 +73,35 @@ export default async function BookLandingPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="min-h-screen bg-linear-to-br from-background to-muted">
-        <div className="container mx-auto px-4 py-16 max-w-4xl">
-          <div className="bg-card rounded-lg shadow-lg p-8 md:p-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+      <div className="min-h-[calc(100vh-4rem)] flex items-center bg-background/80 font-dev">
+        <div className="container mx-auto px-4 py-8 sm:py-16 max-w-4xl">
+          <div className="rounded-lg p-8 md:p-12">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">
               {book.title}
             </h1>
+
+            {book.coverImage && (
+              <SafeImage
+                src={book.coverImage}
+                alt={`${book.title} book cover`}
+                width={400}
+                height={600}
+                className="mx-auto mb-8 rounded-lg shadow-lg"
+              />
+            )}
 
             <p className="text-xl text-muted-foreground text-center mb-8">
               {book.description}
             </p>
 
-            <div className="flex items-center justify-center gap-4 mb-8 text-sm text-muted-foreground">
-              <span>{book.totalPages} पृष्ठहरू</span>
+            <div className="flex items-center justify-center gap-4 mb-8 text-xl text-muted-foreground">
+              <p>{book.totalPages} पृष्ठहरू</p>
             </div>
 
             <div className="flex justify-center">
               <Link
                 href={`/books/${bookId}/1`}
-                className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-lg font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
               >
                 पढ्न सुरु गर्नुहोस्
               </Link>
