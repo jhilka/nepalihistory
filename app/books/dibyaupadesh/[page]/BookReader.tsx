@@ -45,7 +45,7 @@ export default function BookReader({
   }, [currentPage, totalPages, router]);
 
   return (
-    <div className="min-h-screen bg-background/80 font-dev">
+    <div className="bg-background/80 font-dev">
       <div className="container page-content-width mx-auto px-4! py-8">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between text-lg font-bold">
@@ -57,7 +57,10 @@ export default function BookReader({
             <span className="-mb-1">{bookTitle}</span>
           </Link>
           <span className="text-muted-foreground">
-            पृष्ठ {currentPage} / {totalPages}
+            पृष्ठ{" "}
+            <span className="text-base">
+              {currentPage}/{totalPages}
+            </span>
           </span>
         </div>
 

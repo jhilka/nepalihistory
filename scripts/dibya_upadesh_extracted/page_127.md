@@ -1,3 +1,3 @@
-![Dibyaupadesh Original copy](/divyaupadesh-original.png)
+![Dibyaupadesh Original copy](/divyaupadesh-original.avif)
 
 <div class="text-center">'दिव्योपदेश' मूल प्रतिको पहिलो पेजको छायाचित्र ।</div>
