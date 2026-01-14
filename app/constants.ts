@@ -5,13 +5,20 @@ export const SEO = {
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    url: "www.nepalihistory.org",
     site_name: "Nepali History",
+    images: [
+      {
+        url: "/placeholder.avif",
+        alt: "Nepali History",
+      },
+    ],
   },
   twitter: {
     handle: "@handle",
     site: "@site",
     cardType: "summary_large_image",
+    images: ["/placeholder.avif"],
   },
 };
 
