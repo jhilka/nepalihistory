@@ -8,7 +8,7 @@ import rehypeRaw from "rehype-raw";
 import Link from "next/link";
 
 import { extractReferences } from "@/lib/books/extract-references";
-import { CodeBlock } from "../components/code-block";
+import { CodeBlock } from "@/components/books/code-block";
 import { ArrowLeftRight, ChevronLeft } from "lucide-react";
 
 interface BookReaderProps {
@@ -16,6 +16,7 @@ interface BookReaderProps {
   currentPage: number;
   totalPages: number;
   bookTitle: string;
+  bookId: string;
 }
 
 export default function BookReader({
@@ -23,6 +24,7 @@ export default function BookReader({
   currentPage,
   totalPages,
   bookTitle,
+  bookId,
 }: BookReaderProps) {
   const router = useRouter();
   const references = useMemo(() => extractReferences(content), [content]);
@@ -30,27 +32,26 @@ export default function BookReader({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft" && currentPage > 1) {
-        router.push(`/books/dibyaupadesh/${currentPage - 1}`);
+        router.push(`/books/${bookId}/${currentPage - 1}`);
       } else if (e.key === "ArrowRight" && currentPage < totalPages) {
-        router.push(`/books/dibyaupadesh/${currentPage + 1}`);
+        router.push(`/books/${bookId}/${currentPage + 1}`);
       } else if (e.key === "Home") {
-        router.push(`/books/dibyaupadesh/1`);
+        router.push(`/books/${bookId}/1`);
       } else if (e.key === "End") {
-        router.push(`/books/dibyaupadesh/${totalPages}`);
+        router.push(`/books/${bookId}/${totalPages}`);
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentPage, totalPages, router]);
+  }, [currentPage, totalPages, bookId, router]);
 
   return (
     <div className="min-h-[calc(100vh-4rem)] bg-background/80 font-dev">
       <div className="container page-content-width mx-auto px-4! py-8">
-        {/* Header */}
         <div className="mb-6 flex items-center justify-between text-lg font-bold">
           <Link
-            href="/books/dibyaupadesh"
+            href={`/books/${bookId}`}
             className="flex items-center justify-center gap-1 text-muted-foreground hover:text-foreground"
           >
             <ChevronLeft className="size-4 stroke-3" aria-hidden="true" />{" "}
@@ -64,7 +65,6 @@ export default function BookReader({
           </span>
         </div>
 
-        {/* Content */}
         <article className="prose prose-lg dark:prose-invert mb-8 space-y-3 text-sm sm:text-lg text-shadow-sm">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
@@ -103,11 +103,10 @@ export default function BookReader({
           </ReactMarkdown>
         </article>
 
-        {/* Navigation */}
         <div className="flex items-center justify-between gap-4">
           {currentPage > 1 ? (
             <Link
-              href={`/books/dibyaupadesh/${currentPage - 1}`}
+              href={`/books/${bookId}/${currentPage - 1}`}
               className="flex items-center justify-center rounded-md bg-primary pl-1 pr-4 py-1 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               <ChevronLeft />
@@ -123,7 +122,7 @@ export default function BookReader({
 
           {currentPage < totalPages ? (
             <Link
-              href={`/books/dibyaupadesh/${currentPage + 1}`}
+              href={`/books/${bookId}/${currentPage + 1}`}
               className="flex items-center justify-center rounded-md bg-primary pr-1 pl-4 py-1 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               <span className="leading-snug -mb-1">अर्को</span>{" "}
@@ -134,7 +133,6 @@ export default function BookReader({
           )}
         </div>
 
-        {/* Keyboard shortcuts hint */}
         <div className="flex items-center justify-center mt-8 text-sm text-muted-foreground leading-snug">
           <span className="leading-snug -mb-1">अकिबोर्डकोर्को</span>
           <ArrowLeftRight className="mx-2" />
