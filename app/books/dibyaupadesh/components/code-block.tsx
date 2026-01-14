@@ -33,7 +33,7 @@ export function CodeBlock({ children, references }: CodeBlockProps) {
 
   return (
     <pre className="bg-muted-foreground/10 rounded-lg p-4 overflow-x-auto my-4">
-      <code className="italic text-base sm:text-lg leading-snug whitespace-pre-wrap wrap-break-words tracking-tight">
+      <code className="italic text-base sm:text-lg leading-snug whitespace-pre-wrap wrap-break-words tracking-tight tracking-tighter">
         {parts.map((part, index) => {
           const abbrMatch = part.match(
             /<abbr\s+title="([^"]*)">([^<]*)<\/abbr>/

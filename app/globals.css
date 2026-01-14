@@ -485,11 +485,15 @@
   }
 
   p {
-    @apply my-4 text-justify;
+    @apply my-4 text-justify tracking-normal;
+
+    strong {
+      @apply font-extrabold;
+    }
   }
 
   em {
-    @apply text-muted-foreground/95 italic!;
+    @apply text-muted-foreground/95 italic! font-bold! tracking-tight;
   }
 
   strong {
