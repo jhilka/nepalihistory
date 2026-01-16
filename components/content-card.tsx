@@ -33,7 +33,7 @@ export function ContentCard({
     <Link
       href={href}
       className={cn(
-        "group bg-background block overflow-hidden shadow-md rounded-md hover:shadow-lg transition-shadow",
+        "group bg-background block overflow-hidden shadow-lg/30 rounded-md hover:shadow-lg transition-shadow",
         className
       )}
     >
