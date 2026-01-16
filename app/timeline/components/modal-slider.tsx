@@ -91,7 +91,7 @@ const ModalSlider: React.FC<ModalSliderProps> = ({ media }) => {
               }}
             >
               {/* IMAGE CARD */}
-              <div className="relative size-[260px] sm:size-70 overflow-hidden rounded-md shadow-lg border-4 border-white">
+              <div className="relative size-[260px] sm:size-70 overflow-hidden rounded-md shadow-lg/30 border-4 border-white">
                 <SafeImage
                   src={m.src}
                   alt={m.alt || ""}

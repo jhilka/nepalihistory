@@ -57,7 +57,7 @@ export default async function TimelineClient({
             Back
           </Link>
           {timeline.coverMedia && (
-            <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow-lg">
+            <div className="relative size-32 shrink-0 rounded-lg overflow-hidden bg-muted shadow-lg/30">
               <SafeImage
                 src={timeline.coverMedia?.src || "/placeholder.avif"}
                 alt={timeline.coverMedia?.alt || ""}
