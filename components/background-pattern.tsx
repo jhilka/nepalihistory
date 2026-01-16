@@ -2,13 +2,13 @@ export function BackgroundPattern() {
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-25 dark:opacity-15"
         style={{
           backgroundImage: `linear-gradient(to right, var(--border) 1px, transparent 1px), linear-gradient(to bottom, var(--border) 1px, transparent 1px)`,
           backgroundSize: "25px 25px",
-          mask: "radial-gradient(ellipse at center, black 40%, transparent 95%)",
+          mask: "radial-gradient(ellipse 40% 60% at center, black 45%, transparent 100%)",
           WebkitMask:
-            "radial-gradient(ellipse at center, black 40%, transparent 95%)",
+            "radial-gradient(ellipse 40% 60% at center, black 45%, transparent 100%)",
         }}
       />
       {/* Gradient orbs */}
