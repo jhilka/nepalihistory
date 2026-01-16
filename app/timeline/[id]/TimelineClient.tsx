@@ -85,9 +85,9 @@ export default async function TimelineClient({
           </div>
         </header>
 
-        <div className="grid grid-cols-[1fr_auto_1fr]">
+        <div className="grid grid-cols-[1fr_minmax(0,48rem)_1fr] px-4">
           <div></div>
-          <div className="page-content-width px-4 justify-self-center">
+          <div className="w-full">
             {years.map((year) => {
               const yearEntries = groupedEntries[year];
 
