@@ -6,7 +6,7 @@ import Link from "next/link";
 import { SafeImage } from "@/components/safe-image";
 import { Timeline } from "@/types/timeline";
 import { TimelineNavigation } from "@/components/timeline-navigation";
-import { groupEntriesByYear } from "@/lib/date-utils";
+import { groupEntriesByYear, countTotalEntries } from "@/lib/date-utils";
 import { notFound } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -29,7 +29,7 @@ export default async function TimelineClient({
     return yearA - yearB;
   });
 
-  const totalEntries = entries.length;
+  const totalEntries = countTotalEntries(entries);
   let entryCounter = 0;
 
   return (
@@ -85,7 +85,7 @@ export default async function TimelineClient({
           </div>
         </header>
 
-        <div className="grid grid-cols-[1fr_minmax(0,48rem)_1fr] px-4">
+        <div className="grid grid-cols-[1fr_minmax(0,46rem)_1fr]">
           <div></div>
           <div className="w-full">
             {years.map((year) => {
