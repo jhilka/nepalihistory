@@ -1,14 +1,15 @@
 import { ChevronsDown } from "lucide-react";
+import Link from "next/link";
+
+import { cn } from "@/lib/utils";
+import { groupEntriesByYear, countTotalEntries } from "@/lib/date-utils";
+import { Timeline } from "@/types/timeline";
+
 import { EntityCard } from "@/app/timeline/components/entity-card";
 import { EntityInvolved } from "@/app/timeline/components/entity-involved";
-import { TableOfContents } from "@/app/timeline/components/table-of-contents";
-import Link from "next/link";
 import { SafeImage } from "@/components/safe-image";
-import { Timeline } from "@/types/timeline";
+import { TableOfContents } from "@/app/timeline/components/table-of-contents";
 import { TimelineNavigation } from "@/components/timeline-navigation";
-import { groupEntriesByYear, countTotalEntries } from "@/lib/date-utils";
-import { notFound } from "next/navigation";
-import { cn } from "@/lib/utils";
 
 interface TimelinePageProps {
   params: string;

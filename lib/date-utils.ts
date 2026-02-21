@@ -38,6 +38,15 @@ export function groupEntriesByYear(entries: TimelineEntry[]) {
   return groups;
 }
 
+/** Count total entries including nested subEntries */
+export function countTotalEntries(entries: TimelineEntry[]): number {
+  return entries.reduce((total, entry) => {
+    return (
+      total + 1 + (entry.subEntries ? countTotalEntries(entry.subEntries) : 0)
+    );
+  }, 0);
+}
+
 /** @deprecated Use groupEntriesByYear instead */
 export const groupEventsByYear = groupEntriesByYear;
 
